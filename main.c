@@ -17,10 +17,10 @@ void InitializeInterrupts();
 void ADCIntHandler()
 {
     //Clear the ADC interrupt flag
-    ADCIntClear(ADC0_BASE, 3);
+    ADCIntClear(ADC0_BASE, 1);
 
     unsigned long adcResult;	//Create buffer for this instead
-    ADCSequenceDataGet(ADC0_BASE, 3, &adcResult);
+    ADCSequenceDataGet(ADC0_BASE, 1, &adcResult);
 }
 
 int main()
@@ -53,20 +53,20 @@ void InitializeADC()
 	//Enable the ADC on channel 0
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
 
-	//Disable Sequence 3 in order to configure ADC
-	ADCSequenceDisable(ADC0_BASE, 3);
+	//Disable Sequence 1 in order to configure ADC
+	ADCSequenceDisable(ADC0_BASE, 1);
 
-	ADCSequenceConfigure(ADC_BASE, 3, ADC_TRIGGER_PROCESSOR, 0);
-	ADCSequenceStepConfigure(ADC_BASE, 3, 0, ADC_CTL_CH0 | ADC_CTL_IE | ADC_CTL_END);
+	ADCSequenceConfigure(ADC_BASE, 1, ADC_TRIGGER_PROCESSOR, 0);
+	ADCSequenceStepConfigure(ADC_BASE, 1, 0, ADC_CTL_CH0 | ADC_CTL_IE | ADC_CTL_END);
 
-	ADCSequenceEnable(ADC0_BASE, 3);	//Enable sequence 3
-	ADCIntEnable(ADC0_BASE, 3);
-	IntEnable(INT_ADC3);	//Enable interrupt for ADC Sequence Step 3
+	ADCSequenceEnable(ADC0_BASE, 1);	//Enable sequence 1
+	ADCIntEnable(ADC0_BASE, 1);
+	IntEnable(INT_ADC1);	//Enable interrupt for ADC Sequence Step 1
 }
 
 void InitializeInterrupts()
 {
 	//Enable and clear all interrupts before starting main loop
 	IntMasterEnable();
-	ADCIntClear(ADC0_BASE, 3);
+	ADCIntClear(ADC0_BASE, 1);
 }
