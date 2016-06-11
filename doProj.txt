@@ -1,0 +1,2 @@
+#!/bin/sh
+arm-none-eabi-gcc -Wall -O3 -march=armv7-m -mcpu=cortex-m3 -mthumb -mfix-cortex-m3-ldrd -o main.elf -Os -g -I C:/StellarisWare/boards/ek-lm3s6965 -I C:/StellarisWare -T soundVisualizer.ld -Wl,--gc-sections -L C:/StellarisWare/driverlib/gcc -Wl,--entry=ResetISR startup_gcc.c main.c C:/StellarisWare/boards/ek-lm3s6965/drivers/rit128x96x4.c -ldriver
