@@ -19,6 +19,11 @@ extern void RIT128x96x4StringDraw(const char *pcStr,
                                     unsigned long ulX,
                                     unsigned long ulY,
                                     unsigned char ucLevel);
+extern void RIT128x96x4ImageDraw(const unsigned char *pucImage,
+                                   unsigned long ulX,
+                                   unsigned long ulY,
+                                   unsigned long ulWidth,
+                                   unsigned long ulHeight);
 
 
 

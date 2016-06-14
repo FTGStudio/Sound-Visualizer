@@ -260,6 +260,114 @@ void RIT128x96x4StringDraw(const char *pcStr, unsigned long ulX,
 
 //*****************************************************************************
 //
+//! Displays an image on the OLED display.
+//!
+//! \param pucImage is a pointer to the image data.
+//! \param ulX is the horizontal position to display this image, specified in
+//! columns from the left edge of the display.
+//! \param ulY is the vertical position to display this image, specified in
+//! rows from the top of the display.
+//! \param ulWidth is the width of the image, specified in columns.
+//! \param ulHeight is the height of the image, specified in rows.
+//!
+//! This function will display a bitmap graphic on the display.  Because of the
+//! format of the display RAM, the starting column (\e ulX) and the number of
+//! columns (\e ulWidth) must be an integer multiple of two.
+//!
+//! The image data is organized with the first row of image data appearing left
+//! to right, followed immediately by the second row of image data.  Each byte
+//! contains the data for two columns in the current row, with the leftmost
+//! column being contained in bits 7:4 and the rightmost column being contained
+//! in bits 3:0.
+//!
+//! For example, an image six columns wide and seven scan lines tall would
+//! be arranged as follows (showing how the twenty one bytes of the image would
+//! appear on the display):
+//!
+//! \verbatim
+//!     +-------------------+-------------------+-------------------+
+//!     |      Byte 0       |      Byte 1       |      Byte 2       |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     |      Byte 3       |      Byte 4       |      Byte 5       |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     |      Byte 6       |      Byte 7       |      Byte 8       |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     |      Byte 9       |      Byte 10      |      Byte 11      |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     |      Byte 12      |      Byte 13      |      Byte 14      |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     |      Byte 15      |      Byte 16      |      Byte 17      |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     |      Byte 18      |      Byte 19      |      Byte 20      |
+//!     +---------+---------+---------+---------+---------+---------+
+//!     | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 | 7 6 5 4 | 3 2 1 0 |
+//!     +---------+---------+---------+---------+---------+---------+
+//! \endverbatim
+//!
+//! \return None.
+//
+//*****************************************************************************
+void
+RIT128x96x4ImageDraw(const unsigned char *pucImage, unsigned long ulX,
+                     unsigned long ulY, unsigned long ulWidth,
+                     unsigned long ulHeight)
+{
+    //
+    // Check the arguments.
+    //
+    ASSERT(ulX < 128);
+    ASSERT((ulX & 1) == 0);
+    ASSERT(ulY < 96);
+    ASSERT((ulX + ulWidth) <= 128);
+    ASSERT((ulY + ulHeight) <= 96);
+    ASSERT((ulWidth & 1) == 0);
+
+    //
+    // Setup a window starting at the specified column and row, and ending
+    // at the column + width and row+height.
+    //
+    g_pucBuffer[0] = 0x15;
+    g_pucBuffer[1] = ulX / 2;
+    g_pucBuffer[2] = (ulX + ulWidth - 2) / 2;
+    RITWriteCommand(g_pucBuffer, 3);
+    g_pucBuffer[0] = 0x75;
+    g_pucBuffer[1] = ulY;
+    g_pucBuffer[2] = ulY + ulHeight - 1;
+    RITWriteCommand(g_pucBuffer, 3);
+    RITWriteCommand(g_pucRIT128x96x4HorizontalInc,
+                    sizeof(g_pucRIT128x96x4HorizontalInc));
+
+    //
+    // Loop while there are more rows to display.
+    //
+    while(ulHeight--)
+    {
+        //
+        // Write this row of image data.
+        //
+        RITWriteData(pucImage, (ulWidth / 2));
+
+        //
+        // Advance to the next row of the image.
+        //
+        pucImage += (ulWidth / 2);
+    }
+}
+
+//*****************************************************************************
+//
 //! Clears the OLED display.
 //!
 //! This function will clear the display RAM.  All pixels in the display will

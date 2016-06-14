@@ -47,6 +47,7 @@ extern long ADCSequenceDataGet(unsigned long ulBase, unsigned long ulSequenceNum
 extern void ADCIntEnable(unsigned long ulBase, unsigned long ulSequenceNum);
 extern void ADCIntDisable(unsigned long ulBase, unsigned long ulSequenceNum);
 extern void ADCIntClear(unsigned long ulBase, unsigned long ulSequenceNum);
+extern void ADCProcessorTrigger(unsigned long ulBase, unsigned long ulSequenceNum);
 
 
 #endif /* MY_ADC_H_ */

@@ -439,3 +439,37 @@ void ADCIntClear(unsigned long ulBase, unsigned long ulSequenceNum)
     //
     HWREG(ulBase + ADC_O_ISC) = 1 << ulSequenceNum;
 }
+
+//*****************************************************************************
+//
+//! Causes a processor trigger for a sample sequence.
+//!
+//! \param ulBase is the base address of the ADC module.
+//! \param ulSequenceNum is the sample sequence number, with
+//! \b ADC_TRIGGER_WAIT or \b ADC_TRIGGER_SIGNAL optionally ORed into it.
+//!
+//! This function triggers a processor-initiated sample sequence if the sample
+//! sequence trigger is configured to \b ADC_TRIGGER_PROCESSOR.  If
+//! \b ADC_TRIGGER_WAIT is ORed into the sequence number, the
+//! processor-initiated trigger is delayed until a later processor-initiated
+//! trigger to a different ADC module that specifies \b ADC_TRIGGER_SIGNAL,
+//! allowing multiple ADCs to start from a processor-initiated trigger in a
+//! synchronous manner.
+//!
+//! \return None.
+//
+//*****************************************************************************
+void ADCProcessorTrigger(unsigned long ulBase, unsigned long ulSequenceNum)
+{
+    //
+    // Check the arguments.
+    //
+    ASSERT((ulBase == ADC0_BASE) || (ulBase == ADC1_BASE));
+    ASSERT((ulSequenceNum & 0xf) < 4);
+
+    //
+    // Generate a processor trigger for this sample sequence.
+    //
+    HWREG(ulBase + ADC_O_PSSI) |= ((ulSequenceNum & 0xffff0000) |
+                                   (1 << (ulSequenceNum & 0xf)));
+}
