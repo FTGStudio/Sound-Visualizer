@@ -21,6 +21,7 @@ unsigned long BufOneIndex = 0;
 unsigned long BufTwoIndex = 0;
 int BufOneReadyToRead = 0;
 int BufTwoReadyToRead = 0;
+int OneSecDelayFlag = 0;
 char str[25];
 
 void InitializeDisplay();
@@ -29,11 +30,17 @@ void InitializeADC();
 void InitializeInterrupts();
 unsigned long GetAvgOfBuf(int bufNum);
 
-//Interupt handler for timer 0
+//Interupt handler for timer 0. Performs processor trigger to perform ADC
 void Timer0IntHandler()
 {
     TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);	  //Clear the timer interrupt.
     ADCProcessorTrigger(ADC0_BASE, 3);	              //Trigger ADC sequence 3
+}
+
+void Timer1IntHandler()
+{
+	TimerIntClear(TIMER1_BASE, TIMER_TIMA_TIMEOUT);	  //Clear the timer interrupt
+	OneSecDelayFlag = 1;
 }
 
 //Interrupt handler for ADC
@@ -127,25 +134,30 @@ void InitializeADC()
 
 void InitializeTimers()
 {
-	//Enable timer 0 peripheral
+	//Enable timer 0 and timer 1 peripheral
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
 
-	//Disable timer 0 for configuration
+	//Disable timer 0 and timer 1 for configuration
 	TimerDisable(TIMER0_BASE, TIMER_A);
+	TimerDisable(TIMER1_BASE, TIMER_A);
 
 	//Configure timer 0: 32-bit periodic mode for ADC Timer Trigger
 	TimerConfigure(TIMER0_BASE, TIMER_CFG_32_BIT_PER);
+	TimerConfigure(TIMER1_BASE, TIMER_CFG_32_BIT_PER);
 	//TimerConfigure(TIMER0_BASE, TIMER_CFG_A_PERIODIC);
 
 	//Configure time 0 to generate trigger event for ADC
 	//TimerControlTrigger(TIMER0_BASE, TIMER_BOTH, true);
 
-	TimerLoadSet(TIMER0_BASE, TIMER_A, (SysCtlClockGet()/16000)-1);
+	TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/16000);	//16MHz interrupt
+	TimerLoadSet(TIMER1_BASE, TIMER_A, SysCtlClockGet());	    //1 second interrupt
 
 	//Enable timer and its interrupt
 	TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
-	//TimerEnable(TIMER0_BASE, TIMER_BOTH);
+	TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
 	TimerEnable(TIMER0_BASE, TIMER_A);
+	TimerEnable(TIMER1_BASE, TIMER_A);
 }
 
 void InitializeInterrupts()
@@ -153,6 +165,7 @@ void InitializeInterrupts()
 	//Enable and clear all configured interrupts before starting main loop
 	IntEnable(INT_ADC3);
 	IntEnable(INT_TIMER0A);
+	IntEnable(INT_TIMER1A);
 	IntMasterEnable();
 	ADCIntClear(ADC0_BASE, 3);
 }
