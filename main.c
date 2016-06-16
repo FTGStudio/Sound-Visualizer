@@ -102,69 +102,45 @@ int main()
 
 void InitializeDisplay()
 {
-	// Initialize the OLED display.
-	RIT128x96x4Init(1000000);	//1MHz frequency
-
-	//Print Test String
-	RIT128x96x4StringDraw("Splash Screen!", 30, 40, 15);
+	RIT128x96x4Init(1000000);	// Initialize the OLED display.
+	RIT128x96x4StringDraw("Splash Screen!", 30, 40, 15);	//Print Splash Screen
 }
 
 void InitializeADC()
 {
-	//Enable the clock to the ADC module
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC);	//Enable the clock to the ADC module
+	ADCSequenceDisable(ADC0_BASE, 3);			//Disable Sequence 3 in order to safely configure ADC
 
-	//Currently giving error. Can't find SYSCTL_SET0_ADCSPEED_500KSPS
-	//Configure the ADC to sample at 500KSps (Kilo Samples per second)
-	//SysCtlADCSpeedSet(SYSCTL_SET0_ADCSPEED_500KSPS);	//choices are 125K, 250K, 500K, and 1M
-
-	//Disable Sequence 3 in order to safely configure ADC
-	ADCSequenceDisable(ADC0_BASE, 3);
-
-	//Configure Sequence 3: processor trigger, priority=0 (highest priority)
-	ADCSequenceConfigure(ADC_BASE, 3, ADC_TRIGGER_PROCESSOR, 0);
+	//Configure Sequence 3: processor trigger, priority=0
+	ADCSequenceConfigure(ADC_BASE, 3, ADC_TRIGGER_TIMER, 0);
 
 	//Configure Sequence 3, step 0, analog input 0 | interrupt | end of sequence
 	ADCSequenceStepConfigure(ADC_BASE, 3, 0, ADC_CTL_CH0 | ADC_CTL_IE | ADC_CTL_END);
 
-	//Enable sequence 3 and it's interrupt
-	ADCSequenceEnable(ADC0_BASE, 3);
-	ADCIntEnable(ADC0_BASE, 3);
+	ADCSequenceEnable(ADC0_BASE, 3);	//Enable sequence 3 and it's interrupt
+	ADCIntEnable(ADC0_BASE, 3);			//Enable interrupt
 }
 
 void InitializeTimers()
 {
-	//Enable timer 0 and timer 1 peripheral
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);				 //Enable Timer0 peripheral
+	TimerConfigure(TIMER0_BASE, TIMER_CFG_32_BIT_PER);			 //Configure Timer0: 32-bit periodic mode for ADC Timer Trigger
+	TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/16000);	 //16MHz interrupt
+	TimerControlTrigger(TIMER0_BASE, TIMER_A, true); 			 //Configure Timer0 to generate trigger event for ADC
+	TimerEnable(TIMER0_BASE, TIMER_A);							 //Enable Timer0
 
-	//Disable timer 0 and timer 1 for configuration
-	TimerDisable(TIMER0_BASE, TIMER_A);
-	TimerDisable(TIMER1_BASE, TIMER_A);
 
-	//Configure timer 0: 32-bit periodic mode for ADC Timer Trigger
-	TimerConfigure(TIMER0_BASE, TIMER_CFG_32_BIT_PER);
-	TimerConfigure(TIMER1_BASE, TIMER_CFG_32_BIT_PER);
-	//TimerConfigure(TIMER0_BASE, TIMER_CFG_A_PERIODIC);
-
-	//Configure time 0 to generate trigger event for ADC
-	//TimerControlTrigger(TIMER0_BASE, TIMER_BOTH, true);
-
-	TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/16000);	//16MHz interrupt
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);				//Enable Timer1 peripheral (in case we need a delay)
+	TimerConfigure(TIMER1_BASE, TIMER_CFG_32_BIT_PER);			//Configure Timer1: 32-bit periodic mode
 	TimerLoadSet(TIMER1_BASE, TIMER_A, SysCtlClockGet());	    //1 second interrupt
-
-	//Enable timer and its interrupt
-	TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
-	TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
-	TimerEnable(TIMER0_BASE, TIMER_A);
-	TimerEnable(TIMER1_BASE, TIMER_A);
+	TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);			//Enable Timer1 Interrupt
+	TimerEnable(TIMER1_BASE, TIMER_A);							//Enable Timer1
 }
 
 void InitializeInterrupts()
 {
 	//Enable and clear all configured interrupts before starting main loop
 	IntEnable(INT_ADC3);
-	IntEnable(INT_TIMER0A);
 	IntEnable(INT_TIMER1A);
 	IntMasterEnable();
 	ADCIntClear(ADC0_BASE, 3);
