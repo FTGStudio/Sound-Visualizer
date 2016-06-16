@@ -30,12 +30,6 @@ void InitializeADC();
 void InitializeInterrupts();
 unsigned long GetAvgOfBuf(int bufNum);
 
-//Interupt handler for timer 0. Performs processor trigger to perform ADC
-void Timer0IntHandler()
-{
-    TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);	  //Clear the timer interrupt.
-    ADCProcessorTrigger(ADC0_BASE, 3);	              //Trigger ADC sequence 3
-}
 
 void Timer1IntHandler()
 {
