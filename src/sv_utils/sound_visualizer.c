@@ -102,10 +102,9 @@ void InitializeInterrupts()
 	//Enable and clear all configured interrupts before starting main loop
 	IntEnable(INT_ADC3);
 	IntEnable(INT_TIMER1A);
+	//IntEnable(INT_UART0);
 	IntMasterEnable();
 	ADCIntClear(ADC0_BASE, 3);
-	IntEnable(INT_UART0);
-	UARTIintEnable(UART0_BASE, UART_INT_RX | UART_INT_RT);
 }
 
 unsigned long GetAvgOfBuf(int bufNum)
@@ -132,8 +131,8 @@ unsigned long GetAvgOfBuf(int bufNum)
 void svInitializeUart()
 {
 	// Enable the peripherals used for UART
-	SysCtlPeripheralEnable(SYSCTL_PERIPH2_UART0);
-	SysCtlPeripheralEnable(SYSCTL_PERIPH2_GPIOA);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 
 	// Set GPIO A0 and A1 as UART pins
 	GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
@@ -142,6 +141,8 @@ void svInitializeUart()
 	UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,
 	                        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
 	                         UART_CONFIG_PAR_NONE));
+
+	//UARTIntEnable(UART0_BASE, UART_INT_RX | UART_INT_RT);
 }
 
 //*****************************************************************************

@@ -24,7 +24,6 @@ int main()
 	// Set the clocking to run directly from the crystal.
 	SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_8MHZ);
 
-	UARTSend((unsigned char *)"Setting up system\n", 19);
 
 
 	//Main program loop
@@ -49,10 +48,11 @@ int main()
 
 				// Peripherals include
 				InitializeDisplay();
-				//InitializeTimers();
-				//InitializeADC();
-				//InitializeInterrupts();
-
+				InitializeTimers();
+				InitializeADC();
+				InitializeInterrupts();
+				svInitializeUart();
+				UARTSend((unsigned char *)"Enter text: ", 12);
 				system_state = IDLE;
 				break;
 		}

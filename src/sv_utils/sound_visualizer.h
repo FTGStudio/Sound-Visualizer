@@ -8,3 +8,4 @@ unsigned long GetAvgOfBuf(int bufNum);
 void Timer1IntHandler();
 
 void svInitializeUart();
+void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
