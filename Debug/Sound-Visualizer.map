@@ -1,0 +1,2965 @@
+Archive member included because of file (symbol)
+
+/opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+                              ./src/cmdline.o (strcmp)
+
+Allocating common symbols
+Common symbol       size              file
+
+BufTwo              0x3200            ./src/sv_utils/sound_visualizer.o
+BufOne              0x3200            ./src/sv_utils/sound_visualizer.o
+str                 0x19              ./src/sv_utils/sound_visualizer.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .init          0x00000000        0x4 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .fini          0x00000000        0x4 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .text          0x00000000       0x30 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .data          0x00000000        0x4 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .bss           0x00000000        0x1 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .init_array    0x00000000        0x4 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .fini_array    0x00000000        0x4 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .jcr           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .text          0x00000000        0x0 ./src/sv_utils/sound_visualizer.o
+ .data          0x00000000        0x0 ./src/sv_utils/sound_visualizer.o
+ .bss           0x00000000        0x0 ./src/sv_utils/sound_visualizer.o
+ .text.GetAvgOfBuf
+                0x00000000       0x80 ./src/sv_utils/sound_visualizer.o
+ .text.svInitializeUart
+                0x00000000       0x44 ./src/sv_utils/sound_visualizer.o
+ .text.InitializeInterrupts
+                0x00000000       0x38 ./src/sv_utils/sound_visualizer.o
+ .text.InitializeTimers
+                0x00000000       0x88 ./src/sv_utils/sound_visualizer.o
+ .text.InitializeADC
+                0x00000000       0x4c ./src/sv_utils/sound_visualizer.o
+ .text          0x00000000        0x0 ./src/adc.o
+ .data          0x00000000        0x0 ./src/adc.o
+ .bss           0x00000000        0x0 ./src/adc.o
+ .text.ADCIntDisable
+                0x00000000       0x10 ./src/adc.o
+ .text.ADCIntEnable
+                0x00000000       0x10 ./src/adc.o
+ .text.ADCIntStatus
+                0x00000000       0x38 ./src/adc.o
+ .text.ADCSequenceEnable
+                0x00000000        0xc ./src/adc.o
+ .text.ADCSequenceDisable
+                0x00000000       0x10 ./src/adc.o
+ .text.ADCSequenceConfigure
+                0x00000000       0x38 ./src/adc.o
+ .text.ADCSequenceStepConfigure
+                0x00000000       0x80 ./src/adc.o
+ .text.ADCSequenceOverflow
+                0x00000000       0x10 ./src/adc.o
+ .text.ADCSequenceOverflowClear
+                0x00000000        0xc ./src/adc.o
+ .text.ADCSequenceUnderflow
+                0x00000000       0x10 ./src/adc.o
+ .text.ADCSequenceUnderflowClear
+                0x00000000        0xc ./src/adc.o
+ .text.ADCProcessorTrigger
+                0x00000000       0x1c ./src/adc.o
+ .text.ADCSoftwareOversampleConfigure
+                0x00000000       0x20 ./src/adc.o
+ .text.ADCSoftwareOversampleStepConfigure
+                0x00000000      0x180 ./src/adc.o
+ .text.ADCSoftwareOversampleDataGet
+                0x00000000       0x8c ./src/adc.o
+ .text.ADCHardwareOversampleConfigure
+                0x00000000       0x14 ./src/adc.o
+ .text.ADCComparatorConfigure
+                0x00000000        0xc ./src/adc.o
+ .text.ADCComparatorRegionSet
+                0x00000000       0x10 ./src/adc.o
+ .text.ADCComparatorReset
+                0x00000000       0x20 ./src/adc.o
+ .text.ADCComparatorIntDisable
+                0x00000000       0x10 ./src/adc.o
+ .text.ADCComparatorIntEnable
+                0x00000000       0x10 ./src/adc.o
+ .text.ADCComparatorIntStatus
+                0x00000000        0x4 ./src/adc.o
+ .text.ADCComparatorIntClear
+                0x00000000        0x4 ./src/adc.o
+ .text.ADCReferenceSet
+                0x00000000        0xc ./src/adc.o
+ .text.ADCReferenceGet
+                0x00000000        0x8 ./src/adc.o
+ .text.ADCResolutionSet
+                0x00000000        0xc ./src/adc.o
+ .text.ADCResolutionGet
+                0x00000000        0x8 ./src/adc.o
+ .text.ADCPhaseDelaySet
+                0x00000000        0x4 ./src/adc.o
+ .text.ADCPhaseDelayGet
+                0x00000000        0x4 ./src/adc.o
+ .text.ADCIntUnregister
+                0x00000000       0x28 ./src/adc.o
+ .text.ADCIntRegister
+                0x00000000       0x28 ./src/adc.o
+ .bss.g_pucOversampleFactor
+                0x00000000        0x4 ./src/adc.o
+ .text          0x00000000        0x0 ./src/can.o
+ .data          0x00000000        0x0 ./src/can.o
+ .bss           0x00000000        0x0 ./src/can.o
+ .text.CANIntUnregister
+                0x00000000       0x44 ./src/can.o
+ .text.CANIntRegister
+                0x00000000       0x44 ./src/can.o
+ .text.CANMessageClear
+                0x00000000      0x118 ./src/can.o
+ .text.CANMessageSet
+                0x00000000      0x30c ./src/can.o
+ .text.CANIntClear
+                0x00000000      0x224 ./src/can.o
+ .text.CANBitTimingSet
+                0x00000000      0x148 ./src/can.o
+ .text.CANBitTimingGet
+                0x00000000      0x160 ./src/can.o
+ .text.CANIntDisable
+                0x00000000       0xbc ./src/can.o
+ .text.CANIntEnable
+                0x00000000       0xbc ./src/can.o
+ .text.CANInit  0x00000000      0x34c ./src/can.o
+ .text.CANMessageGet
+                0x00000000      0x714 ./src/can.o
+ .text.CANDisable
+                0x00000000       0xb0 ./src/can.o
+ .text.CANEnable
+                0x00000000       0xb0 ./src/can.o
+ .text.CANErrCntrGet
+                0x00000000       0xb4 ./src/can.o
+ .text.CANRetryGet
+                0x00000000       0x9c ./src/can.o
+ .text.CANRetrySet
+                0x00000000       0xc8 ./src/can.o
+ .text.CANBitRateSet
+                0x00000000      0x360 ./src/can.o
+ .text.CANIntStatus
+                0x00000000      0x1d8 ./src/can.o
+ .text.CANStatusGet
+                0x00000000      0x464 ./src/can.o
+ .rodata.g_usCANBitValues
+                0x00000000       0x20 ./src/can.o
+ .text          0x00000000        0x0 ./src/cmdline.o
+ .data          0x00000000        0x0 ./src/cmdline.o
+ .bss           0x00000000        0x0 ./src/cmdline.o
+ .text.CmdLineProcess
+                0x00000000       0x88 ./src/cmdline.o
+ .bss.argv.1391
+                0x00000000       0x24 ./src/cmdline.o
+ .text          0x00000000        0x0 ./src/comp.o
+ .data          0x00000000        0x0 ./src/comp.o
+ .bss           0x00000000        0x0 ./src/comp.o
+ .text.ComparatorConfigure
+                0x00000000        0x8 ./src/comp.o
+ .text.ComparatorRefSet
+                0x00000000        0x4 ./src/comp.o
+ .text.ComparatorValueGet
+                0x00000000        0xc ./src/comp.o
+ .text.ComparatorIntEnable
+                0x00000000        0xc ./src/comp.o
+ .text.ComparatorIntDisable
+                0x00000000       0x10 ./src/comp.o
+ .text.ComparatorIntStatus
+                0x00000000       0x1c ./src/comp.o
+ .text.ComparatorIntClear
+                0x00000000        0xc ./src/comp.o
+ .text.ComparatorIntUnregister
+                0x00000000       0x24 ./src/comp.o
+ .text.ComparatorIntRegister
+                0x00000000       0x28 ./src/comp.o
+ .text          0x00000000        0x0 ./src/cpu.o
+ .data          0x00000000        0x0 ./src/cpu.o
+ .bss           0x00000000        0x0 ./src/cpu.o
+ .text.CPUcpsid
+                0x00000000        0x8 ./src/cpu.o
+ .text.CPUprimask
+                0x00000000        0x8 ./src/cpu.o
+ .text.CPUcpsie
+                0x00000000        0x8 ./src/cpu.o
+ .text.CPUwfi   0x00000000        0x4 ./src/cpu.o
+ .text.CPUbasepriSet
+                0x00000000        0x8 ./src/cpu.o
+ .text.CPUbasepriGet
+                0x00000000        0x8 ./src/cpu.o
+ .text          0x00000000        0x0 ./src/cpu_usage.o
+ .data          0x00000000        0x0 ./src/cpu_usage.o
+ .bss           0x00000000        0x0 ./src/cpu_usage.o
+ .text.CPUUsageInit
+                0x00000000       0x74 ./src/cpu_usage.o
+ .text.CPUUsageTick
+                0x00000000       0x48 ./src/cpu_usage.o
+ .rodata.g_pulCPUUsageTimerPeriph
+                0x00000000       0x10 ./src/cpu_usage.o
+ .bss.g_ulCPUUsagePrevious
+                0x00000000        0x4 ./src/cpu_usage.o
+ .rodata.g_pulCPUUsageTimerBase
+                0x00000000       0x10 ./src/cpu_usage.o
+ .bss.g_ulCPUUsageTicks
+                0x00000000        0x4 ./src/cpu_usage.o
+ .bss.g_ulCPUUsageTimer
+                0x00000000        0x4 ./src/cpu_usage.o
+ .text          0x00000000        0x0 ./src/crc.o
+ .data          0x00000000        0x0 ./src/crc.o
+ .bss           0x00000000        0x0 ./src/crc.o
+ .text.Crc8CCITT
+                0x00000000      0x1e0 ./src/crc.o
+ .text.Crc16    0x00000000      0x1e4 ./src/crc.o
+ .text.Crc16Array3
+                0x00000000       0xd4 ./src/crc.o
+ .text.Crc16Array
+                0x00000000      0x1e0 ./src/crc.o
+ .rodata.g_pusCrc16
+                0x00000000      0x200 ./src/crc.o
+ .rodata.g_pucCrc8CCITT
+                0x00000000      0x100 ./src/crc.o
+ .text          0x00000000        0x0 ./src/eeprom.o
+ .data          0x00000000        0x0 ./src/eeprom.o
+ .bss           0x00000000        0x0 ./src/eeprom.o
+ .text.EEPROMSizeGet
+                0x00000000       0x10 ./src/eeprom.o
+ .text.EEPROMBlockCountGet
+                0x00000000       0x10 ./src/eeprom.o
+ .text.EEPROMRead
+                0x00000000       0xe8 ./src/eeprom.o
+ .text.EEPROMBlockProtectGet
+                0x00000000       0x18 ./src/eeprom.o
+ .text.EEPROMBlockProtectSet
+                0x00000000       0x34 ./src/eeprom.o
+ .text.EEPROMBlockPasswordSet
+                0x00000000       0x50 ./src/eeprom.o
+ .text.EEPROMBlockLock
+                0x00000000       0x1c ./src/eeprom.o
+ .text.EEPROMBlockUnlock
+                0x00000000       0x8c ./src/eeprom.o
+ .text.EEPROMBlockHide
+                0x00000000       0x14 ./src/eeprom.o
+ .text.EEPROMIntEnable
+                0x00000000       0x24 ./src/eeprom.o
+ .text.EEPROMIntDisable
+                0x00000000       0x24 ./src/eeprom.o
+ .text.EEPROMIntStatus
+                0x00000000       0x28 ./src/eeprom.o
+ .text.EEPROMStatusGet
+                0x00000000        0xc ./src/eeprom.o
+ .text.EEPROMClearSectorMask
+                0x00000000       0x38 ./src/eeprom.o
+ .text.EEPROMProgramNonBlocking
+                0x00000000       0xa4 ./src/eeprom.o
+ .text.EEPROMMassErase
+                0x00000000       0x84 ./src/eeprom.o
+ .text.EEPROMInit
+                0x00000000       0x64 ./src/eeprom.o
+ .text.EEPROMProgram
+                0x00000000      0x180 ./src/eeprom.o
+ .text.EEPROMIntClear
+                0x00000000       0x70 ./src/eeprom.o
+ .text          0x00000000        0x0 ./src/epi.o
+ .data          0x00000000        0x0 ./src/epi.o
+ .bss           0x00000000        0x0 ./src/epi.o
+ .text.EPIModeSet
+                0x00000000        0x4 ./src/epi.o
+ .text.EPIDividerSet
+                0x00000000        0x4 ./src/epi.o
+ .text.EPIConfigSDRAMSet
+                0x00000000       0x10 ./src/epi.o
+ .text.EPIConfigHB8Set
+                0x00000000       0x34 ./src/epi.o
+ .text.EPIConfigHB16Set
+                0x00000000       0x34 ./src/epi.o
+ .text.EPIConfigGPModeSet
+                0x00000000       0x20 ./src/epi.o
+ .text.EPIAddressMapSet
+                0x00000000        0x4 ./src/epi.o
+ .text.EPINonBlockingReadConfigure
+                0x00000000        0xc ./src/epi.o
+ .text.EPINonBlockingReadStart
+                0x00000000        0x8 ./src/epi.o
+ .text.EPINonBlockingReadStop
+                0x00000000        0xc ./src/epi.o
+ .text.EPINonBlockingReadCount
+                0x00000000        0x8 ./src/epi.o
+ .text.EPINonBlockingReadAvail
+                0x00000000        0x4 ./src/epi.o
+ .text.EPINonBlockingReadGet32
+                0x00000000       0x9c ./src/epi.o
+ .text.EPINonBlockingReadGet16
+                0x00000000       0x9c ./src/epi.o
+ .text.EPINonBlockingReadGet8
+                0x00000000       0x90 ./src/epi.o
+ .text.EPIFIFOConfig
+                0x00000000        0x8 ./src/epi.o
+ .text.EPIWriteFIFOCountGet
+                0x00000000        0x8 ./src/epi.o
+ .text.EPIIntEnable
+                0x00000000        0xc ./src/epi.o
+ .text.EPIIntDisable
+                0x00000000       0x10 ./src/epi.o
+ .text.EPIIntStatus
+                0x00000000       0x10 ./src/epi.o
+ .text.EPIIntErrorStatus
+                0x00000000        0x8 ./src/epi.o
+ .text.EPIIntErrorClear
+                0x00000000        0x8 ./src/epi.o
+ .text.EPIIntUnregister
+                0x00000000       0x14 ./src/epi.o
+ .text.EPIIntRegister
+                0x00000000       0x14 ./src/epi.o
+ .text          0x00000000        0x0 ./src/ethernet.o
+ .data          0x00000000        0x0 ./src/ethernet.o
+ .bss           0x00000000        0x0 ./src/ethernet.o
+ .text.EthernetInitExpClk
+                0x00000000       0x14 ./src/ethernet.o
+ .text.EthernetConfigSet
+                0x00000000       0x30 ./src/ethernet.o
+ .text.EthernetConfigGet
+                0x00000000       0x18 ./src/ethernet.o
+ .text.EthernetMACAddrSet
+                0x00000000       0x40 ./src/ethernet.o
+ .text.EthernetMACAddrGet
+                0x00000000       0x30 ./src/ethernet.o
+ .text.EthernetEnable
+                0x00000000       0x24 ./src/ethernet.o
+ .text.EthernetDisable
+                0x00000000       0x24 ./src/ethernet.o
+ .text.EthernetPacketAvail
+                0x00000000        0xc ./src/ethernet.o
+ .text.EthernetSpaceAvail
+                0x00000000        0xc ./src/ethernet.o
+ .text.EthernetPacketGetNonBlocking
+                0x00000000      0x154 ./src/ethernet.o
+ .text.EthernetPacketPutNonBlocking
+                0x00000000       0xf8 ./src/ethernet.o
+ .text.EthernetIntEnable
+                0x00000000        0x8 ./src/ethernet.o
+ .text.EthernetIntDisable
+                0x00000000        0xc ./src/ethernet.o
+ .text.EthernetIntStatus
+                0x00000000        0xc ./src/ethernet.o
+ .text.EthernetIntClear
+                0x00000000        0x4 ./src/ethernet.o
+ .text.EthernetPHYAddrSet
+                0x00000000       0x10 ./src/ethernet.o
+ .text.EthernetPHYWrite
+                0x00000000       0x2c ./src/ethernet.o
+ .text.EthernetPHYRead
+                0x00000000       0x28 ./src/ethernet.o
+ .text.EthernetIntUnregister
+                0x00000000       0x14 ./src/ethernet.o
+ .text.EthernetIntRegister
+                0x00000000       0x14 ./src/ethernet.o
+ .text.EthernetPHYPowerOn
+                0x00000000       0x44 ./src/ethernet.o
+ .text.EthernetPHYPowerOff
+                0x00000000       0x44 ./src/ethernet.o
+ .text.EthernetPacketPut
+                0x00000000      0x100 ./src/ethernet.o
+ .text.EthernetPacketGet
+                0x00000000      0x15c ./src/ethernet.o
+ .text          0x00000000        0x0 ./src/fan.o
+ .data          0x00000000        0x0 ./src/fan.o
+ .bss           0x00000000        0x0 ./src/fan.o
+ .text.FanChannelEnable
+                0x00000000        0xc ./src/fan.o
+ .text.FanChannelDisable
+                0x00000000       0x10 ./src/fan.o
+ .text.FanChannelStatus
+                0x00000000       0x10 ./src/fan.o
+ .text.FanChannelConfigManual
+                0x00000000        0xc ./src/fan.o
+ .text.FanChannelConfigAuto
+                0x00000000        0xc ./src/fan.o
+ .text.FanChannelDutySet
+                0x00000000       0x14 ./src/fan.o
+ .text.FanChannelDutyGet
+                0x00000000        0xc ./src/fan.o
+ .text.FanChannelRPMSet
+                0x00000000        0x8 ./src/fan.o
+ .text.FanChannelRPMGet
+                0x00000000        0xc ./src/fan.o
+ .text.FanIntEnable
+                0x00000000        0xc ./src/fan.o
+ .text.FanIntDisable
+                0x00000000       0x10 ./src/fan.o
+ .text.FanIntStatus
+                0x00000000       0x10 ./src/fan.o
+ .text.FanIntClear
+                0x00000000        0x8 ./src/fan.o
+ .text.FanChannelsGet
+                0x00000000        0xc ./src/fan.o
+ .text.FanIntUnregister
+                0x00000000       0x14 ./src/fan.o
+ .text.FanIntRegister
+                0x00000000       0x14 ./src/fan.o
+ .text          0x00000000        0x0 ./src/flash.o
+ .data          0x00000000        0x0 ./src/flash.o
+ .bss           0x00000000        0x0 ./src/flash.o
+ .text.FlashUsecGet
+                0x00000000       0x10 ./src/flash.o
+ .text.FlashUsecSet
+                0x00000000       0x10 ./src/flash.o
+ .text.FlashErase
+                0x00000000       0x58 ./src/flash.o
+ .text.FlashProgram
+                0x00000000      0x20c ./src/flash.o
+ .text.FlashProtectGet
+                0x00000000       0xb4 ./src/flash.o
+ .text.FlashProtectSet
+                0x00000000      0x138 ./src/flash.o
+ .text.FlashProtectSave
+                0x00000000       0x64 ./src/flash.o
+ .text.FlashUserGet
+                0x00000000       0x48 ./src/flash.o
+ .text.FlashUserSet
+                0x00000000       0x44 ./src/flash.o
+ .text.FlashUserSave
+                0x00000000       0x80 ./src/flash.o
+ .text.FlashIntEnable
+                0x00000000       0x14 ./src/flash.o
+ .text.FlashIntDisable
+                0x00000000       0x14 ./src/flash.o
+ .text.FlashIntStatus
+                0x00000000       0x1c ./src/flash.o
+ .text.FlashIntClear
+                0x00000000        0xc ./src/flash.o
+ .text.FlashIntUnregister
+                0x00000000       0x14 ./src/flash.o
+ .text.FlashIntRegister
+                0x00000000       0x14 ./src/flash.o
+ .rodata.CSWTCH.5
+                0x00000000        0x4 ./src/flash.o
+ .rodata.g_pulFMPPERegs
+                0x00000000       0x10 ./src/flash.o
+ .rodata.g_pulFMPRERegs
+                0x00000000       0x10 ./src/flash.o
+ .text          0x00000000        0x0 ./src/flash_pb.o
+ .data          0x00000000        0x0 ./src/flash_pb.o
+ .bss           0x00000000        0x0 ./src/flash_pb.o
+ .text.FlashPBGet
+                0x00000000        0xc ./src/flash_pb.o
+ .text.FlashPBInit
+                0x00000000       0xec ./src/flash_pb.o
+ .text.FlashPBSave
+                0x00000000      0x224 ./src/flash_pb.o
+ .bss.g_ulFlashPBSize
+                0x00000000        0x4 ./src/flash_pb.o
+ .bss.g_pucFlashPBCurrent
+                0x00000000        0x4 ./src/flash_pb.o
+ .bss.g_pucFlashPBEnd
+                0x00000000        0x4 ./src/flash_pb.o
+ .bss.g_pucFlashPBStart
+                0x00000000        0x4 ./src/flash_pb.o
+ .text          0x00000000        0x0 ./src/fpu.o
+ .data          0x00000000        0x0 ./src/fpu.o
+ .bss           0x00000000        0x0 ./src/fpu.o
+ .text.FPUEnable
+                0x00000000       0x14 ./src/fpu.o
+ .text.FPUDisable
+                0x00000000       0x14 ./src/fpu.o
+ .text.FPUStackingEnable
+                0x00000000       0x18 ./src/fpu.o
+ .text.FPULazyStackingEnable
+                0x00000000       0x14 ./src/fpu.o
+ .text.FPUStackingDisable
+                0x00000000       0x14 ./src/fpu.o
+ .text.FPUHalfPrecisionModeSet
+                0x00000000       0x18 ./src/fpu.o
+ .text.FPUNaNModeSet
+                0x00000000       0x18 ./src/fpu.o
+ .text.FPUFlushToZeroModeSet
+                0x00000000       0x18 ./src/fpu.o
+ .text.FPURoundingModeSet
+                0x00000000       0x18 ./src/fpu.o
+ .text          0x00000000        0x0 ./src/gpio.o
+ .data          0x00000000        0x0 ./src/gpio.o
+ .bss           0x00000000        0x0 ./src/gpio.o
+ .text.GPIODirModeSet
+                0x00000000       0x30 ./src/gpio.o
+ .text.GPIODirModeGet
+                0x00000000       0x24 ./src/gpio.o
+ .text.GPIOIntTypeSet
+                0x00000000       0x5c ./src/gpio.o
+ .text.GPIOIntTypeGet
+                0x00000000       0x34 ./src/gpio.o
+ .text.GPIOPadConfigGet
+                0x00000000       0x88 ./src/gpio.o
+ .text.GPIOPinIntEnable
+                0x00000000        0xc ./src/gpio.o
+ .text.GPIOPinIntDisable
+                0x00000000       0x10 ./src/gpio.o
+ .text.GPIOPinIntStatus
+                0x00000000       0x10 ./src/gpio.o
+ .text.GPIOPinIntClear
+                0x00000000        0x8 ./src/gpio.o
+ .text.GPIOPinRead
+                0x00000000        0x8 ./src/gpio.o
+ .text.GPIOPinConfigure
+                0x00000000       0x58 ./src/gpio.o
+ .text.GPIODMATriggerEnable
+                0x00000000        0xc ./src/gpio.o
+ .text.GPIODMATriggerDisable
+                0x00000000       0x10 ./src/gpio.o
+ .text.GPIOADCTriggerEnable
+                0x00000000        0xc ./src/gpio.o
+ .text.GPIOADCTriggerDisable
+                0x00000000       0x10 ./src/gpio.o
+ .text.GPIOPortIntRegister
+                0x00000000      0x1a0 ./src/gpio.o
+ .text.GPIOPortIntUnregister
+                0x00000000      0x1a0 ./src/gpio.o
+ .text.GPIOPinTypePECITx
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypePWM
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeQEI
+                0x00000000       0x80 ./src/gpio.o
+ .text.GPIOPinTypeTimer
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeUART
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeUSBAnalog
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeUSBDigital
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeADC
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeCAN
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeComparator
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeEPI
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeEthernetLED
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeEthernetMII
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeFan
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeGPIOInput
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeGPIOOutputOD
+                0x00000000       0x80 ./src/gpio.o
+ .text.GPIOPinTypeI2C
+                0x00000000       0x80 ./src/gpio.o
+ .text.GPIOPinTypeI2S
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeLPC
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypePECIRx
+                0x00000000       0x84 ./src/gpio.o
+ .text.GPIOPinTypeI2CSCL
+                0x00000000       0xdc ./src/gpio.o
+ .rodata.g_pulGPIOBaseAddrs
+                0x00000000       0x78 ./src/gpio.o
+ .text          0x00000000        0x0 ./src/hibernate.o
+ .data          0x00000000        0x0 ./src/hibernate.o
+ .bss           0x00000000        0x0 ./src/hibernate.o
+ .text.HibernateBatCheckDone
+                0x00000000       0x10 ./src/hibernate.o
+ .text.HibernateWakeGet
+                0x00000000       0x10 ./src/hibernate.o
+ .text.HibernateLowBatGet
+                0x00000000       0x18 ./src/hibernate.o
+ .text.HibernateRTCGet
+                0x00000000        0xc ./src/hibernate.o
+ .text.HibernateRTCMatch0Get
+                0x00000000        0xc ./src/hibernate.o
+ .text.HibernateRTCMatch1Get
+                0x00000000        0xc ./src/hibernate.o
+ .text.HibernateRTCSSMatch0Get
+                0x00000000       0x10 ./src/hibernate.o
+ .text.HibernateRTCSSGet
+                0x00000000       0x10 ./src/hibernate.o
+ .text.HibernateRTCTrimGet
+                0x00000000        0xc ./src/hibernate.o
+ .text.HibernateDataGet
+                0x00000000       0x90 ./src/hibernate.o
+ .text.HibernateIntStatus
+                0x00000000       0x24 ./src/hibernate.o
+ .text.HibernateIsActive
+                0x00000000       0x10 ./src/hibernate.o
+ .text.HibernateIntUnregister
+                0x00000000       0x14 ./src/hibernate.o
+ .text.HibernateIntRegister
+                0x00000000       0x14 ./src/hibernate.o
+ .text.HibernateWriteComplete
+                0x00000000       0x44 ./src/hibernate.o
+ .text.HibernateDataSet
+                0x00000000       0x7c ./src/hibernate.o
+ .text.HibernateRTCTrimSet
+                0x00000000       0x4c ./src/hibernate.o
+ .text.HibernateRTCSSMatch0Set
+                0x00000000       0x50 ./src/hibernate.o
+ .text.HibernateRTCMatch1Set
+                0x00000000       0x4c ./src/hibernate.o
+ .text.HibernateRTCMatch0Set
+                0x00000000       0x4c ./src/hibernate.o
+ .text.HibernateRTCSet
+                0x00000000       0x4c ./src/hibernate.o
+ .text.HibernateLowBatSet
+                0x00000000       0x50 ./src/hibernate.o
+ .text.HibernateWakeSet
+                0x00000000       0x4c ./src/hibernate.o
+ .text.HibernateBatCheckStart
+                0x00000000       0x48 ./src/hibernate.o
+ .text.HibernateRTCDisable
+                0x00000000       0x48 ./src/hibernate.o
+ .text.HibernateRTCEnable
+                0x00000000       0x48 ./src/hibernate.o
+ .text.HibernateClockConfig
+                0x00000000       0x50 ./src/hibernate.o
+ .text.HibernateClockSelect
+                0x00000000       0x4c ./src/hibernate.o
+ .text.HibernateDisable
+                0x00000000       0x48 ./src/hibernate.o
+ .text.HibernateIntClear
+                0x00000000       0x54 ./src/hibernate.o
+ .text.HibernateIntDisable
+                0x00000000       0x54 ./src/hibernate.o
+ .text.HibernateIntEnable
+                0x00000000       0x54 ./src/hibernate.o
+ .text.HibernateRequest
+                0x00000000       0x48 ./src/hibernate.o
+ .text.HibernateEnableExpClk
+                0x00000000       0x94 ./src/hibernate.o
+ .bss.g_ulWriteDelay
+                0x00000000        0x4 ./src/hibernate.o
+ .text          0x00000000        0x0 ./src/i2c.o
+ .data          0x00000000        0x0 ./src/i2c.o
+ .bss           0x00000000        0x0 ./src/i2c.o
+ .text.I2CMasterInitExpClk
+                0x00000000       0x58 ./src/i2c.o
+ .text.I2CSlaveInit
+                0x00000000       0x1c ./src/i2c.o
+ .text.I2CSlaveAddressSet
+                0x00000000       0x14 ./src/i2c.o
+ .text.I2CMasterEnable
+                0x00000000        0xc ./src/i2c.o
+ .text.I2CSlaveEnable
+                0x00000000       0x18 ./src/i2c.o
+ .text.I2CMasterDisable
+                0x00000000        0xc ./src/i2c.o
+ .text.I2CSlaveDisable
+                0x00000000       0x18 ./src/i2c.o
+ .text.I2CMasterIntEnable
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CMasterIntEnableEx
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CSlaveIntEnable
+                0x00000000        0xc ./src/i2c.o
+ .text.I2CSlaveIntEnableEx
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CMasterIntDisable
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CMasterIntDisableEx
+                0x00000000        0xc ./src/i2c.o
+ .text.I2CSlaveIntDisable
+                0x00000000        0xc ./src/i2c.o
+ .text.I2CSlaveIntDisableEx
+                0x00000000        0xc ./src/i2c.o
+ .text.I2CMasterIntStatus
+                0x00000000       0x18 ./src/i2c.o
+ .text.I2CMasterIntStatusEx
+                0x00000000        0xc ./src/i2c.o
+ .text.I2CSlaveIntStatus
+                0x00000000       0x18 ./src/i2c.o
+ .text.I2CSlaveIntStatusEx
+                0x00000000       0x40 ./src/i2c.o
+ .text.I2CMasterIntClear
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CMasterIntClearEx
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CSlaveIntClear
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CSlaveIntClearEx
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CMasterSlaveAddrSet
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CMasterLineStateGet
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CMasterBusy
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CMasterBusBusy
+                0x00000000        0x8 ./src/i2c.o
+ .text.I2CMasterControl
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CMasterErr
+                0x00000000       0x18 ./src/i2c.o
+ .text.I2CMasterDataPut
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CMasterDataGet
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CMasterTimeoutSet
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CSlaveACKOverride
+                0x00000000       0x18 ./src/i2c.o
+ .text.I2CSlaveACKValueSet
+                0x00000000       0x18 ./src/i2c.o
+ .text.I2CSlaveStatus
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CSlaveDataPut
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CSlaveDataGet
+                0x00000000        0x4 ./src/i2c.o
+ .text.I2CIntUnregister
+                0x00000000       0x64 ./src/i2c.o
+ .text.I2CIntRegister
+                0x00000000       0x64 ./src/i2c.o
+ .rodata.g_ppulI2CIntMap
+                0x00000000       0x30 ./src/i2c.o
+ .text          0x00000000        0x0 ./src/i2s.o
+ .data          0x00000000        0x0 ./src/i2s.o
+ .bss           0x00000000        0x0 ./src/i2s.o
+ .text.I2STxEnable
+                0x00000000       0x14 ./src/i2s.o
+ .text.I2STxDisable
+                0x00000000       0x10 ./src/i2s.o
+ .text.I2STxDataPut
+                0x00000000       0x10 ./src/i2s.o
+ .text.I2STxDataPutNonBlocking
+                0x00000000       0x10 ./src/i2s.o
+ .text.I2STxConfigSet
+                0x00000000       0x20 ./src/i2s.o
+ .text.I2STxFIFOLimitSet
+                0x00000000        0x4 ./src/i2s.o
+ .text.I2STxFIFOLimitGet
+                0x00000000        0x4 ./src/i2s.o
+ .text.I2STxFIFOLevelGet
+                0x00000000        0x4 ./src/i2s.o
+ .text.I2SRxEnable
+                0x00000000       0x14 ./src/i2s.o
+ .text.I2SRxDisable
+                0x00000000       0x10 ./src/i2s.o
+ .text.I2SRxDataGet
+                0x00000000       0x14 ./src/i2s.o
+ .text.I2SRxDataGetNonBlocking
+                0x00000000       0x14 ./src/i2s.o
+ .text.I2SRxConfigSet
+                0x00000000       0x44 ./src/i2s.o
+ .text.I2SRxFIFOLimitSet
+                0x00000000        0x8 ./src/i2s.o
+ .text.I2SRxFIFOLimitGet
+                0x00000000       0x14 ./src/i2s.o
+ .text.I2SRxFIFOLevelGet
+                0x00000000        0x8 ./src/i2s.o
+ .text.I2STxRxEnable
+                0x00000000       0x18 ./src/i2s.o
+ .text.I2STxRxDisable
+                0x00000000       0x10 ./src/i2s.o
+ .text.I2STxRxConfigSet
+                0x00000000       0x4c ./src/i2s.o
+ .text.I2SMasterClockSelect
+                0x00000000       0x10 ./src/i2s.o
+ .text.I2SIntEnable
+                0x00000000        0xc ./src/i2s.o
+ .text.I2SIntDisable
+                0x00000000       0x10 ./src/i2s.o
+ .text.I2SIntStatus
+                0x00000000       0x10 ./src/i2s.o
+ .text.I2SIntClear
+                0x00000000        0x8 ./src/i2s.o
+ .text.I2SIntUnregister
+                0x00000000       0x14 ./src/i2s.o
+ .text.I2SIntRegister
+                0x00000000       0x14 ./src/i2s.o
+ .text          0x00000000        0x0 ./src/interrupt.o
+ .data          0x00000000        0x0 ./src/interrupt.o
+ .bss           0x00000000        0x0 ./src/interrupt.o
+ .text.IntDefaultHandler
+                0x00000000        0x4 ./src/interrupt.o
+ .text.IntRegister
+                0x00000000       0x7c ./src/interrupt.o
+ .text.IntUnregister
+                0x00000000       0x18 ./src/interrupt.o
+ .text.IntPriorityGroupingSet
+                0x00000000       0x20 ./src/interrupt.o
+ .text.IntPriorityGroupingGet
+                0x00000000       0x60 ./src/interrupt.o
+ .text.IntPrioritySet
+                0x00000000       0x2c ./src/interrupt.o
+ .text.IntPriorityGet
+                0x00000000       0x20 ./src/interrupt.o
+ .text.IntEnable
+                0x00000000       0x78 ./src/interrupt.o
+ .text.IntDisable
+                0x00000000       0x78 ./src/interrupt.o
+ .text.IntIsEnabled
+                0x00000000       0x78 ./src/interrupt.o
+ .text.IntPendSet
+                0x00000000       0x60 ./src/interrupt.o
+ .text.IntPendClear
+                0x00000000       0x4c ./src/interrupt.o
+ .text.IntPriorityMaskGet
+                0x00000000        0x4 ./src/interrupt.o
+ .text.IntPriorityMaskSet
+                0x00000000        0x4 ./src/interrupt.o
+ .text.IntMasterDisable
+                0x00000000        0xc ./src/interrupt.o
+ .text.IntMasterEnable
+                0x00000000        0xc ./src/interrupt.o
+ .rodata.g_pulEnRegs
+                0x00000000       0x14 ./src/interrupt.o
+ .rodata.g_pulDisRegs
+                0x00000000       0x14 ./src/interrupt.o
+ .rodata.g_pulPendRegs
+                0x00000000       0x14 ./src/interrupt.o
+ .rodata.g_pulUnpendRegs
+                0x00000000       0x14 ./src/interrupt.o
+ vtable         0x00000000      0x400 ./src/interrupt.o
+ .rodata.g_pulPriority
+                0x00000000       0x20 ./src/interrupt.o
+ .rodata.g_pulRegs
+                0x00000000       0x94 ./src/interrupt.o
+ .text          0x00000000        0x0 ./src/isqrt.o
+ .data          0x00000000        0x0 ./src/isqrt.o
+ .bss           0x00000000        0x0 ./src/isqrt.o
+ .text.isqrt    0x00000000      0x1d0 ./src/isqrt.o
+ .text          0x00000000        0x0 ./src/lpc.o
+ .data          0x00000000        0x0 ./src/lpc.o
+ .bss           0x00000000        0x0 ./src/lpc.o
+ .text.LPCConfigSet
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCConfigGet
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCStatusBlockAddressSet
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCStatusBlockAddressGet
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCStatusGet
+                0x00000000       0x1c ./src/lpc.o
+ .text.LPCSCIAssert
+                0x00000000       0x24 ./src/lpc.o
+ .text.LPCIRQConfig
+                0x00000000       0x34 ./src/lpc.o
+ .text.LPCIRQSet
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCIRQClear
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCIRQGet
+                0x00000000        0x4 ./src/lpc.o
+ .text.LPCIRQSend
+                0x00000000        0xc ./src/lpc.o
+ .text.LPCIntEnable
+                0x00000000        0xc ./src/lpc.o
+ .text.LPCIntDisable
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCIntStatus
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCIntClear
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCChannelEnable
+                0x00000000        0xc ./src/lpc.o
+ .text.LPCChannelDisable
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCChannelConfigEPSet
+                0x00000000       0x1c ./src/lpc.o
+ .text.LPCChannelConfigMBSet
+                0x00000000       0x20 ./src/lpc.o
+ .text.LPCChannelConfigCOMxSet
+                0x00000000       0x30 ./src/lpc.o
+ .text.LPCChannelConfigGet
+                0x00000000       0x48 ./src/lpc.o
+ .text.LPCChannelPoolAddressGet
+                0x00000000       0x20 ./src/lpc.o
+ .text.LPCChannelStatusGet
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCChannelStatusSet
+                0x00000000        0xc ./src/lpc.o
+ .text.LPCChannelStatusClear
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCChannelDMAConfigSet
+                0x00000000       0x14 ./src/lpc.o
+ .text.LPCChannelDMAConfigGet
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCByteRead
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCByteWrite
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCHalfWordRead
+                0x00000000        0xc ./src/lpc.o
+ .text.LPCHalfWordWrite
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCWordRead
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCWordWrite
+                0x00000000        0x8 ./src/lpc.o
+ .text.LPCCOMxIntEnable
+                0x00000000        0xc ./src/lpc.o
+ .text.LPCCOMxIntDisable
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCCOMxIntStatus
+                0x00000000       0x10 ./src/lpc.o
+ .text.LPCCOMxIntClear
+                0x00000000        0xc ./src/lpc.o
+ .text.LPCIntUnregister
+                0x00000000       0x14 ./src/lpc.o
+ .text.LPCIntRegister
+                0x00000000       0x14 ./src/lpc.o
+ .text          0x00000000        0x0 ./src/main.o
+ .data          0x00000000        0x0 ./src/main.o
+ .bss           0x00000000        0x0 ./src/main.o
+ .text          0x00000000        0x0 ./src/mpu.o
+ .data          0x00000000        0x0 ./src/mpu.o
+ .bss           0x00000000        0x0 ./src/mpu.o
+ .text.MPUEnable
+                0x00000000       0x10 ./src/mpu.o
+ .text.MPUDisable
+                0x00000000       0x14 ./src/mpu.o
+ .text.MPURegionCountGet
+                0x00000000       0x10 ./src/mpu.o
+ .text.MPURegionEnable
+                0x00000000       0x1c ./src/mpu.o
+ .text.MPURegionDisable
+                0x00000000       0x1c ./src/mpu.o
+ .text.MPURegionSet
+                0x00000000       0x2c ./src/mpu.o
+ .text.MPURegionGet
+                0x00000000       0x28 ./src/mpu.o
+ .text.MPUIntUnregister
+                0x00000000       0x14 ./src/mpu.o
+ .text.MPUIntRegister
+                0x00000000       0x14 ./src/mpu.o
+ .text          0x00000000        0x0 ./src/peci.o
+ .data          0x00000000        0x0 ./src/peci.o
+ .bss           0x00000000        0x0 ./src/peci.o
+ .text.PECIConfigSet
+                0x00000000       0x5c ./src/peci.o
+ .text.PECIConfigGet
+                0x00000000       0x34 ./src/peci.o
+ .text.PECIBypassEnable
+                0x00000000        0xc ./src/peci.o
+ .text.PECIBypassDisable
+                0x00000000        0xc ./src/peci.o
+ .text.PECIDomainConfigSet
+                0x00000000       0x10 ./src/peci.o
+ .text.PECIDomainConfigGet
+                0x00000000       0x14 ./src/peci.o
+ .text.PECIDomainEnable
+                0x00000000        0xc ./src/peci.o
+ .text.PECIDomainDisable
+                0x00000000       0x10 ./src/peci.o
+ .text.PECIDomainValueGet
+                0x00000000        0xc ./src/peci.o
+ .text.PECIDomainMaxReadGet
+                0x00000000        0xc ./src/peci.o
+ .text.PECIDomainValueClear
+                0x00000000       0x10 ./src/peci.o
+ .text.PECIDomainMaxReadClear
+                0x00000000       0x10 ./src/peci.o
+ .text.PECIIntEnable
+                0x00000000       0x1c ./src/peci.o
+ .text.PECIIntDisable
+                0x00000000       0x10 ./src/peci.o
+ .text.PECIIntStatus
+                0x00000000       0x10 ./src/peci.o
+ .text.PECIIntClear
+                0x00000000        0x8 ./src/peci.o
+ .text.PECIAdvCmdSend
+                0x00000000       0x40 ./src/peci.o
+ .text.PECIAdvCmdSendNonBlocking
+                0x00000000       0x50 ./src/peci.o
+ .text.PECIAdvCmdStatusGet
+                0x00000000       0x24 ./src/peci.o
+ .text.PECIIntUnregister
+                0x00000000       0x14 ./src/peci.o
+ .text.PECIIntRegister
+                0x00000000       0x14 ./src/peci.o
+ .text          0x00000000        0x0 ./src/pwm.o
+ .data          0x00000000        0x0 ./src/pwm.o
+ .bss           0x00000000        0x0 ./src/pwm.o
+ .text.PWMGenConfigure
+                0x00000000       0x38 ./src/pwm.o
+ .text.PWMGenPeriodSet
+                0x00000000       0x18 ./src/pwm.o
+ .text.PWMGenPeriodGet
+                0x00000000       0x14 ./src/pwm.o
+ .text.PWMGenEnable
+                0x00000000        0xc ./src/pwm.o
+ .text.PWMGenDisable
+                0x00000000        0xc ./src/pwm.o
+ .text.PWMPulseWidthSet
+                0x00000000       0x24 ./src/pwm.o
+ .text.PWMPulseWidthGet
+                0x00000000       0x24 ./src/pwm.o
+ .text.PWMDeadBandEnable
+                0x00000000       0x10 ./src/pwm.o
+ .text.PWMDeadBandDisable
+                0x00000000        0xc ./src/pwm.o
+ .text.PWMSyncUpdate
+                0x00000000        0x4 ./src/pwm.o
+ .text.PWMSyncTimeBase
+                0x00000000        0x4 ./src/pwm.o
+ .text.PWMOutputState
+                0x00000000       0x10 ./src/pwm.o
+ .text.PWMOutputInvert
+                0x00000000       0x10 ./src/pwm.o
+ .text.PWMOutputFaultLevel
+                0x00000000       0x10 ./src/pwm.o
+ .text.PWMOutputFault
+                0x00000000       0x10 ./src/pwm.o
+ .text.PWMGenIntTrigEnable
+                0x00000000        0xc ./src/pwm.o
+ .text.PWMGenIntTrigDisable
+                0x00000000        0xc ./src/pwm.o
+ .text.PWMGenIntStatus
+                0x00000000        0xc ./src/pwm.o
+ .text.PWMGenIntClear
+                0x00000000        0x8 ./src/pwm.o
+ .text.PWMIntEnable
+                0x00000000        0x8 ./src/pwm.o
+ .text.PWMIntDisable
+                0x00000000        0xc ./src/pwm.o
+ .text.PWMFaultIntClear
+                0x00000000        0x8 ./src/pwm.o
+ .text.PWMIntStatus
+                0x00000000        0xc ./src/pwm.o
+ .text.PWMFaultIntClearExt
+                0x00000000        0x4 ./src/pwm.o
+ .text.PWMGenFaultConfigure
+                0x00000000       0x1c ./src/pwm.o
+ .text.PWMGenFaultTriggerSet
+                0x00000000       0x10 ./src/pwm.o
+ .text.PWMGenFaultTriggerGet
+                0x00000000       0x10 ./src/pwm.o
+ .text.PWMGenFaultStatus
+                0x00000000       0x28 ./src/pwm.o
+ .text.PWMGenFaultClear
+                0x00000000       0x28 ./src/pwm.o
+ .text.PWMFaultIntUnregister
+                0x00000000       0x24 ./src/pwm.o
+ .text.PWMGenIntUnregister
+                0x00000000       0x9c ./src/pwm.o
+ .text.PWMFaultIntRegister
+                0x00000000       0x24 ./src/pwm.o
+ .text.PWMGenIntRegister
+                0x00000000       0x9c ./src/pwm.o
+ .text          0x00000000        0x0 ./src/qei.o
+ .data          0x00000000        0x0 ./src/qei.o
+ .bss           0x00000000        0x0 ./src/qei.o
+ .text.QEIEnable
+                0x00000000        0xc ./src/qei.o
+ .text.QEIDisable
+                0x00000000        0xc ./src/qei.o
+ .text.QEIConfigure
+                0x00000000       0x10 ./src/qei.o
+ .text.QEIPositionGet
+                0x00000000        0x4 ./src/qei.o
+ .text.QEIPositionSet
+                0x00000000        0x4 ./src/qei.o
+ .text.QEIDirectionGet
+                0x00000000       0x10 ./src/qei.o
+ .text.QEIErrorGet
+                0x00000000        0x8 ./src/qei.o
+ .text.QEIVelocityEnable
+                0x00000000        0xc ./src/qei.o
+ .text.QEIVelocityDisable
+                0x00000000        0xc ./src/qei.o
+ .text.QEIVelocityConfigure
+                0x00000000       0x10 ./src/qei.o
+ .text.QEIVelocityGet
+                0x00000000        0x4 ./src/qei.o
+ .text.QEIIntEnable
+                0x00000000        0x8 ./src/qei.o
+ .text.QEIIntDisable
+                0x00000000        0xc ./src/qei.o
+ .text.QEIIntStatus
+                0x00000000        0xc ./src/qei.o
+ .text.QEIIntClear
+                0x00000000        0x4 ./src/qei.o
+ .text.QEIIntUnregister
+                0x00000000       0x24 ./src/qei.o
+ .text.QEIIntRegister
+                0x00000000       0x24 ./src/qei.o
+ .text          0x00000000        0x0 ./src/ringbuf.o
+ .data          0x00000000        0x0 ./src/ringbuf.o
+ .bss           0x00000000        0x0 ./src/ringbuf.o
+ .text.RingBufFull
+                0x00000000       0x1c ./src/ringbuf.o
+ .text.RingBufEmpty
+                0x00000000       0x10 ./src/ringbuf.o
+ .text.RingBufUsed
+                0x00000000       0x14 ./src/ringbuf.o
+ .text.RingBufFree
+                0x00000000       0x14 ./src/ringbuf.o
+ .text.RingBufContigUsed
+                0x00000000       0x14 ./src/ringbuf.o
+ .text.RingBufContigFree
+                0x00000000       0x1c ./src/ringbuf.o
+ .text.RingBufSize
+                0x00000000        0x4 ./src/ringbuf.o
+ .text.RingBufInit
+                0x00000000       0x10 ./src/ringbuf.o
+ .text.RingBufAdvanceWrite
+                0x00000000       0x5c ./src/ringbuf.o
+ .text.RingBufFlush
+                0x00000000       0x18 ./src/ringbuf.o
+ .text.RingBufRead
+                0x00000000       0x54 ./src/ringbuf.o
+ .text.RingBufWrite
+                0x00000000       0x50 ./src/ringbuf.o
+ .text.RingBufWriteOne
+                0x00000000       0x38 ./src/ringbuf.o
+ .text.RingBufAdvanceRead
+                0x00000000       0x50 ./src/ringbuf.o
+ .text.RingBufReadOne
+                0x00000000       0x38 ./src/ringbuf.o
+ .text          0x00000000        0x0 ./src/rit128x96x4.o
+ .data          0x00000000        0x0 ./src/rit128x96x4.o
+ .bss           0x00000000        0x0 ./src/rit128x96x4.o
+ .text.RIT128x96x4Disable
+                0x00000000       0x88 ./src/rit128x96x4.o
+ .text.RIT128x96x4DisplayOn
+                0x00000000      0x144 ./src/rit128x96x4.o
+ .text.RIT128x96x4DisplayOff
+                0x00000000       0x94 ./src/rit128x96x4.o
+ .text.RIT128x96x4ImageDraw
+                0x00000000      0x330 ./src/rit128x96x4.o
+ .text          0x00000000        0x0 ./src/scheduler.o
+ .data          0x00000000        0x0 ./src/scheduler.o
+ .bss           0x00000000        0x0 ./src/scheduler.o
+ .text.SchedulerSysTickIntHandler
+                0x00000000       0x10 ./src/scheduler.o
+ .text.SchedulerRun
+                0x00000000       0x50 ./src/scheduler.o
+ .text.SchedulerTaskEnable
+                0x00000000       0x44 ./src/scheduler.o
+ .text.SchedulerTaskDisable
+                0x00000000       0x24 ./src/scheduler.o
+ .text.SchedulerTickCountGet
+                0x00000000        0xc ./src/scheduler.o
+ .text.SchedulerElapsedTicksGet
+                0x00000000       0x10 ./src/scheduler.o
+ .text.SchedulerElapsedTicksCalc
+                0x00000000        0x4 ./src/scheduler.o
+ .text.SchedulerInit
+                0x00000000       0x1c ./src/scheduler.o
+ .bss.g_ulSchedulerTickCount
+                0x00000000        0x4 ./src/scheduler.o
+ .text          0x00000000        0x0 ./src/sine.o
+ .data          0x00000000        0x0 ./src/sine.o
+ .bss           0x00000000        0x0 ./src/sine.o
+ .text.sine     0x00000000       0x28 ./src/sine.o
+ .rodata.g_pusFixedSineTable
+                0x00000000      0x104 ./src/sine.o
+ .text          0x00000000        0x0 ./src/softi2c.o
+ .data          0x00000000        0x0 ./src/softi2c.o
+ .bss           0x00000000        0x0 ./src/softi2c.o
+ .text.SoftI2CCallbackSet
+                0x00000000        0x4 ./src/softi2c.o
+ .text.SoftI2CSCLGPIOSet
+                0x00000000        0x8 ./src/softi2c.o
+ .text.SoftI2CSDAGPIOSet
+                0x00000000        0x8 ./src/softi2c.o
+ .text.SoftI2CIntEnable
+                0x00000000        0x8 ./src/softi2c.o
+ .text.SoftI2CIntDisable
+                0x00000000        0x8 ./src/softi2c.o
+ .text.SoftI2CIntStatus
+                0x00000000       0x1c ./src/softi2c.o
+ .text.SoftI2CIntClear
+                0x00000000        0x8 ./src/softi2c.o
+ .text.SoftI2CSlaveAddrSet
+                0x00000000       0x44 ./src/softi2c.o
+ .text.SoftI2CBusy
+                0x00000000        0xc ./src/softi2c.o
+ .text.SoftI2CControl
+                0x00000000       0x10 ./src/softi2c.o
+ .text.SoftI2CErr
+                0x00000000       0x44 ./src/softi2c.o
+ .text.SoftI2CDataPut
+                0x00000000        0x4 ./src/softi2c.o
+ .text.SoftI2CDataGet
+                0x00000000        0x4 ./src/softi2c.o
+ .text.SoftI2CTimerTick
+                0x00000000      0x404 ./src/softi2c.o
+ .text.SoftI2CInit
+                0x00000000       0x60 ./src/softi2c.o
+ .text          0x00000000        0x0 ./src/softssi.o
+ .data          0x00000000        0x0 ./src/softssi.o
+ .bss           0x00000000        0x0 ./src/softssi.o
+ .text.SoftSSITimerTick
+                0x00000000      0x278 ./src/softssi.o
+ .text.SoftSSIEnable
+                0x00000000       0x14 ./src/softssi.o
+ .text.SoftSSIDisable
+                0x00000000       0x10 ./src/softssi.o
+ .text.SoftSSIIntEnable
+                0x00000000       0x10 ./src/softssi.o
+ .text.SoftSSIIntDisable
+                0x00000000       0x10 ./src/softssi.o
+ .text.SoftSSIIntStatus
+                0x00000000       0x14 ./src/softssi.o
+ .text.SoftSSIIntClear
+                0x00000000       0x14 ./src/softssi.o
+ .text.SoftSSIDataAvail
+                0x00000000        0xc ./src/softssi.o
+ .text.SoftSSISpaceAvail
+                0x00000000       0x18 ./src/softssi.o
+ .text.SoftSSIBusy
+                0x00000000       0x24 ./src/softssi.o
+ .text.SoftSSICallbackSet
+                0x00000000        0x4 ./src/softssi.o
+ .text.SoftSSIFssGPIOSet
+                0x00000000        0xc ./src/softssi.o
+ .text.SoftSSIClkGPIOSet
+                0x00000000        0x8 ./src/softssi.o
+ .text.SoftSSITxGPIOSet
+                0x00000000        0x8 ./src/softssi.o
+ .text.SoftSSIRxGPIOSet
+                0x00000000        0xc ./src/softssi.o
+ .text.SoftSSITxBufferSet
+                0x00000000        0xc ./src/softssi.o
+ .text.SoftSSIRxBufferSet
+                0x00000000        0xc ./src/softssi.o
+ .text.SoftSSIConfigSet
+                0x00000000       0xa0 ./src/softssi.o
+ .text.SoftSSIDataGet
+                0x00000000       0x64 ./src/softssi.o
+ .text.SoftSSIDataPut
+                0x00000000       0x5c ./src/softssi.o
+ .text.SoftSSIDataGetNonBlocking
+                0x00000000       0x6c ./src/softssi.o
+ .text.SoftSSIDataPutNonBlocking
+                0x00000000       0x68 ./src/softssi.o
+ .text          0x00000000        0x0 ./src/softuart.o
+ .data          0x00000000        0x0 ./src/softuart.o
+ .bss           0x00000000        0x0 ./src/softuart.o
+ .text.SoftUARTTxTimerTick
+                0x00000000      0x1f4 ./src/softuart.o
+ .text.SoftUARTParityModeSet
+                0x00000000       0x10 ./src/softuart.o
+ .text.SoftUARTParityModeGet
+                0x00000000        0x8 ./src/softuart.o
+ .text.SoftUARTFIFOLevelGet
+                0x00000000       0x14 ./src/softuart.o
+ .text.SoftUARTConfigGet
+                0x00000000        0x8 ./src/softuart.o
+ .text.SoftUARTEnable
+                0x00000000       0x10 ./src/softuart.o
+ .text.SoftUARTDisable
+                0x00000000       0x28 ./src/softuart.o
+ .text.SoftUARTCharsAvail
+                0x00000000        0xc ./src/softuart.o
+ .text.SoftUARTSpaceAvail
+                0x00000000       0x18 ./src/softuart.o
+ .text.SoftUARTCharGetNonBlocking
+                0x00000000       0x78 ./src/softuart.o
+ .text.SoftUARTCharGet
+                0x00000000       0x80 ./src/softuart.o
+ .text.SoftUARTCharPutNonBlocking
+                0x00000000       0x30 ./src/softuart.o
+ .text.SoftUARTCharPut
+                0x00000000       0x2c ./src/softuart.o
+ .text.SoftUARTBreakCtl
+                0x00000000       0x20 ./src/softuart.o
+ .text.SoftUARTBusy
+                0x00000000       0x24 ./src/softuart.o
+ .text.SoftUARTIntEnable
+                0x00000000        0xc ./src/softuart.o
+ .text.SoftUARTIntDisable
+                0x00000000        0xc ./src/softuart.o
+ .text.SoftUARTIntStatus
+                0x00000000       0x10 ./src/softuart.o
+ .text.SoftUARTIntClear
+                0x00000000        0xc ./src/softuart.o
+ .text.SoftUARTRxErrorGet
+                0x00000000        0x8 ./src/softuart.o
+ .text.SoftUARTRxErrorClear
+                0x00000000        0x8 ./src/softuart.o
+ .text.SoftUARTCallbackSet
+                0x00000000        0x4 ./src/softuart.o
+ .text.SoftUARTTxGPIOSet
+                0x00000000        0xc ./src/softuart.o
+ .text.SoftUARTRxGPIOSet
+                0x00000000       0x14 ./src/softuart.o
+ .text.SoftUARTTxBufferSet
+                0x00000000       0x58 ./src/softuart.o
+ .text.SoftUARTRxTick
+                0x00000000      0x3c4 ./src/softuart.o
+ .text.SoftUARTConfigSet
+                0x00000000       0x94 ./src/softuart.o
+ .text.SoftUARTInit
+                0x00000000       0x40 ./src/softuart.o
+ .text.SoftUARTRxBufferSet
+                0x00000000       0x58 ./src/softuart.o
+ .text.SoftUARTFIFOLevelSet
+                0x00000000       0xc0 ./src/softuart.o
+ .rodata.g_pulParityOdd
+                0x00000000       0x20 ./src/softuart.o
+ .text          0x00000000        0x0 ./src/ssi.o
+ .data          0x00000000        0x0 ./src/ssi.o
+ .bss           0x00000000        0x0 ./src/ssi.o
+ .text.SSIIntEnable
+                0x00000000        0x8 ./src/ssi.o
+ .text.SSIIntDisable
+                0x00000000        0xc ./src/ssi.o
+ .text.SSIIntStatus
+                0x00000000        0xc ./src/ssi.o
+ .text.SSIIntClear
+                0x00000000        0x4 ./src/ssi.o
+ .text.SSIDataPutNonBlocking
+                0x00000000       0x10 ./src/ssi.o
+ .text.SSIDataGet
+                0x00000000       0x14 ./src/ssi.o
+ .text.SSIDataGetNonBlocking
+                0x00000000       0x14 ./src/ssi.o
+ .text.SSIDMAEnable
+                0x00000000        0x8 ./src/ssi.o
+ .text.SSIDMADisable
+                0x00000000        0xc ./src/ssi.o
+ .text.SSIClockSourceSet
+                0x00000000        0x8 ./src/ssi.o
+ .text.SSIClockSourceGet
+                0x00000000        0x8 ./src/ssi.o
+ .text.SSIIntUnregister
+                0x00000000       0x68 ./src/ssi.o
+ .text.SSIIntRegister
+                0x00000000       0x68 ./src/ssi.o
+ .rodata.g_ppulSSIIntMap
+                0x00000000       0x20 ./src/ssi.o
+ .text          0x00000000        0x0 ./src/startup_gcc.o
+ .data          0x00000000        0x0 ./src/startup_gcc.o
+ .bss           0x00000000        0x0 ./src/startup_gcc.o
+ .text          0x00000000        0x0 ./src/sysctl.o
+ .data          0x00000000        0x0 ./src/sysctl.o
+ .bss           0x00000000        0x0 ./src/sysctl.o
+ .text.SysCtlSRAMSizeGet
+                0x00000000       0x18 ./src/sysctl.o
+ .text.SysCtlFlashSizeGet
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlPinPresent
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlPeripheralPresent
+                0x00000000       0x80 ./src/sysctl.o
+ .text.SysCtlPeripheralReady
+                0x00000000       0x88 ./src/sysctl.o
+ .text.SysCtlPeripheralPowerOn
+                0x00000000       0x88 ./src/sysctl.o
+ .text.SysCtlPeripheralPowerOff
+                0x00000000       0x88 ./src/sysctl.o
+ .text.SysCtlPeripheralReset
+                0x00000000       0x9c ./src/sysctl.o
+ .text.SysCtlPeripheralDisable
+                0x00000000       0x5c ./src/sysctl.o
+ .text.SysCtlPeripheralSleepEnable
+                0x00000000       0x5c ./src/sysctl.o
+ .text.SysCtlPeripheralSleepDisable
+                0x00000000       0x5c ./src/sysctl.o
+ .text.SysCtlPeripheralDeepSleepEnable
+                0x00000000       0x5c ./src/sysctl.o
+ .text.SysCtlPeripheralDeepSleepDisable
+                0x00000000       0x5c ./src/sysctl.o
+ .text.SysCtlPeripheralClockGating
+                0x00000000       0x28 ./src/sysctl.o
+ .text.SysCtlIntEnable
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlIntDisable
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlIntClear
+                0x00000000        0xc ./src/sysctl.o
+ .text.SysCtlIntStatus
+                0x00000000       0x1c ./src/sysctl.o
+ .text.SysCtlLDOSet
+                0x00000000        0xc ./src/sysctl.o
+ .text.SysCtlLDOGet
+                0x00000000        0xc ./src/sysctl.o
+ .text.SysCtlLDOConfigSet
+                0x00000000        0xc ./src/sysctl.o
+ .text.SysCtlReset
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlResetCauseGet
+                0x00000000        0xc ./src/sysctl.o
+ .text.SysCtlResetCauseClear
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlBrownOutConfigSet
+                0x00000000       0x10 ./src/sysctl.o
+ .text.SysCtlMOSCConfigSet
+                0x00000000        0xc ./src/sysctl.o
+ .text.SysCtlPIOSCCalibrate
+                0x00000000       0x6c ./src/sysctl.o
+ .text.SysCtlDeepSleepClockSet
+                0x00000000        0xc ./src/sysctl.o
+ .text.SysCtlPWMClockSet
+                0x00000000       0x18 ./src/sysctl.o
+ .text.SysCtlPWMClockGet
+                0x00000000       0x18 ./src/sysctl.o
+ .text.SysCtlADCSpeedSet
+                0x00000000       0x28 ./src/sysctl.o
+ .text.SysCtlADCSpeedGet
+                0x00000000       0x10 ./src/sysctl.o
+ .text.SysCtlIOSCVerificationSet
+                0x00000000       0x28 ./src/sysctl.o
+ .text.SysCtlMOSCVerificationSet
+                0x00000000       0x28 ./src/sysctl.o
+ .text.SysCtlPLLVerificationSet
+                0x00000000       0x28 ./src/sysctl.o
+ .text.SysCtlClkVerificationClear
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlGPIOAHBEnable
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlGPIOAHBDisable
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlUSBPLLEnable
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlUSBPLLDisable
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlI2SMClkSet
+                0x00000000      0x10c ./src/sysctl.o
+ .text.SysCtlDeepSleep
+                0x00000000       0x20 ./src/sysctl.o
+ .text.SysCtlSleep
+                0x00000000        0x4 ./src/sysctl.o
+ .text.SysCtlIntUnregister
+                0x00000000       0x14 ./src/sysctl.o
+ .text.SysCtlIntRegister
+                0x00000000       0x14 ./src/sysctl.o
+ .rodata.g_pulDCRegs
+                0x00000000       0x10 ./src/sysctl.o
+ .rodata.g_pulDCGCRegs
+                0x00000000        0xc ./src/sysctl.o
+ .rodata.g_ppulPeripheralMap
+                0x00000000      0x118 ./src/sysctl.o
+ .rodata.g_pulSCGCRegs
+                0x00000000        0xc ./src/sysctl.o
+ .rodata.g_pulSRCRRegs
+                0x00000000        0xc ./src/sysctl.o
+ .text          0x00000000        0x0 ./src/sysexc.o
+ .data          0x00000000        0x0 ./src/sysexc.o
+ .bss           0x00000000        0x0 ./src/sysexc.o
+ .text.SysExcIntEnable
+                0x00000000       0x14 ./src/sysexc.o
+ .text.SysExcIntDisable
+                0x00000000       0x14 ./src/sysexc.o
+ .text.SysExcIntStatus
+                0x00000000       0x1c ./src/sysexc.o
+ .text.SysExcIntClear
+                0x00000000        0xc ./src/sysexc.o
+ .text.SysExcIntUnregister
+                0x00000000       0x14 ./src/sysexc.o
+ .text.SysExcIntRegister
+                0x00000000       0x14 ./src/sysexc.o
+ .text          0x00000000        0x0 ./src/systick.o
+ .data          0x00000000        0x0 ./src/systick.o
+ .bss           0x00000000        0x0 ./src/systick.o
+ .text.SysTickEnable
+                0x00000000       0x14 ./src/systick.o
+ .text.SysTickDisable
+                0x00000000       0x14 ./src/systick.o
+ .text.SysTickIntEnable
+                0x00000000       0x14 ./src/systick.o
+ .text.SysTickIntDisable
+                0x00000000       0x14 ./src/systick.o
+ .text.SysTickPeriodSet
+                0x00000000       0x10 ./src/systick.o
+ .text.SysTickPeriodGet
+                0x00000000       0x10 ./src/systick.o
+ .text.SysTickValueGet
+                0x00000000        0xc ./src/systick.o
+ .text.SysTickIntUnregister
+                0x00000000       0x18 ./src/systick.o
+ .text.SysTickIntRegister
+                0x00000000       0x1c ./src/systick.o
+ .text          0x00000000        0x0 ./src/timer.o
+ .data          0x00000000        0x0 ./src/timer.o
+ .bss           0x00000000        0x0 ./src/timer.o
+ .text.TimerEnable
+                0x00000000       0x18 ./src/timer.o
+ .text.TimerDisable
+                0x00000000       0x18 ./src/timer.o
+ .text.TimerConfigure
+                0x00000000       0x2c ./src/timer.o
+ .text.TimerControlLevel
+                0x00000000       0x28 ./src/timer.o
+ .text.TimerControlTrigger
+                0x00000000       0x28 ./src/timer.o
+ .text.TimerControlEvent
+                0x00000000       0x20 ./src/timer.o
+ .text.TimerControlStall
+                0x00000000       0x28 ./src/timer.o
+ .text.TimerControlWaitOnTrigger
+                0x00000000       0x38 ./src/timer.o
+ .text.TimerRTCEnable
+                0x00000000        0xc ./src/timer.o
+ .text.TimerRTCDisable
+                0x00000000        0xc ./src/timer.o
+ .text.TimerPrescaleSet
+                0x00000000       0x14 ./src/timer.o
+ .text.TimerPrescaleGet
+                0x00000000        0xc ./src/timer.o
+ .text.TimerPrescaleMatchSet
+                0x00000000       0x14 ./src/timer.o
+ .text.TimerPrescaleMatchGet
+                0x00000000        0xc ./src/timer.o
+ .text.TimerLoadSet
+                0x00000000       0x14 ./src/timer.o
+ .text.TimerLoadGet
+                0x00000000        0xc ./src/timer.o
+ .text.TimerLoadSet64
+                0x00000000        0x8 ./src/timer.o
+ .text.TimerLoadGet64
+                0x00000000       0x24 ./src/timer.o
+ .text.TimerValueGet
+                0x00000000        0xc ./src/timer.o
+ .text.TimerValueGet64
+                0x00000000       0x24 ./src/timer.o
+ .text.TimerMatchSet
+                0x00000000       0x14 ./src/timer.o
+ .text.TimerMatchGet
+                0x00000000        0xc ./src/timer.o
+ .text.TimerMatchSet64
+                0x00000000        0x8 ./src/timer.o
+ .text.TimerMatchGet64
+                0x00000000       0x24 ./src/timer.o
+ .text.TimerIntEnable
+                0x00000000        0x8 ./src/timer.o
+ .text.TimerIntDisable
+                0x00000000        0xc ./src/timer.o
+ .text.TimerIntStatus
+                0x00000000        0xc ./src/timer.o
+ .text.TimerSynchronize
+                0x00000000        0x4 ./src/timer.o
+ .text.TimerIntUnregister
+                0x00000000       0xc8 ./src/timer.o
+ .text.TimerIntRegister
+                0x00000000       0xcc ./src/timer.o
+ .text.TimerQuiesce
+                0x00000000       0xe4 ./src/timer.o
+ .rodata.g_ppulTimerIntMap
+                0x00000000       0x60 ./src/timer.o
+ .text          0x00000000        0x0 ./src/uart.o
+ .data          0x00000000        0x0 ./src/uart.o
+ .bss           0x00000000        0x0 ./src/uart.o
+ .text.UARTParityModeSet
+                0x00000000        0xc ./src/uart.o
+ .text.UARTParityModeGet
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTFIFOLevelSet
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTFIFOLevelGet
+                0x00000000       0x10 ./src/uart.o
+ .text.UARTConfigSetExpClk
+                0x00000000       0x6c ./src/uart.o
+ .text.UARTConfigGetExpClk
+                0x00000000       0x2c ./src/uart.o
+ .text.UARTEnable
+                0x00000000       0x18 ./src/uart.o
+ .text.UARTDisable
+                0x00000000       0x24 ./src/uart.o
+ .text.UARTFIFOEnable
+                0x00000000        0xc ./src/uart.o
+ .text.UARTFIFODisable
+                0x00000000        0xc ./src/uart.o
+ .text.UARTEnableSIR
+                0x00000000       0x18 ./src/uart.o
+ .text.UARTDisableSIR
+                0x00000000        0xc ./src/uart.o
+ .text.UARTSmartCardEnable
+                0x00000000       0x18 ./src/uart.o
+ .text.UARTSmartCardDisable
+                0x00000000        0xc ./src/uart.o
+ .text.UARTModemControlSet
+                0x00000000        0xc ./src/uart.o
+ .text.UARTModemControlClear
+                0x00000000       0x10 ./src/uart.o
+ .text.UARTModemControlGet
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTModemStatusGet
+                0x00000000       0x10 ./src/uart.o
+ .text.UARTFlowControlSet
+                0x00000000        0xc ./src/uart.o
+ .text.UARTFlowControlGet
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTTxIntModeSet
+                0x00000000        0xc ./src/uart.o
+ .text.UARTTxIntModeGet
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTSpaceAvail
+                0x00000000        0xc ./src/uart.o
+ .text.UARTCharGet
+                0x00000000       0x10 ./src/uart.o
+ .text.UARTCharPut
+                0x00000000       0x10 ./src/uart.o
+ .text.UARTBreakCtl
+                0x00000000       0x1c ./src/uart.o
+ .text.UARTBusy
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTIntEnable
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTIntDisable
+                0x00000000        0xc ./src/uart.o
+ .text.UARTDMAEnable
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTDMADisable
+                0x00000000        0xc ./src/uart.o
+ .text.UARTRxErrorGet
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTRxErrorClear
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTClockSourceSet
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTClockSourceGet
+                0x00000000        0x8 ./src/uart.o
+ .text.UART9BitEnable
+                0x00000000       0x10 ./src/uart.o
+ .text.UART9BitDisable
+                0x00000000       0x10 ./src/uart.o
+ .text.UART9BitAddrSet
+                0x00000000        0xc ./src/uart.o
+ .text.UART9BitAddrSend
+                0x00000000       0x2c ./src/uart.o
+ .text.UARTIntUnregister
+                0x00000000       0x78 ./src/uart.o
+ .text.UARTIntRegister
+                0x00000000       0x78 ./src/uart.o
+ .rodata.g_ppulUARTIntMap
+                0x00000000       0x40 ./src/uart.o
+ .text          0x00000000        0x0 ./src/uartstdio.o
+ .data          0x00000000        0x0 ./src/uartstdio.o
+ .bss           0x00000000        0x0 ./src/uartstdio.o
+ .text.UARTgetc
+                0x00000000       0x14 ./src/uartstdio.o
+ .text.UARTwrite
+                0x00000000      0x144 ./src/uartstdio.o
+ .text.UARTStdioInitExpClk
+                0x00000000       0x54 ./src/uartstdio.o
+ .text.UARTStdioInit
+                0x00000000       0x54 ./src/uartstdio.o
+ .text.UARTgets
+                0x00000000       0xbc ./src/uartstdio.o
+ .text.UARTprintf
+                0x00000000      0x968 ./src/uartstdio.o
+ .rodata.g_ulUARTPeriph
+                0x00000000        0xc ./src/uartstdio.o
+ .bss.bLastWasCR.1449
+                0x00000000        0x1 ./src/uartstdio.o
+ .rodata.str1.4
+                0x00000000       0x14 ./src/uartstdio.o
+ .rodata.g_ulUARTBase
+                0x00000000        0xc ./src/uartstdio.o
+ .bss.g_ulBase  0x00000000        0x4 ./src/uartstdio.o
+ .text          0x00000000        0x0 ./src/udma.o
+ .data          0x00000000        0x0 ./src/udma.o
+ .bss           0x00000000        0x0 ./src/udma.o
+ .text.uDMAEnable
+                0x00000000       0x10 ./src/udma.o
+ .text.uDMADisable
+                0x00000000       0x10 ./src/udma.o
+ .text.uDMAErrorStatusGet
+                0x00000000        0xc ./src/udma.o
+ .text.uDMAErrorStatusClear
+                0x00000000       0x10 ./src/udma.o
+ .text.uDMAChannelEnable
+                0x00000000       0x18 ./src/udma.o
+ .text.uDMAChannelDisable
+                0x00000000       0x18 ./src/udma.o
+ .text.uDMAChannelIsEnabled
+                0x00000000       0x20 ./src/udma.o
+ .text.uDMAControlBaseSet
+                0x00000000        0xc ./src/udma.o
+ .text.uDMAControlBaseGet
+                0x00000000        0xc ./src/udma.o
+ .text.uDMAControlAlternateBaseGet
+                0x00000000        0xc ./src/udma.o
+ .text.uDMAChannelRequest
+                0x00000000       0x18 ./src/udma.o
+ .text.uDMAChannelAttributeEnable
+                0x00000000       0x58 ./src/udma.o
+ .text.uDMAChannelAttributeDisable
+                0x00000000       0x58 ./src/udma.o
+ .text.uDMAChannelAttributeGet
+                0x00000000       0x54 ./src/udma.o
+ .text.uDMAChannelControlSet
+                0x00000000       0x28 ./src/udma.o
+ .text.uDMAChannelTransferSet
+                0x00000000       0xb4 ./src/udma.o
+ .text.uDMAChannelScatterGatherSet
+                0x00000000       0x4c ./src/udma.o
+ .text.uDMAChannelSizeGet
+                0x00000000       0x28 ./src/udma.o
+ .text.uDMAChannelModeGet
+                0x00000000       0x38 ./src/udma.o
+ .text.uDMAChannelSelectSecondary
+                0x00000000       0x14 ./src/udma.o
+ .text.uDMAChannelSelectDefault
+                0x00000000       0x14 ./src/udma.o
+ .text.uDMAIntStatus
+                0x00000000        0xc ./src/udma.o
+ .text.uDMAIntClear
+                0x00000000        0xc ./src/udma.o
+ .text.uDMAChannelAssign
+                0x00000000       0x2c ./src/udma.o
+ .text.uDMAIntUnregister
+                0x00000000       0x14 ./src/udma.o
+ .text.uDMAIntRegister
+                0x00000000       0x14 ./src/udma.o
+ .text          0x00000000        0x0 ./src/usb.o
+ .data          0x00000000        0x0 ./src/usb.o
+ .bss           0x00000000        0x0 ./src/usb.o
+ .text.USBHostSuspend
+                0x00000000        0xc ./src/usb.o
+ .text.USBHostReset
+                0x00000000       0x18 ./src/usb.o
+ .text.USBHostResume
+                0x00000000       0x18 ./src/usb.o
+ .text.USBHostSpeedGet
+                0x00000000       0x20 ./src/usb.o
+ .text.USBIntStatus
+                0x00000000       0x4c ./src/usb.o
+ .text.USBIntDisable
+                0x00000000       0x50 ./src/usb.o
+ .text.USBIntEnable
+                0x00000000       0x50 ./src/usb.o
+ .text.USBIntDisableControl
+                0x00000000       0x2c ./src/usb.o
+ .text.USBIntEnableControl
+                0x00000000       0x30 ./src/usb.o
+ .text.USBIntStatusControl
+                0x00000000       0x40 ./src/usb.o
+ .text.USBIntDisableEndpoint
+                0x00000000       0x24 ./src/usb.o
+ .text.USBIntEnableEndpoint
+                0x00000000       0x20 ./src/usb.o
+ .text.USBIntStatusEndpoint
+                0x00000000        0xc ./src/usb.o
+ .text.USBEndpointStatus
+                0x00000000       0x14 ./src/usb.o
+ .text.USBHostEndpointStatusClear
+                0x00000000       0x2c ./src/usb.o
+ .text.USBDevEndpointStatusClear
+                0x00000000       0x60 ./src/usb.o
+ .text.USBHostEndpointDataToggle
+                0x00000000       0x68 ./src/usb.o
+ .text.USBEndpointDataToggleClear
+                0x00000000       0x20 ./src/usb.o
+ .text.USBDevEndpointStall
+                0x00000000       0x30 ./src/usb.o
+ .text.USBDevEndpointStallClear
+                0x00000000       0x4c ./src/usb.o
+ .text.USBDevConnect
+                0x00000000        0xc ./src/usb.o
+ .text.USBDevDisconnect
+                0x00000000        0xc ./src/usb.o
+ .text.USBDevAddrSet
+                0x00000000        0x8 ./src/usb.o
+ .text.USBDevAddrGet
+                0x00000000        0x4 ./src/usb.o
+ .text.USBHostEndpointConfig
+                0x00000000       0xec ./src/usb.o
+ .text.USBDevEndpointConfigSet
+                0x00000000       0x88 ./src/usb.o
+ .text.USBDevEndpointConfigGet
+                0x00000000       0x84 ./src/usb.o
+ .text.USBFIFOConfigSet
+                0x00000000       0x4c ./src/usb.o
+ .text.USBFIFOConfigGet
+                0x00000000       0x58 ./src/usb.o
+ .text.USBEndpointDMAEnable
+                0x00000000       0x28 ./src/usb.o
+ .text.USBEndpointDMADisable
+                0x00000000       0x28 ./src/usb.o
+ .text.USBEndpointDataAvail
+                0x00000000       0x24 ./src/usb.o
+ .text.USBEndpointDataGet
+                0x00000000       0xa8 ./src/usb.o
+ .text.USBDevEndpointDataAck
+                0x00000000       0x24 ./src/usb.o
+ .text.USBHostEndpointDataAck
+                0x00000000       0x20 ./src/usb.o
+ .text.USBEndpointDataPut
+                0x00000000       0x94 ./src/usb.o
+ .text.USBEndpointDataSend
+                0x00000000       0x28 ./src/usb.o
+ .text.USBFIFOFlush
+                0x00000000       0x4c ./src/usb.o
+ .text.USBHostRequestIN
+                0x00000000       0x18 ./src/usb.o
+ .text.USBHostRequestINClear
+                0x00000000       0x20 ./src/usb.o
+ .text.USBHostRequestStatus
+                0x00000000        0x8 ./src/usb.o
+ .text.USBHostAddrSet
+                0x00000000       0x20 ./src/usb.o
+ .text.USBHostAddrGet
+                0x00000000       0x18 ./src/usb.o
+ .text.USBHostHubAddrSet
+                0x00000000       0x34 ./src/usb.o
+ .text.USBHostHubAddrGet
+                0x00000000       0x18 ./src/usb.o
+ .text.USBHostPwrConfig
+                0x00000000       0x20 ./src/usb.o
+ .text.USBHostPwrFaultEnable
+                0x00000000       0x10 ./src/usb.o
+ .text.USBHostPwrFaultDisable
+                0x00000000       0x14 ./src/usb.o
+ .text.USBHostPwrEnable
+                0x00000000       0x10 ./src/usb.o
+ .text.USBHostPwrDisable
+                0x00000000       0x14 ./src/usb.o
+ .text.USBFrameNumberGet
+                0x00000000        0x8 ./src/usb.o
+ .text.USBOTGSessionRequest
+                0x00000000       0x20 ./src/usb.o
+ .text.USBFIFOAddrGet
+                0x00000000        0x8 ./src/usb.o
+ .text.USBModeGet
+                0x00000000        0xc ./src/usb.o
+ .text.USBEndpointDMAChannel
+                0x00000000       0x20 ./src/usb.o
+ .text.USBHostMode
+                0x00000000        0x8 ./src/usb.o
+ .text.USBDevMode
+                0x00000000        0x8 ./src/usb.o
+ .text.USBOTGMode
+                0x00000000        0x8 ./src/usb.o
+ .text.USBPHYPowerOff
+                0x00000000        0xc ./src/usb.o
+ .text.USBPHYPowerOn
+                0x00000000        0xc ./src/usb.o
+ .text.USBNumEndpointsGet
+                0x00000000       0xb8 ./src/usb.o
+ .text.USBIntUnregister
+                0x00000000       0x14 ./src/usb.o
+ .text.USBIntRegister
+                0x00000000       0x14 ./src/usb.o
+ .text          0x00000000        0x0 ./src/ustdlib.o
+ .data          0x00000000        0x0 ./src/ustdlib.o
+ .bss           0x00000000        0x0 ./src/ustdlib.o
+ .text.ustrncpy
+                0x00000000      0x1dc ./src/ustdlib.o
+ .text.ulocaltime
+                0x00000000      0x164 ./src/ustdlib.o
+ .text.umktime  0x00000000      0x118 ./src/ustdlib.o
+ .text.ustrtoul
+                0x00000000      0x138 ./src/ustdlib.o
+ .text.ustrlen  0x00000000       0x14 ./src/ustdlib.o
+ .text.ustrstr  0x00000000       0x50 ./src/ustdlib.o
+ .text.ustrnicmp
+                0x00000000      0x134 ./src/ustdlib.o
+ .text.ustrncmp
+                0x00000000      0x120 ./src/ustdlib.o
+ .text.ustrcmp  0x00000000       0x34 ./src/ustdlib.o
+ .text.usrand   0x00000000        0xc ./src/ustdlib.o
+ .text.urand    0x00000000       0x24 ./src/ustdlib.o
+ .text.ustrcasecmp
+                0x00000000       0x60 ./src/ustdlib.o
+ .text.uvsnprintf
+                0x00000000     0x10d4 ./src/ustdlib.o
+ .text.usnprintf
+                0x00000000       0x20 ./src/ustdlib.o
+ .text.usprintf
+                0x00000000       0x24 ./src/ustdlib.o
+ .rodata.g_psDaysToMonth
+                0x00000000       0x18 ./src/ustdlib.o
+ .data.g_ulRandomSeed
+                0x00000000        0x4 ./src/ustdlib.o
+ .rodata.str1.4
+                0x00000000       0x1c ./src/ustdlib.o
+ .text          0x00000000        0x0 ./src/watchdog.o
+ .data          0x00000000        0x0 ./src/watchdog.o
+ .bss           0x00000000        0x0 ./src/watchdog.o
+ .text.WatchdogRunning
+                0x00000000        0x8 ./src/watchdog.o
+ .text.WatchdogEnable
+                0x00000000        0xc ./src/watchdog.o
+ .text.WatchdogResetEnable
+                0x00000000        0xc ./src/watchdog.o
+ .text.WatchdogResetDisable
+                0x00000000        0xc ./src/watchdog.o
+ .text.WatchdogLock
+                0x00000000        0x8 ./src/watchdog.o
+ .text.WatchdogUnlock
+                0x00000000       0x10 ./src/watchdog.o
+ .text.WatchdogLockState
+                0x00000000       0x10 ./src/watchdog.o
+ .text.WatchdogReloadSet
+                0x00000000        0x4 ./src/watchdog.o
+ .text.WatchdogReloadGet
+                0x00000000        0x4 ./src/watchdog.o
+ .text.WatchdogValueGet
+                0x00000000        0x4 ./src/watchdog.o
+ .text.WatchdogIntEnable
+                0x00000000        0xc ./src/watchdog.o
+ .text.WatchdogIntStatus
+                0x00000000        0xc ./src/watchdog.o
+ .text.WatchdogIntClear
+                0x00000000        0x8 ./src/watchdog.o
+ .text.WatchdogIntTypeSet
+                0x00000000        0xc ./src/watchdog.o
+ .text.WatchdogStallEnable
+                0x00000000       0x10 ./src/watchdog.o
+ .text.WatchdogStallDisable
+                0x00000000       0x10 ./src/watchdog.o
+ .text.WatchdogIntUnregister
+                0x00000000       0x14 ./src/watchdog.o
+ .text.WatchdogIntRegister
+                0x00000000       0x14 ./src/watchdog.o
+ .text          0x00000000      0x1dc /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+ .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+ .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+ .text          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .jcr           0x00000000        0x4 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .text          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .init          0x00000000        0x8 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .fini          0x00000000        0x8 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00000000         0x00040000         xr
+SRAM             0x20000000         0x00010000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+LOAD /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+LOAD ./src/sv_utils/sound_visualizer.o
+LOAD ./src/adc.o
+LOAD ./src/can.o
+LOAD ./src/cmdline.o
+LOAD ./src/comp.o
+LOAD ./src/cpu.o
+LOAD ./src/cpu_usage.o
+LOAD ./src/crc.o
+LOAD ./src/eeprom.o
+LOAD ./src/epi.o
+LOAD ./src/ethernet.o
+LOAD ./src/fan.o
+LOAD ./src/flash.o
+LOAD ./src/flash_pb.o
+LOAD ./src/fpu.o
+LOAD ./src/gpio.o
+LOAD ./src/hibernate.o
+LOAD ./src/i2c.o
+LOAD ./src/i2s.o
+LOAD ./src/interrupt.o
+LOAD ./src/isqrt.o
+LOAD ./src/lpc.o
+LOAD ./src/main.o
+LOAD ./src/mpu.o
+LOAD ./src/peci.o
+LOAD ./src/pwm.o
+LOAD ./src/qei.o
+LOAD ./src/ringbuf.o
+LOAD ./src/rit128x96x4.o
+LOAD ./src/scheduler.o
+LOAD ./src/sine.o
+LOAD ./src/softi2c.o
+LOAD ./src/softssi.o
+LOAD ./src/softuart.o
+LOAD ./src/ssi.o
+LOAD ./src/startup_gcc.o
+LOAD ./src/sysctl.o
+LOAD ./src/sysexc.o
+LOAD ./src/systick.o
+LOAD ./src/timer.o
+LOAD ./src/uart.o
+LOAD ./src/uartstdio.o
+LOAD ./src/udma.o
+LOAD ./src/usb.o
+LOAD ./src/ustdlib.o
+LOAD ./src/watchdog.o
+START GROUP
+LOAD /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a
+LOAD /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a
+END GROUP
+LOAD /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+LOAD /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+
+.text           0x00000000     0x1874
+                0x00000000                _text = .
+ *(.isr_vector)
+ .isr_vector    0x00000000       0xf0 ./src/startup_gcc.o
+                0x00000000                g_pfnVectors
+ *(.text*)
+ .text.UARTSend
+                0x000000f0       0xac ./src/sv_utils/sound_visualizer.o
+                0x000000f0                UARTSend
+ .text.UARTIntHandler
+                0x0000019c       0x4c ./src/sv_utils/sound_visualizer.o
+                0x0000019c                UARTIntHandler
+ .text.InitializeDisplay
+                0x000001e8       0x24 ./src/sv_utils/sound_visualizer.o
+                0x000001e8                InitializeDisplay
+ .text.ADCIntHandler
+                0x0000020c       0xa8 ./src/sv_utils/sound_visualizer.o
+                0x0000020c                ADCIntHandler
+ .text.Timer1IntHandler
+                0x000002b4       0x20 ./src/sv_utils/sound_visualizer.o
+                0x000002b4                Timer1IntHandler
+ .text.ADCIntClear
+                0x000002d4        0xc ./src/adc.o
+                0x000002d4                ADCIntClear
+ .text.ADCSequenceDataGet
+                0x000002e0       0xa0 ./src/adc.o
+                0x000002e0                ADCSequenceDataGet
+ .text.GPIOPadConfigSet
+                0x00000380       0xf8 ./src/gpio.o
+                0x00000380                GPIOPadConfigSet
+ .text.GPIOPinWrite
+                0x00000478        0x8 ./src/gpio.o
+                0x00000478                GPIOPinWrite
+ .text.GPIOPinTypeSSI
+                0x00000480       0x84 ./src/gpio.o
+                0x00000480                GPIOPinTypeSSI
+ .text.GPIOPinTypeGPIOOutput
+                0x00000504       0x84 ./src/gpio.o
+                0x00000504                GPIOPinTypeGPIOOutput
+ .text.main     0x00000588       0x30 ./src/main.o
+                0x00000588                main
+ .text.RIT128x96x4Enable
+                0x000005b8       0x70 ./src/rit128x96x4.o
+                0x000005b8                RIT128x96x4Enable
+ .text.RIT128x96x4StringDraw
+                0x00000628      0x460 ./src/rit128x96x4.o
+                0x00000628                RIT128x96x4StringDraw
+ .text.RIT128x96x4Clear
+                0x00000a88      0x2ac ./src/rit128x96x4.o
+                0x00000a88                RIT128x96x4Clear
+ .text.RIT128x96x4Init
+                0x00000d34      0x1cc ./src/rit128x96x4.o
+                0x00000d34                RIT128x96x4Init
+ .text.SSIConfigSetExpClk
+                0x00000f00       0x50 ./src/ssi.o
+                0x00000f00                SSIConfigSetExpClk
+ .text.SSIEnable
+                0x00000f50        0xc ./src/ssi.o
+                0x00000f50                SSIEnable
+ .text.SSIDisable
+                0x00000f5c        0xc ./src/ssi.o
+                0x00000f5c                SSIDisable
+ .text.SSIDataPut
+                0x00000f68       0x10 ./src/ssi.o
+                0x00000f68                SSIDataPut
+ .text.SSIBusy  0x00000f78        0x8 ./src/ssi.o
+                0x00000f78                SSIBusy
+ .text.NmiSR    0x00000f80        0x4 ./src/startup_gcc.o
+ .text.FaultISR
+                0x00000f84        0x4 ./src/startup_gcc.o
+ .text.IntDefaultHandler
+                0x00000f88        0x4 ./src/startup_gcc.o
+ .text.ResetISR
+                0x00000f8c       0xa8 ./src/startup_gcc.o
+                0x00000f8c                ResetISR
+ .text.SysCtlPeripheralEnable
+                0x00001034       0x5c ./src/sysctl.o
+                0x00001034                SysCtlPeripheralEnable
+ .text.SysCtlDelay
+                0x00001090        0x8 ./src/sysctl.o
+                0x00001090                SysCtlDelay
+ .text.SysCtlClockSet
+                0x00001098      0x20c ./src/sysctl.o
+                0x00001098                SysCtlClockSet
+ .text.SysCtlClockGet
+                0x000012a4      0x2c0 ./src/sysctl.o
+                0x000012a4                SysCtlClockGet
+ .text.TimerIntClear
+                0x00001564        0x4 ./src/timer.o
+                0x00001564                TimerIntClear
+ .text.UARTCharsAvail
+                0x00001568        0xc ./src/uart.o
+                0x00001568                UARTCharsAvail
+ .text.UARTCharGetNonBlocking
+                0x00001574       0x10 ./src/uart.o
+                0x00001574                UARTCharGetNonBlocking
+ .text.UARTCharPutNonBlocking
+                0x00001584       0x14 ./src/uart.o
+                0x00001584                UARTCharPutNonBlocking
+ .text.UARTIntStatus
+                0x00001598        0xc ./src/uart.o
+                0x00001598                UARTIntStatus
+ .text.UARTIntClear
+                0x000015a4        0x4 ./src/uart.o
+                0x000015a4                UARTIntClear
+ *(.rodata*)
+ .rodata.str1.4
+                0x000015a8        0xf ./src/sv_utils/sound_visualizer.o
+                                 0x10 (size before relaxing)
+ *fill*         0x000015b7        0x1 00
+ .rodata.str1.4
+                0x000015b8       0x14 ./src/main.o
+ .rodata.g_pucFont
+                0x000015cc      0x1e0 ./src/rit128x96x4.o
+ .rodata.g_pucRIT128x96x4Init
+                0x000017ac       0x50 ./src/rit128x96x4.o
+ .rodata.g_pulXtals
+                0x000017fc       0x6c ./src/sysctl.o
+ .rodata.g_pulRCGCRegs
+                0x00001868        0xc ./src/sysctl.o
+                0x00001874                _etext = .
+
+.glue_7         0x00001874        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x00001874        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x00001874        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00001874        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.data           0x20000000        0x0 load address 0x00001874
+                0x20000000                _data = .
+ *(vtable)
+ *(.data*)
+                0x20000000                _edata = .
+
+.bss            0x20000000     0x6539
+                0x20000000                _bss = .
+ *(.bss*)
+ .bss.BufOneIndex
+                0x20000000        0x4 ./src/sv_utils/sound_visualizer.o
+                0x20000000                BufOneIndex
+ .bss.BufOneReadyToRead
+                0x20000004        0x4 ./src/sv_utils/sound_visualizer.o
+                0x20000004                BufOneReadyToRead
+ .bss.OneSecDelayFlag
+                0x20000008        0x4 ./src/sv_utils/sound_visualizer.o
+                0x20000008                OneSecDelayFlag
+ .bss.BufTwoReadyToRead
+                0x2000000c        0x4 ./src/sv_utils/sound_visualizer.o
+                0x2000000c                BufTwoReadyToRead
+ .bss.BufTwoIndex
+                0x20000010        0x4 ./src/sv_utils/sound_visualizer.o
+                0x20000010                BufTwoIndex
+ .bss.g_pucBuffer
+                0x20000014        0x8 ./src/rit128x96x4.o
+ .bss.g_ulSSIFlags
+                0x2000001c        0x4 ./src/rit128x96x4.o
+ .bss.pulStack  0x20000020      0x100 ./src/startup_gcc.o
+ *(COMMON)
+ COMMON         0x20000120     0x6419 ./src/sv_utils/sound_visualizer.o
+                0x20000120                BufTwo
+                0x20003320                BufOne
+                0x20006520                str
+                0x20006539                _ebss = .
+OUTPUT(Sound-Visualizer.elf elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x25
+ .ARM.attributes
+                0x00000000       0x19 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .ARM.attributes
+                0x00000019       0x29 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .ARM.attributes
+                0x00000042       0x31 ./src/sv_utils/sound_visualizer.o
+ .ARM.attributes
+                0x00000073       0x31 ./src/adc.o
+ .ARM.attributes
+                0x000000a4       0x31 ./src/can.o
+ .ARM.attributes
+                0x000000d5       0x31 ./src/cmdline.o
+ .ARM.attributes
+                0x00000106       0x31 ./src/comp.o
+ .ARM.attributes
+                0x00000137       0x31 ./src/cpu.o
+ .ARM.attributes
+                0x00000168       0x31 ./src/cpu_usage.o
+ .ARM.attributes
+                0x00000199       0x31 ./src/crc.o
+ .ARM.attributes
+                0x000001ca       0x31 ./src/eeprom.o
+ .ARM.attributes
+                0x000001fb       0x31 ./src/epi.o
+ .ARM.attributes
+                0x0000022c       0x31 ./src/ethernet.o
+ .ARM.attributes
+                0x0000025d       0x31 ./src/fan.o
+ .ARM.attributes
+                0x0000028e       0x31 ./src/flash.o
+ .ARM.attributes
+                0x000002bf       0x31 ./src/flash_pb.o
+ .ARM.attributes
+                0x000002f0       0x31 ./src/fpu.o
+ .ARM.attributes
+                0x00000321       0x31 ./src/gpio.o
+ .ARM.attributes
+                0x00000352       0x31 ./src/hibernate.o
+ .ARM.attributes
+                0x00000383       0x31 ./src/i2c.o
+ .ARM.attributes
+                0x000003b4       0x31 ./src/i2s.o
+ .ARM.attributes
+                0x000003e5       0x31 ./src/interrupt.o
+ .ARM.attributes
+                0x00000416       0x31 ./src/isqrt.o
+ .ARM.attributes
+                0x00000447       0x31 ./src/lpc.o
+ .ARM.attributes
+                0x00000478       0x31 ./src/main.o
+ .ARM.attributes
+                0x000004a9       0x31 ./src/mpu.o
+ .ARM.attributes
+                0x000004da       0x31 ./src/peci.o
+ .ARM.attributes
+                0x0000050b       0x31 ./src/pwm.o
+ .ARM.attributes
+                0x0000053c       0x31 ./src/qei.o
+ .ARM.attributes
+                0x0000056d       0x31 ./src/ringbuf.o
+ .ARM.attributes
+                0x0000059e       0x31 ./src/rit128x96x4.o
+ .ARM.attributes
+                0x000005cf       0x31 ./src/scheduler.o
+ .ARM.attributes
+                0x00000600       0x31 ./src/sine.o
+ .ARM.attributes
+                0x00000631       0x31 ./src/softi2c.o
+ .ARM.attributes
+                0x00000662       0x31 ./src/softssi.o
+ .ARM.attributes
+                0x00000693       0x31 ./src/softuart.o
+ .ARM.attributes
+                0x000006c4       0x31 ./src/ssi.o
+ .ARM.attributes
+                0x000006f5       0x31 ./src/startup_gcc.o
+ .ARM.attributes
+                0x00000726       0x31 ./src/sysctl.o
+ .ARM.attributes
+                0x00000757       0x31 ./src/sysexc.o
+ .ARM.attributes
+                0x00000788       0x31 ./src/systick.o
+ .ARM.attributes
+                0x000007b9       0x31 ./src/timer.o
+ .ARM.attributes
+                0x000007ea       0x31 ./src/uart.o
+ .ARM.attributes
+                0x0000081b       0x31 ./src/uartstdio.o
+ .ARM.attributes
+                0x0000084c       0x31 ./src/udma.o
+ .ARM.attributes
+                0x0000087d       0x31 ./src/usb.o
+ .ARM.attributes
+                0x000008ae       0x31 ./src/ustdlib.o
+ .ARM.attributes
+                0x000008df       0x31 ./src/watchdog.o
+ .ARM.attributes
+                0x00000910       0x29 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+ .ARM.attributes
+                0x00000939       0x29 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .ARM.attributes
+                0x00000962       0x19 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+
+.comment        0x00000000      0x7ba
+ .comment       0x00000000       0x2b ./src/sv_utils/sound_visualizer.o
+ .comment       0x0000002b       0x2b ./src/adc.o
+ .comment       0x00000056       0x2b ./src/can.o
+ .comment       0x00000081       0x2b ./src/cmdline.o
+ .comment       0x000000ac       0x2b ./src/comp.o
+ .comment       0x000000d7       0x2b ./src/cpu.o
+ .comment       0x00000102       0x2b ./src/cpu_usage.o
+ .comment       0x0000012d       0x2b ./src/crc.o
+ .comment       0x00000158       0x2b ./src/eeprom.o
+ .comment       0x00000183       0x2b ./src/epi.o
+ .comment       0x000001ae       0x2b ./src/ethernet.o
+ .comment       0x000001d9       0x2b ./src/fan.o
+ .comment       0x00000204       0x2b ./src/flash.o
+ .comment       0x0000022f       0x2b ./src/flash_pb.o
+ .comment       0x0000025a       0x2b ./src/fpu.o
+ .comment       0x00000285       0x2b ./src/gpio.o
+ .comment       0x000002b0       0x2b ./src/hibernate.o
+ .comment       0x000002db       0x2b ./src/i2c.o
+ .comment       0x00000306       0x2b ./src/i2s.o
+ .comment       0x00000331       0x2b ./src/interrupt.o
+ .comment       0x0000035c       0x2b ./src/isqrt.o
+ .comment       0x00000387       0x2b ./src/lpc.o
+ .comment       0x000003b2       0x2b ./src/main.o
+ .comment       0x000003dd       0x2b ./src/mpu.o
+ .comment       0x00000408       0x2b ./src/peci.o
+ .comment       0x00000433       0x2b ./src/pwm.o
+ .comment       0x0000045e       0x2b ./src/qei.o
+ .comment       0x00000489       0x2b ./src/ringbuf.o
+ .comment       0x000004b4       0x2b ./src/rit128x96x4.o
+ .comment       0x000004df       0x2b ./src/scheduler.o
+ .comment       0x0000050a       0x2b ./src/sine.o
+ .comment       0x00000535       0x2b ./src/softi2c.o
+ .comment       0x00000560       0x2b ./src/softssi.o
+ .comment       0x0000058b       0x2b ./src/softuart.o
+ .comment       0x000005b6       0x2b ./src/ssi.o
+ .comment       0x000005e1       0x2b ./src/startup_gcc.o
+ .comment       0x0000060c       0x2b ./src/sysctl.o
+ .comment       0x00000637       0x2b ./src/sysexc.o
+ .comment       0x00000662       0x2b ./src/systick.o
+ .comment       0x0000068d       0x2b ./src/timer.o
+ .comment       0x000006b8       0x2b ./src/uart.o
+ .comment       0x000006e3       0x2b ./src/uartstdio.o
+ .comment       0x0000070e       0x2b ./src/udma.o
+ .comment       0x00000739       0x2b ./src/usb.o
+ .comment       0x00000764       0x2b ./src/ustdlib.o
+ .comment       0x0000078f       0x2b ./src/watchdog.o
+
+.debug_abbrev   0x00000000     0x3d26
+ .debug_abbrev  0x00000000      0x101 ./src/sv_utils/sound_visualizer.o
+ .debug_abbrev  0x00000101      0x17a ./src/adc.o
+ .debug_abbrev  0x0000027b      0x206 ./src/can.o
+ .debug_abbrev  0x00000481       0xfd ./src/cmdline.o
+ .debug_abbrev  0x0000057e      0x10a ./src/comp.o
+ .debug_abbrev  0x00000688       0xac ./src/cpu.o
+ .debug_abbrev  0x00000734       0xaf ./src/cpu_usage.o
+ .debug_abbrev  0x000007e3      0x159 ./src/crc.o
+ .debug_abbrev  0x0000093c      0x1ec ./src/eeprom.o
+ .debug_abbrev  0x00000b28      0x126 ./src/epi.o
+ .debug_abbrev  0x00000c4e      0x24c ./src/ethernet.o
+ .debug_abbrev  0x00000e9a      0x100 ./src/fan.o
+ .debug_abbrev  0x00000f9a      0x1a5 ./src/flash.o
+ .debug_abbrev  0x0000113f      0x11e ./src/flash_pb.o
+ .debug_abbrev  0x0000125d       0x82 ./src/fpu.o
+ .debug_abbrev  0x000012df      0x1dd ./src/gpio.o
+ .debug_abbrev  0x000014bc      0x177 ./src/hibernate.o
+ .debug_abbrev  0x00001633      0x1f8 ./src/i2c.o
+ .debug_abbrev  0x0000182b      0x100 ./src/i2s.o
+ .debug_abbrev  0x0000192b      0x177 ./src/interrupt.o
+ .debug_abbrev  0x00001aa2       0x67 ./src/isqrt.o
+ .debug_abbrev  0x00001b09      0x139 ./src/lpc.o
+ .debug_abbrev  0x00001c42       0x61 ./src/main.o
+ .debug_abbrev  0x00001ca3       0xcf ./src/mpu.o
+ .debug_abbrev  0x00001d72      0x17f ./src/peci.o
+ .debug_abbrev  0x00001ef1      0x15c ./src/pwm.o
+ .debug_abbrev  0x0000204d      0x102 ./src/qei.o
+ .debug_abbrev  0x0000214f      0x256 ./src/ringbuf.o
+ .debug_abbrev  0x000023a5      0x141 ./src/rit128x96x4.o
+ .debug_abbrev  0x000024e6      0x184 ./src/scheduler.o
+ .debug_abbrev  0x0000266a       0x7c ./src/sine.o
+ .debug_abbrev  0x000026e6       0xe5 ./src/softi2c.o
+ .debug_abbrev  0x000027cb      0x197 ./src/softssi.o
+ .debug_abbrev  0x00002962      0x20f ./src/softuart.o
+ .debug_abbrev  0x00002b71      0x17a ./src/ssi.o
+ .debug_abbrev  0x00002ceb       0xbd ./src/startup_gcc.o
+ .debug_abbrev  0x00002da8      0x1a8 ./src/sysctl.o
+ .debug_abbrev  0x00002f50       0xba ./src/sysexc.o
+ .debug_abbrev  0x0000300a       0x9c ./src/systick.o
+ .debug_abbrev  0x000030a6      0x1f0 ./src/timer.o
+ .debug_abbrev  0x00003296      0x1fa ./src/uart.o
+ .debug_abbrev  0x00003490      0x1e8 ./src/uartstdio.o
+ .debug_abbrev  0x00003678      0x181 ./src/udma.o
+ .debug_abbrev  0x000037f9      0x196 ./src/usb.o
+ .debug_abbrev  0x0000398f      0x2a4 ./src/ustdlib.o
+ .debug_abbrev  0x00003c33       0xf3 ./src/watchdog.o
+
+.debug_info     0x00000000    0x116e7
+ .debug_info    0x00000000      0x242 ./src/sv_utils/sound_visualizer.o
+ .debug_info    0x00000242      0x907 ./src/adc.o
+ .debug_info    0x00000b49     0x1fd1 ./src/can.o
+ .debug_info    0x00002b1a      0x197 ./src/cmdline.o
+ .debug_info    0x00002cb1      0x26c ./src/comp.o
+ .debug_info    0x00002f1d      0x11a ./src/cpu.o
+ .debug_info    0x00003037      0x12d ./src/cpu_usage.o
+ .debug_info    0x00003164      0x28d ./src/crc.o
+ .debug_info    0x000033f1      0x4b9 ./src/eeprom.o
+ .debug_info    0x000038aa      0x66c ./src/epi.o
+ .debug_info    0x00003f16      0x87d ./src/ethernet.o
+ .debug_info    0x00004793      0x3f8 ./src/fan.o
+ .debug_info    0x00004b8b      0x3ef ./src/flash.o
+ .debug_info    0x00004f7a      0x1dd ./src/flash_pb.o
+ .debug_info    0x00005157      0x12d ./src/fpu.o
+ .debug_info    0x00005284     0x11f6 ./src/gpio.o
+ .debug_info    0x0000647a      0x63b ./src/hibernate.o
+ .debug_info    0x00006ab5      0x92d ./src/i2c.o
+ .debug_info    0x000073e2      0x557 ./src/i2s.o
+ .debug_info    0x00007939      0x3e9 ./src/interrupt.o
+ .debug_info    0x00007d22       0x89 ./src/isqrt.o
+ .debug_info    0x00007dab      0xa87 ./src/lpc.o
+ .debug_info    0x00008832       0x81 ./src/main.o
+ .debug_info    0x000088b3      0x1bc ./src/mpu.o
+ .debug_info    0x00008a6f      0x736 ./src/peci.o
+ .debug_info    0x000091a5      0x9e7 ./src/pwm.o
+ .debug_info    0x00009b8c      0x3ae ./src/qei.o
+ .debug_info    0x00009f3a      0x724 ./src/ringbuf.o
+ .debug_info    0x0000a65e      0x577 ./src/rit128x96x4.o
+ .debug_info    0x0000abd5      0x2bc ./src/scheduler.o
+ .debug_info    0x0000ae91       0xa4 ./src/sine.o
+ .debug_info    0x0000af35      0x3ee ./src/softi2c.o
+ .debug_info    0x0000b323      0x7f7 ./src/softssi.o
+ .debug_info    0x0000bb1a      0xaa6 ./src/softuart.o
+ .debug_info    0x0000c5c0      0x52f ./src/ssi.o
+ .debug_info    0x0000caef      0x11b ./src/startup_gcc.o
+ .debug_info    0x0000cc0a      0x998 ./src/sysctl.o
+ .debug_info    0x0000d5a2      0x127 ./src/sysexc.o
+ .debug_info    0x0000d6c9      0x121 ./src/systick.o
+ .debug_info    0x0000d7ea      0x938 ./src/timer.o
+ .debug_info    0x0000e122      0xaf6 ./src/uart.o
+ .debug_info    0x0000ec18      0x4fb ./src/uartstdio.o
+ .debug_info    0x0000f113      0x5da ./src/udma.o
+ .debug_info    0x0000f6ed     0x12f1 ./src/usb.o
+ .debug_info    0x000109de      0x9ad ./src/ustdlib.o
+ .debug_info    0x0001138b      0x35c ./src/watchdog.o
+
+.debug_line     0x00000000     0xa172
+ .debug_line    0x00000000      0x318 ./src/sv_utils/sound_visualizer.o
+ .debug_line    0x00000318      0x449 ./src/adc.o
+ .debug_line    0x00000761      0xbeb ./src/can.o
+ .debug_line    0x0000134c      0x2b7 ./src/cmdline.o
+ .debug_line    0x00001603      0x16a ./src/comp.o
+ .debug_line    0x0000176d       0xbb ./src/cpu.o
+ .debug_line    0x00001828      0x112 ./src/cpu_usage.o
+ .debug_line    0x0000193a      0x227 ./src/crc.o
+ .debug_line    0x00001b61      0x426 ./src/eeprom.o
+ .debug_line    0x00001f87      0x394 ./src/epi.o
+ .debug_line    0x0000231b      0x48c ./src/ethernet.o
+ .debug_line    0x000027a7      0x1f6 ./src/fan.o
+ .debug_line    0x0000299d      0x32c ./src/flash.o
+ .debug_line    0x00002cc9      0x1ae ./src/flash_pb.o
+ .debug_line    0x00002e77      0x10e ./src/fpu.o
+ .debug_line    0x00002f85      0x7cc ./src/gpio.o
+ .debug_line    0x00003751      0x637 ./src/hibernate.o
+ .debug_line    0x00003d88      0x456 ./src/i2c.o
+ .debug_line    0x000041de      0x303 ./src/i2s.o
+ .debug_line    0x000044e1      0x22f ./src/interrupt.o
+ .debug_line    0x00004710       0xf7 ./src/isqrt.o
+ .debug_line    0x00004807      0x421 ./src/lpc.o
+ .debug_line    0x00004c28      0x1ec ./src/main.o
+ .debug_line    0x00004e14      0x166 ./src/mpu.o
+ .debug_line    0x00004f7a      0x2d8 ./src/peci.o
+ .debug_line    0x00005252      0x3dd ./src/pwm.o
+ .debug_line    0x0000562f      0x205 ./src/qei.o
+ .debug_line    0x00005834      0x288 ./src/ringbuf.o
+ .debug_line    0x00005abc      0x48f ./src/rit128x96x4.o
+ .debug_line    0x00005f4b      0x185 ./src/scheduler.o
+ .debug_line    0x000060d0       0x60 ./src/sine.o
+ .debug_line    0x00006130      0x2ec ./src/softi2c.o
+ .debug_line    0x0000641c      0x407 ./src/softssi.o
+ .debug_line    0x00006823      0x8c4 ./src/softuart.o
+ .debug_line    0x000070e7      0x279 ./src/ssi.o
+ .debug_line    0x00007360       0x87 ./src/startup_gcc.o
+ .debug_line    0x000073e7      0x67a ./src/sysctl.o
+ .debug_line    0x00007a61       0xfa ./src/sysexc.o
+ .debug_line    0x00007b5b      0x144 ./src/systick.o
+ .debug_line    0x00007c9f      0x411 ./src/timer.o
+ .debug_line    0x000080b0      0x4fc ./src/uart.o
+ .debug_line    0x000085ac      0x4e1 ./src/uartstdio.o
+ .debug_line    0x00008a8d      0x328 ./src/udma.o
+ .debug_line    0x00008db5      0x837 ./src/usb.o
+ .debug_line    0x000095ec      0x959 ./src/ustdlib.o
+ .debug_line    0x00009f45      0x22d ./src/watchdog.o
+
+.debug_macinfo  0x00000000   0x26e65c
+ .debug_macinfo
+                0x00000000    0x29d97 ./src/sv_utils/sound_visualizer.o
+ .debug_macinfo
+                0x00029d97    0x18203 ./src/adc.o
+ .debug_macinfo
+                0x00041f9a     0xc87c ./src/can.o
+ .debug_macinfo
+                0x0004e816     0x2984 ./src/cmdline.o
+ .debug_macinfo
+                0x0005119a     0x411f ./src/comp.o
+ .debug_macinfo
+                0x000552b9      0xcb3 ./src/cpu.o
+ .debug_macinfo
+                0x00055f6c     0xd8a4 ./src/cpu_usage.o
+ .debug_macinfo
+                0x00063810      0xd4e ./src/crc.o
+ .debug_macinfo
+                0x0006455e    0x16db7 ./src/eeprom.o
+ .debug_macinfo
+                0x0007b315     0x5d36 ./src/epi.o
+ .debug_macinfo
+                0x0008104b     0x8540 ./src/ethernet.o
+ .debug_macinfo
+                0x0008958b     0x5db1 ./src/fan.o
+ .debug_macinfo
+                0x0008f33c    0x12ca0 ./src/flash.o
+ .debug_macinfo
+                0x000a1fdc     0x67bf ./src/flash_pb.o
+ .debug_macinfo
+                0x000a879b     0x904b ./src/fpu.o
+ .debug_macinfo
+                0x000b17e6    0x12dcb ./src/gpio.o
+ .debug_macinfo
+                0x000c45b1    0x155ce ./src/hibernate.o
+ .debug_macinfo
+                0x000d9b7f    0x16a58 ./src/i2c.o
+ .debug_macinfo
+                0x000f05d7     0x392f ./src/i2s.o
+ .debug_macinfo
+                0x000f3f06     0x9857 ./src/interrupt.o
+ .debug_macinfo
+                0x000fd75d      0xcb5 ./src/isqrt.o
+ .debug_macinfo
+                0x000fe412    0x17c2d ./src/lpc.o
+ .debug_macinfo
+                0x0011603f    0x29d83 ./src/main.o
+ .debug_macinfo
+                0x0013fdc2     0x9e35 ./src/mpu.o
+ .debug_macinfo
+                0x00149bf7    0x1384f ./src/peci.o
+ .debug_macinfo
+                0x0015d446    0x1b6a0 ./src/pwm.o
+ .debug_macinfo
+                0x00178ae6     0x35ad ./src/qei.o
+ .debug_macinfo
+                0x0017c093     0x18b5 ./src/ringbuf.o
+ .debug_macinfo
+                0x0017d948    0x15e17 ./src/rit128x96x4.o
+ .debug_macinfo
+                0x0019375f     0x5834 ./src/scheduler.o
+ .debug_macinfo
+                0x00198f93      0xce3 ./src/sine.o
+ .debug_macinfo
+                0x00199c76     0x9b34 ./src/softi2c.o
+ .debug_macinfo
+                0x001a37aa     0x97b9 ./src/softssi.o
+ .debug_macinfo
+                0x001acf63    0x21b11 ./src/softuart.o
+ .debug_macinfo
+                0x001cea74     0x6ce0 ./src/ssi.o
+ .debug_macinfo
+                0x001d5754      0xca2 ./src/startup_gcc.o
+ .debug_macinfo
+                0x001d63f6    0x1c2d4 ./src/sysctl.o
+ .debug_macinfo
+                0x001f26ca     0x24a7 ./src/sysexc.o
+ .debug_macinfo
+                0x001f4b71     0x985b ./src/systick.o
+ .debug_macinfo
+                0x001fe3cc     0x5776 ./src/timer.o
+ .debug_macinfo
+                0x00203b42    0x176c2 ./src/uart.o
+ .debug_macinfo
+                0x0021b204     0xfbed ./src/uartstdio.o
+ .debug_macinfo
+                0x0022adf1    0x14714 ./src/udma.o
+ .debug_macinfo
+                0x0023f505    0x29473 ./src/usb.o
+ .debug_macinfo
+                0x00268978     0x2aad ./src/ustdlib.o
+ .debug_macinfo
+                0x0026b425     0x3237 ./src/watchdog.o
+
+.debug_loc      0x00000000     0xe26f
+ .debug_loc     0x00000000      0x1ed ./src/sv_utils/sound_visualizer.o
+ .debug_loc     0x000001ed      0x667 ./src/adc.o
+ .debug_loc     0x00000854     0x395d ./src/can.o
+ .debug_loc     0x000041b1       0xb3 ./src/cmdline.o
+ .debug_loc     0x00004264      0x14e ./src/comp.o
+ .debug_loc     0x000043b2       0x4c ./src/cpu.o
+ .debug_loc     0x000043fe       0x95 ./src/cpu_usage.o
+ .debug_loc     0x00004493      0x41e ./src/crc.o
+ .debug_loc     0x000048b1      0x417 ./src/eeprom.o
+ .debug_loc     0x00004cc8      0x330 ./src/epi.o
+ .debug_loc     0x00004ff8      0x7b5 ./src/ethernet.o
+ .debug_loc     0x000057ad      0x1d8 ./src/fan.o
+ .debug_loc     0x00005985      0x350 ./src/flash.o
+ .debug_loc     0x00005cd5      0x2a3 ./src/flash_pb.o
+ .debug_loc     0x00005f78      0x5c9 ./src/gpio.o
+ .debug_loc     0x00006541      0x29c ./src/hibernate.o
+ .debug_loc     0x000067dd      0x38f ./src/i2c.o
+ .debug_loc     0x00006b6c      0x11d ./src/i2s.o
+ .debug_loc     0x00006c89      0x344 ./src/interrupt.o
+ .debug_loc     0x00006fcd      0x35c ./src/isqrt.o
+ .debug_loc     0x00007329      0x50b ./src/lpc.o
+ .debug_loc     0x00007834       0x3d ./src/main.o
+ .debug_loc     0x00007871      0x11f ./src/mpu.o
+ .debug_loc     0x00007990      0x466 ./src/peci.o
+ .debug_loc     0x00007df6      0x633 ./src/pwm.o
+ .debug_loc     0x00008429       0xf4 ./src/qei.o
+ .debug_loc     0x0000851d      0x500 ./src/ringbuf.o
+ .debug_loc     0x00008a1d      0x35d ./src/rit128x96x4.o
+ .debug_loc     0x00008d7a       0xdc ./src/scheduler.o
+ .debug_loc     0x00008e56       0x1e ./src/sine.o
+ .debug_loc     0x00008e74      0x2dd ./src/softi2c.o
+ .debug_loc     0x00009151      0x3c9 ./src/softssi.o
+ .debug_loc     0x0000951a      0x70c ./src/softuart.o
+ .debug_loc     0x00009c26      0x273 ./src/ssi.o
+ .debug_loc     0x00009e99       0x1f ./src/startup_gcc.o
+ .debug_loc     0x00009eb8      0x76d ./src/sysctl.o
+ .debug_loc     0x0000a625       0x7a ./src/sysexc.o
+ .debug_loc     0x0000a69f       0x50 ./src/systick.o
+ .debug_loc     0x0000a6ef      0x6f1 ./src/timer.o
+ .debug_loc     0x0000ade0      0x470 ./src/uart.o
+ .debug_loc     0x0000b250      0xae0 ./src/uartstdio.o
+ .debug_loc     0x0000bd30      0x3bd ./src/udma.o
+ .debug_loc     0x0000c0ed      0xea6 ./src/usb.o
+ .debug_loc     0x0000cf93     0x11fb ./src/ustdlib.o
+ .debug_loc     0x0000e18e       0xe1 ./src/watchdog.o
+
+.debug_pubnames
+                0x00000000     0x4b37
+ .debug_pubnames
+                0x00000000      0x152 ./src/sv_utils/sound_visualizer.o
+ .debug_pubnames
+                0x00000152      0x33f ./src/adc.o
+ .debug_pubnames
+                0x00000491      0x15c ./src/can.o
+ .debug_pubnames
+                0x000005ed       0x25 ./src/cmdline.o
+ .debug_pubnames
+                0x00000612       0xec ./src/comp.o
+ .debug_pubnames
+                0x000006fe       0x6a ./src/cpu.o
+ .debug_pubnames
+                0x00000768       0x34 ./src/cpu_usage.o
+ .debug_pubnames
+                0x0000079c       0x49 ./src/crc.o
+ .debug_pubnames
+                0x000007e5      0x18e ./src/eeprom.o
+ .debug_pubnames
+                0x00000973      0x232 ./src/epi.o
+ .debug_pubnames
+                0x00000ba5      0x240 ./src/ethernet.o
+ .debug_pubnames
+                0x00000de5      0x15b ./src/fan.o
+ .debug_pubnames
+                0x00000f40      0x13d ./src/flash.o
+ .debug_pubnames
+                0x0000107d       0x41 ./src/flash_pb.o
+ .debug_pubnames
+                0x000010be       0xd5 ./src/fpu.o
+ .debug_pubnames
+                0x00001193      0x3a5 ./src/gpio.o
+ .debug_pubnames
+                0x00001538      0x33d ./src/hibernate.o
+ .debug_pubnames
+                0x00001875      0x370 ./src/i2c.o
+ .debug_pubnames
+                0x00001be5      0x217 ./src/i2s.o
+ .debug_pubnames
+                0x00001dfc      0x135 ./src/interrupt.o
+ .debug_pubnames
+                0x00001f31       0x1c ./src/isqrt.o
+ .debug_pubnames
+                0x00001f4d      0x337 ./src/lpc.o
+ .debug_pubnames
+                0x00002284       0x1b ./src/main.o
+ .debug_pubnames
+                0x0000229f       0xb8 ./src/mpu.o
+ .debug_pubnames
+                0x00002357      0x1db ./src/peci.o
+ .debug_pubnames
+                0x00002532      0x2d1 ./src/pwm.o
+ .debug_pubnames
+                0x00002803      0x14f ./src/qei.o
+ .debug_pubnames
+                0x00002952      0x127 ./src/ringbuf.o
+ .debug_pubnames
+                0x00002a79       0xce ./src/rit128x96x4.o
+ .debug_pubnames
+                0x00002b47       0xda ./src/scheduler.o
+ .debug_pubnames
+                0x00002c21       0x1b ./src/sine.o
+ .debug_pubnames
+                0x00002c3c      0x13e ./src/softi2c.o
+ .debug_pubnames
+                0x00002d7a      0x1ed ./src/softssi.o
+ .debug_pubnames
+                0x00002f67      0x2bd ./src/softuart.o
+ .debug_pubnames
+                0x00003224      0x15f ./src/ssi.o
+ .debug_pubnames
+                0x00003383       0x30 ./src/startup_gcc.o
+ .debug_pubnames
+                0x000033b3      0x4bf ./src/sysctl.o
+ .debug_pubnames
+                0x00003872       0x90 ./src/sysexc.o
+ .debug_pubnames
+                0x00003902       0xd0 ./src/systick.o
+ .debug_pubnames
+                0x000039d2      0x29b ./src/timer.o
+ .debug_pubnames
+                0x00003c6d      0x3c4 ./src/uart.o
+ .debug_pubnames
+                0x00004031       0x73 ./src/uartstdio.o
+ .debug_pubnames
+                0x000040a4      0x289 ./src/udma.o
+ .debug_pubnames
+                0x0000432d      0x595 ./src/usb.o
+ .debug_pubnames
+                0x000048c2       0xd5 ./src/ustdlib.o
+ .debug_pubnames
+                0x00004997      0x1a0 ./src/watchdog.o
+
+.debug_aranges  0x00000000     0x1f50
+ .debug_aranges
+                0x00000000       0x68 ./src/sv_utils/sound_visualizer.o
+ .debug_aranges
+                0x00000068      0x120 ./src/adc.o
+ .debug_aranges
+                0x00000188       0xb0 ./src/can.o
+ .debug_aranges
+                0x00000238       0x20 ./src/cmdline.o
+ .debug_aranges
+                0x00000258       0x60 ./src/comp.o
+ .debug_aranges
+                0x000002b8       0x48 ./src/cpu.o
+ .debug_aranges
+                0x00000300       0x28 ./src/cpu_usage.o
+ .debug_aranges
+                0x00000328       0x38 ./src/crc.o
+ .debug_aranges
+                0x00000360       0xb0 ./src/eeprom.o
+ .debug_aranges
+                0x00000410       0xd8 ./src/epi.o
+ .debug_aranges
+                0x000004e8       0xd8 ./src/ethernet.o
+ .debug_aranges
+                0x000005c0       0x98 ./src/fan.o
+ .debug_aranges
+                0x00000658       0x98 ./src/flash.o
+ .debug_aranges
+                0x000006f0       0x30 ./src/flash_pb.o
+ .debug_aranges
+                0x00000720       0x60 ./src/fpu.o
+ .debug_aranges
+                0x00000780      0x168 ./src/gpio.o
+ .debug_aranges
+                0x000008e8      0x128 ./src/hibernate.o
+ .debug_aranges
+                0x00000a10      0x150 ./src/i2c.o
+ .debug_aranges
+                0x00000b60       0xe8 ./src/i2s.o
+ .debug_aranges
+                0x00000c48       0x98 ./src/interrupt.o
+ .debug_aranges
+                0x00000ce0       0x20 ./src/isqrt.o
+ .debug_aranges
+                0x00000d00      0x150 ./src/lpc.o
+ .debug_aranges
+                0x00000e50       0x20 ./src/main.o
+ .debug_aranges
+                0x00000e70       0x60 ./src/mpu.o
+ .debug_aranges
+                0x00000ed0       0xc0 ./src/peci.o
+ .debug_aranges
+                0x00000f90      0x120 ./src/pwm.o
+ .debug_aranges
+                0x000010b0       0xa0 ./src/qei.o
+ .debug_aranges
+                0x00001150       0x90 ./src/ringbuf.o
+ .debug_aranges
+                0x000011e0       0x58 ./src/rit128x96x4.o
+ .debug_aranges
+                0x00001238       0x58 ./src/scheduler.o
+ .debug_aranges
+                0x00001290       0x20 ./src/sine.o
+ .debug_aranges
+                0x000012b0       0x90 ./src/softi2c.o
+ .debug_aranges
+                0x00001340       0xc8 ./src/softssi.o
+ .debug_aranges
+                0x00001408      0x108 ./src/softuart.o
+ .debug_aranges
+                0x00001510       0xa8 ./src/ssi.o
+ .debug_aranges
+                0x000015b8       0x38 ./src/startup_gcc.o
+ .debug_aranges
+                0x000015f0      0x1a0 ./src/sysctl.o
+ .debug_aranges
+                0x00001790       0x48 ./src/sysexc.o
+ .debug_aranges
+                0x000017d8       0x60 ./src/systick.o
+ .debug_aranges
+                0x00001838      0x118 ./src/timer.o
+ .debug_aranges
+                0x00001950      0x188 ./src/uart.o
+ .debug_aranges
+                0x00001ad8       0x48 ./src/uartstdio.o
+ .debug_aranges
+                0x00001b20       0xe8 ./src/udma.o
+ .debug_aranges
+                0x00001c08      0x210 ./src/usb.o
+ .debug_aranges
+                0x00001e18       0x90 ./src/ustdlib.o
+ .debug_aranges
+                0x00001ea8       0xa8 ./src/watchdog.o
+
+.debug_ranges   0x00000000     0x4ed0
+ .debug_ranges  0x00000000       0x60 ./src/sv_utils/sound_visualizer.o
+ .debug_ranges  0x00000060      0x118 ./src/adc.o
+ .debug_ranges  0x00000178     0x1e08 ./src/can.o
+ .debug_ranges  0x00001f80       0x18 ./src/cmdline.o
+ .debug_ranges  0x00001f98       0x58 ./src/comp.o
+ .debug_ranges  0x00001ff0       0x40 ./src/cpu.o
+ .debug_ranges  0x00002030       0x20 ./src/cpu_usage.o
+ .debug_ranges  0x00002050       0x30 ./src/crc.o
+ .debug_ranges  0x00002080      0x118 ./src/eeprom.o
+ .debug_ranges  0x00002198       0xd0 ./src/epi.o
+ .debug_ranges  0x00002268      0x130 ./src/ethernet.o
+ .debug_ranges  0x00002398       0x90 ./src/fan.o
+ .debug_ranges  0x00002428       0x90 ./src/flash.o
+ .debug_ranges  0x000024b8       0x68 ./src/flash_pb.o
+ .debug_ranges  0x00002520       0x58 ./src/fpu.o
+ .debug_ranges  0x00002578      0x210 ./src/gpio.o
+ .debug_ranges  0x00002788      0x418 ./src/hibernate.o
+ .debug_ranges  0x00002ba0      0x1e0 ./src/i2c.o
+ .debug_ranges  0x00002d80       0xe0 ./src/i2s.o
+ .debug_ranges  0x00002e60       0x90 ./src/interrupt.o
+ .debug_ranges  0x00002ef0       0x18 ./src/isqrt.o
+ .debug_ranges  0x00002f08      0x148 ./src/lpc.o
+ .debug_ranges  0x00003050       0x18 ./src/main.o
+ .debug_ranges  0x00003068       0x58 ./src/mpu.o
+ .debug_ranges  0x000030c0       0xb8 ./src/peci.o
+ .debug_ranges  0x00003178      0x158 ./src/pwm.o
+ .debug_ranges  0x000032d0       0x98 ./src/qei.o
+ .debug_ranges  0x00003368      0x200 ./src/ringbuf.o
+ .debug_ranges  0x00003568      0x2e0 ./src/rit128x96x4.o
+ .debug_ranges  0x00003848       0x78 ./src/scheduler.o
+ .debug_ranges  0x000038c0       0x18 ./src/sine.o
+ .debug_ranges  0x000038d8       0x88 ./src/softi2c.o
+ .debug_ranges  0x00003960      0x240 ./src/softssi.o
+ .debug_ranges  0x00003ba0      0x2f0 ./src/softuart.o
+ .debug_ranges  0x00003e90      0x120 ./src/ssi.o
+ .debug_ranges  0x00003fb0       0x30 ./src/startup_gcc.o
+ .debug_ranges  0x00003fe0      0x228 ./src/sysctl.o
+ .debug_ranges  0x00004208       0x40 ./src/sysexc.o
+ .debug_ranges  0x00004248       0x58 ./src/systick.o
+ .debug_ranges  0x000042a0      0x260 ./src/timer.o
+ .debug_ranges  0x00004500      0x218 ./src/uart.o
+ .debug_ranges  0x00004718      0x1e0 ./src/uartstdio.o
+ .debug_ranges  0x000048f8       0xe0 ./src/udma.o
+ .debug_ranges  0x000049d8      0x288 ./src/usb.o
+ .debug_ranges  0x00004c60      0x1d0 ./src/ustdlib.o
+ .debug_ranges  0x00004e30       0xa0 ./src/watchdog.o
+
+.debug_str      0x00000000     0x53dc
+ .debug_str     0x00000000      0x183 ./src/sv_utils/sound_visualizer.o
+                                0x1ac (size before relaxing)
+ .debug_str     0x00000183      0x386 ./src/adc.o
+                                0x416 (size before relaxing)
+ .debug_str     0x00000509      0x47d ./src/can.o
+                                0x540 (size before relaxing)
+ .debug_str     0x00000986       0xb6 ./src/cmdline.o
+                                0x14b (size before relaxing)
+ .debug_str     0x00000a3c       0x60 ./src/comp.o
+                                0x158 (size before relaxing)
+ .debug_str     0x00000a9c       0x60 ./src/cpu.o
+                                 0xad (size before relaxing)
+ .debug_str     0x00000afc       0xb9 ./src/cpu_usage.o
+                                0x11c (size before relaxing)
+ .debug_str     0x00000bb5       0x77 ./src/crc.o
+                                0x10c (size before relaxing)
+ .debug_str     0x00000c2c      0x1ab ./src/eeprom.o
+                                0x24c (size before relaxing)
+ .debug_str     0x00000dd7      0x246 ./src/epi.o
+                                0x306 (size before relaxing)
+ .debug_str     0x0000101d      0x262 ./src/ethernet.o
+                                0x31b (size before relaxing)
+ .debug_str     0x0000127f      0x123 ./src/fan.o
+                                0x1bc (size before relaxing)
+ .debug_str     0x000013a2      0x1b2 ./src/flash.o
+                                0x26e (size before relaxing)
+ .debug_str     0x00001554       0xc6 ./src/flash_pb.o
+                                0x138 (size before relaxing)
+ .debug_str     0x0000161a       0xac ./src/fpu.o
+                                0x10e (size before relaxing)
+ .debug_str     0x000016c6      0x3c1 ./src/gpio.o
+                                0x457 (size before relaxing)
+ .debug_str     0x00001a87      0x318 ./src/hibernate.o
+                                0x3b9 (size before relaxing)
+ .debug_str     0x00001d9f      0x346 ./src/i2c.o
+                                0x3f3 (size before relaxing)
+ .debug_str     0x000020e5      0x1bb ./src/i2s.o
+                                0x265 (size before relaxing)
+ .debug_str     0x000022a0      0x170 ./src/interrupt.o
+                                0x232 (size before relaxing)
+ .debug_str     0x00002410       0x22 ./src/isqrt.o
+                                 0x7d (size before relaxing)
+ .debug_str     0x00002432      0x2f9 ./src/lpc.o
+                                0x400 (size before relaxing)
+ .debug_str     0x0000272b       0x27 ./src/main.o
+                                 0x9a (size before relaxing)
+ .debug_str     0x00002752       0xb5 ./src/mpu.o
+                                0x12a (size before relaxing)
+ .debug_str     0x00002807      0x20f ./src/peci.o
+                                0x2eb (size before relaxing)
+ .debug_str     0x00002a16      0x33b ./src/pwm.o
+                                0x3ec (size before relaxing)
+ .debug_str     0x00002d51      0x128 ./src/qei.o
+                                0x1d2 (size before relaxing)
+ .debug_str     0x00002e79      0x169 ./src/ringbuf.o
+                                0x200 (size before relaxing)
+ .debug_str     0x00002fe2      0x191 ./src/rit128x96x4.o
+                                0x22f (size before relaxing)
+ .debug_str     0x00003173      0x18c ./src/scheduler.o
+                                0x1f7 (size before relaxing)
+ .debug_str     0x000032ff       0x2f ./src/sine.o
+                                 0x9e (size before relaxing)
+ .debug_str     0x0000332e      0x171 ./src/softi2c.o
+                                0x20c (size before relaxing)
+ .debug_str     0x0000349f      0x291 ./src/softssi.o
+                                0x38e (size before relaxing)
+ .debug_str     0x00003730      0x39c ./src/softuart.o
+                                0x55f (size before relaxing)
+ .debug_str     0x00003acc       0xf9 ./src/ssi.o
+                                0x253 (size before relaxing)
+ .debug_str     0x00003bc5       0x66 ./src/startup_gcc.o
+                                 0xc5 (size before relaxing)
+ .debug_str     0x00003c2b      0x502 ./src/sysctl.o
+                                0x5a9 (size before relaxing)
+ .debug_str     0x0000412d       0x76 ./src/sysexc.o
+                                 0xf8 (size before relaxing)
+ .debug_str     0x000041a3       0xab ./src/systick.o
+                                0x11a (size before relaxing)
+ .debug_str     0x0000424e      0x273 ./src/timer.o
+                                0x351 (size before relaxing)
+ .debug_str     0x000044c1      0x22e ./src/uart.o
+                                0x498 (size before relaxing)
+ .debug_str     0x000046ef       0xfd ./src/uartstdio.o
+                                0x1a2 (size before relaxing)
+ .debug_str     0x000047ec      0x342 ./src/udma.o
+                                0x3cf (size before relaxing)
+ .debug_str     0x00004b2e      0x58e ./src/usb.o
+                                0x69c (size before relaxing)
+ .debug_str     0x000050bc      0x1be ./src/ustdlib.o
+                                0x320 (size before relaxing)
+ .debug_str     0x0000527a      0x162 ./src/watchdog.o
+                                0x1e7 (size before relaxing)
+
+.debug_frame    0x00000000     0x43a4
+ .debug_frame   0x00000000      0x10c ./src/sv_utils/sound_visualizer.o
+ .debug_frame   0x0000010c      0x270 ./src/adc.o
+ .debug_frame   0x0000037c      0x2d0 ./src/can.o
+ .debug_frame   0x0000064c       0x2c ./src/cmdline.o
+ .debug_frame   0x00000678       0xb4 ./src/comp.o
+ .debug_frame   0x0000072c       0x70 ./src/cpu.o
+ .debug_frame   0x0000079c       0x48 ./src/cpu_usage.o
+ .debug_frame   0x000007e4       0x88 ./src/crc.o
+ .debug_frame   0x0000086c      0x1c0 ./src/eeprom.o
+ .debug_frame   0x00000a2c      0x1d4 ./src/epi.o
+ .debug_frame   0x00000c00      0x200 ./src/ethernet.o
+ .debug_frame   0x00000e00      0x120 ./src/fan.o
+ .debug_frame   0x00000f20      0x15c ./src/flash.o
+ .debug_frame   0x0000107c       0x68 ./src/flash_pb.o
+ .debug_frame   0x000010e4       0xa0 ./src/fpu.o
+ .debug_frame   0x00001184      0x2f8 ./src/gpio.o
+ .debug_frame   0x0000147c      0x26c ./src/hibernate.o
+ .debug_frame   0x000016e8      0x298 ./src/i2c.o
+ .debug_frame   0x00001980      0x1c0 ./src/i2s.o
+ .debug_frame   0x00001b40      0x140 ./src/interrupt.o
+ .debug_frame   0x00001c80       0x20 ./src/isqrt.o
+ .debug_frame   0x00001ca0      0x2b4 ./src/lpc.o
+ .debug_frame   0x00001f54       0x28 ./src/main.o
+ .debug_frame   0x00001f7c       0xc0 ./src/mpu.o
+ .debug_frame   0x0000203c      0x1a4 ./src/peci.o
+ .debug_frame   0x000021e0      0x260 ./src/pwm.o
+ .debug_frame   0x00002440      0x130 ./src/qei.o
+ .debug_frame   0x00002570      0x168 ./src/ringbuf.o
+ .debug_frame   0x000026d8      0x134 ./src/rit128x96x4.o
+ .debug_frame   0x0000280c       0xa8 ./src/scheduler.o
+ .debug_frame   0x000028b4       0x20 ./src/sine.o
+ .debug_frame   0x000028d4      0x118 ./src/softi2c.o
+ .debug_frame   0x000029ec      0x1a4 ./src/softssi.o
+ .debug_frame   0x00002b90      0x230 ./src/softuart.o
+ .debug_frame   0x00002dc0      0x140 ./src/ssi.o
+ .debug_frame   0x00002f00       0x60 ./src/startup_gcc.o
+ .debug_frame   0x00002f60      0x378 ./src/sysctl.o
+ .debug_frame   0x000032d8       0x80 ./src/sysexc.o
+ .debug_frame   0x00003358       0xa8 ./src/systick.o
+ .debug_frame   0x00003400      0x25c ./src/timer.o
+ .debug_frame   0x0000365c      0x318 ./src/uart.o
+ .debug_frame   0x00003974       0xe0 ./src/uartstdio.o
+ .debug_frame   0x00003a54      0x1d8 ./src/udma.o
+ .debug_frame   0x00003c2c      0x448 ./src/usb.o
+ .debug_frame   0x00004074      0x1c0 ./src/ustdlib.o
+ .debug_frame   0x00004234      0x140 ./src/watchdog.o
+ .debug_frame   0x00004374       0x30 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
