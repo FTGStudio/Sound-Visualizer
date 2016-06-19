@@ -1,0 +1,5 @@
+#define IDLE				0
+#define BUFFER_1_COMPLETE	1
+#define BUFFER_2_COMPLETE	2
+#define ROTATE_BUFFERS		3
+#define INITIALIZE_TIMERS	4
