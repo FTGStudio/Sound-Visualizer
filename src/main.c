@@ -18,7 +18,7 @@
 #include "sv_utils/system_states.h"
 #include "sv_utils/sound_visualizer.h"
 
-void Display(int avgVal, int bufNum);
+void Display(unsigned long avgVal, int bufNum);
 
 int main()
 {
@@ -54,9 +54,9 @@ int main()
 	}
 }
 
-void Display(int avgVal, int bufNum)
+void Display(unsigned long avgVal, int bufNum)
 {
 	unsigned char uartStr[25];
-	usprintf(uartStr, "Avg Val(%1d): %4u \r", bufNum, avgVal);
-	UARTSend(uartStr, 18);
+	usprintf(uartStr, "Avg Val%d: %4u \r", bufNum, avgVal);
+	UARTSend(uartStr, 16);
 }

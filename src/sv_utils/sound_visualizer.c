@@ -41,27 +41,7 @@ void Timer1IntHandler()
 void ADCIntHandler()
 {
     ADCIntClear(ADC0_BASE, 3);	//Clear the ADC interrupt flag
-    ADCSampleReady = true;
-    /*
-    if(BufOneIndex < BUF_SIZE)
-    {
-    	ADCSequenceDataGet(ADC0_BASE, 3, &BufOne[BufOneIndex++]);
-    	if(BufOneIndex == BUF_SIZE-1)
-    	{
-    		BufTwoIndex = 0;
-    		BufOneReadyToRead = 1;
-    	}
-    }
-    else if(BufTwoIndex < BUF_SIZE)
-    {
-    	ADCSequenceDataGet(ADC0_BASE, 3, &BufTwo[BufTwoIndex++]);
-    	if(BufTwoIndex == BUF_SIZE-1)
-    	{
-    		BufOneIndex = 0;
-    		BufTwoReadyToRead = 1;
-    	}
-    }
-    */
+    ADCSampleReady = true;		//Flag to signal sample is ready
 }
 
 // The UART interrupt handler.
@@ -82,8 +62,8 @@ void UARTIntHandler(void)
 //Initialize all peripherals
 void Initialize()
 {
-	// Set the clocking to run directly from the crystal.
-	SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_8MHZ);
+	// Set the clocking 20Mhz (200Mhz/10)
+	SysCtlClockSet(SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_8MHZ);
 	InitializeDisplay();
 	InitializeTimers();
 	InitializeADC();
@@ -116,7 +96,7 @@ void InitializeTimers()
 {
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);				 //Enable Timer0 peripheral
 	TimerConfigure(TIMER0_BASE, TIMER_CFG_32_BIT_PER);			 //Configure Timer0: 32-bit periodic mode for ADC Timer Trigger
-	TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/16000);	 //16MHz interrupt
+	TimerLoadSet(TIMER0_BASE, TIMER_A, (SysCtlClockGet()/16000)-1);	 //16MHz interrupt
 	TimerControlTrigger(TIMER0_BASE, TIMER_A, true); 			 //Configure Timer0 to generate trigger event for ADC
 	TimerEnable(TIMER0_BASE, TIMER_A);							 //Enable Timer0
 
@@ -210,14 +190,14 @@ unsigned long GetAvgOfBuf(int bufNum)
 			sum += BufOne[i];
 		}
 	}
-	else
+	else if(bufNum == 2)
 	{
 		for(i=0; i<BUF_SIZE; i++)
 		{
 			sum += BufTwo[i];
 		}
 	}
-	return sum / BUF_SIZE;
+	return sum / (unsigned long) BUF_SIZE;
 }
 
 
