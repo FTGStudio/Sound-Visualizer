@@ -63,7 +63,7 @@ void ADCIntHandler()
 void InitializeDisplay()
 {
 	RIT128x96x4Init(1000000);	// Initialize the OLED display.
-	RIT128x96x4StringDraw("Splash Screen!", 30, 40, 15);	//Print Splash Screen
+	RIT128x96x4StringDraw("Splash", 30, 40, 7);	//Print Splash Screen
 }
 
 void InitializeADC()
@@ -100,11 +100,12 @@ void InitializeTimers()
 void InitializeInterrupts()
 {
 	//Enable and clear all configured interrupts before starting main loop
+	IntMasterEnable();
 	IntEnable(INT_ADC3);
 	IntEnable(INT_TIMER1A);
-	//IntEnable(INT_UART0);
-	IntMasterEnable();
 	ADCIntClear(ADC0_BASE, 3);
+	IntEnable(INT_UART0);
+	UARTIntEnable(UART0_BASE, UART_INT_RX | UART_INT_RT);
 }
 
 unsigned long GetAvgOfBuf(int bufNum)
@@ -141,8 +142,6 @@ void svInitializeUart()
 	UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,
 	                        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
 	                         UART_CONFIG_PAR_NONE));
-
-	//UARTIntEnable(UART0_BASE, UART_INT_RX | UART_INT_RT);
 }
 
 //*****************************************************************************
@@ -195,5 +194,10 @@ UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
         //
         UARTCharPutNonBlocking(UART0_BASE, *pucBuffer++);
     }
+}
+
+void svCheckSystemState(int *system_state)
+{
+
 }
 

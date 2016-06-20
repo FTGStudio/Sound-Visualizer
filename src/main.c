@@ -22,9 +22,19 @@ int main()
 {
 	int system_state = INITIALIZE_TIMERS;
 	// Set the clocking to run directly from the crystal.
-	SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_8MHZ);
+//	SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_8MHZ);
+//
+//	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
+//
+//	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+//
+//	GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+//
+//	UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,
+//    					(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
+//						 UART_CONFIG_PAR_NONE));
 
-
+//    UARTSend((unsigned char *)"Enter text: ", 12);
 
 	//Main program loop
 	unsigned long avgADCValue = 0;
@@ -50,11 +60,13 @@ int main()
 				InitializeDisplay();
 				InitializeTimers();
 				InitializeADC();
-				InitializeInterrupts();
 				svInitializeUart();
+				InitializeInterrupts();
 				UARTSend((unsigned char *)"Enter text: ", 12);
 				system_state = IDLE;
 				break;
 		}
+
+		svCheckSystemState(&system_state);
 	}
 }
