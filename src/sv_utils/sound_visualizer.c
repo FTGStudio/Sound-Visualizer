@@ -2,7 +2,7 @@
 #include "../inc/hw_types.h"
 #include "../inc/hw_ints.h"
 #include "../inc/hw_memmap.h"
-#include "../inc/lm3s6965.h"
+//#include "../inc/lm3s6965.h"
 #include "../inc/rit128x96x4.h"
 
 #include "../utils/ustdlib.h"
@@ -22,12 +22,14 @@
 
 unsigned long BufOne[BUF_SIZE];
 unsigned long BufTwo[BUF_SIZE];
-unsigned long BufOneIndex = 0;
-unsigned long BufTwoIndex = 0;
-int BufOneReadyToRead = 0;
-int BufTwoReadyToRead = 0;
+//unsigned long BufOneIndex = 0;
+//unsigned long BufTwoIndex = 0;
+tBoolean ADCSampleReady = false;
+tBoolean BufOneReadyToRead = false;
+tBoolean BufTwoReadyToRead = false;
+int CurrentWriteBuf = 1;
+int BufWriteIndex = 0;
 int OneSecDelayFlag = 0;
-char str[25];
 
 void Timer1IntHandler()
 {
@@ -39,31 +41,40 @@ void Timer1IntHandler()
 void ADCIntHandler()
 {
     ADCIntClear(ADC0_BASE, 3);	//Clear the ADC interrupt flag
+    ADCSampleReady = true;		//Flag to signal sample is ready
+}
 
-    if(BufOneIndex < BUF_SIZE)
+// The UART interrupt handler.
+void UARTIntHandler(void)
+{
+    unsigned long ulStatus;
+    ulStatus = UARTIntStatus(UART0_BASE, true);	// Get the interrrupt status.
+    UARTIntClear(UART0_BASE, ulStatus);	// Clear the asserted interrupts.
+
+    // Loop while there are characters in the receive FIFO.
+    while(UARTCharsAvail(UART0_BASE))
     {
-    	ADCSequenceDataGet(ADC0_BASE, 3, &BufOne[BufOneIndex++]);
-    	if(BufOneIndex == BUF_SIZE-1)
-    	{
-    		BufTwoIndex = 0;
-    		BufOneReadyToRead = 1;
-    	}
+    	// Read the next character from the UART and write it back to the UART.
+        UARTCharPutNonBlocking(UART0_BASE, UARTCharGetNonBlocking(UART0_BASE));
     }
-    else if(BufTwoIndex < BUF_SIZE)
-    {
-    	ADCSequenceDataGet(ADC0_BASE, 3, &BufTwo[BufTwoIndex++]);
-    	if(BufTwoIndex == BUF_SIZE-1)
-    	{
-    		BufOneIndex = 0;
-    		BufTwoReadyToRead = 1;
-    	}
-    }
+}
+
+//Initialize all peripherals
+void Initialize()
+{
+	// Set the clocking 20Mhz (200Mhz/10)
+	SysCtlClockSet(SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_8MHZ);
+	InitializeDisplay();
+	InitializeTimers();
+	InitializeADC();
+	svInitializeUart();
+	InitializeInterrupts();
 }
 
 void InitializeDisplay()
 {
 	RIT128x96x4Init(1000000);	// Initialize the OLED display.
-	RIT128x96x4StringDraw("Splash", 30, 40, 7);	//Print Splash Screen
+	RIT128x96x4StringDraw("Splash Screen!", 30, 40, 15);	//Print Splash Screen
 }
 
 void InitializeADC()
@@ -85,7 +96,7 @@ void InitializeTimers()
 {
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);				 //Enable Timer0 peripheral
 	TimerConfigure(TIMER0_BASE, TIMER_CFG_32_BIT_PER);			 //Configure Timer0: 32-bit periodic mode for ADC Timer Trigger
-	TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/16000);	 //16MHz interrupt
+	TimerLoadSet(TIMER0_BASE, TIMER_A, (SysCtlClockGet()/16000)-1);	 //16MHz interrupt
 	TimerControlTrigger(TIMER0_BASE, TIMER_A, true); 			 //Configure Timer0 to generate trigger event for ADC
 	TimerEnable(TIMER0_BASE, TIMER_A);							 //Enable Timer0
 
@@ -95,38 +106,6 @@ void InitializeTimers()
 	TimerLoadSet(TIMER1_BASE, TIMER_A, SysCtlClockGet());	    //1 second interrupt
 	TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);			//Enable Timer1 Interrupt
 	TimerEnable(TIMER1_BASE, TIMER_A);							//Enable Timer1
-}
-
-void InitializeInterrupts()
-{
-	//Enable and clear all configured interrupts before starting main loop
-	IntMasterEnable();
-	IntEnable(INT_ADC3);
-	IntEnable(INT_TIMER1A);
-	ADCIntClear(ADC0_BASE, 3);
-	IntEnable(INT_UART0);
-	UARTIntEnable(UART0_BASE, UART_INT_RX | UART_INT_RT);
-}
-
-unsigned long GetAvgOfBuf(int bufNum)
-{
-	int i = 0;
-	unsigned long sum = 0;
-	if(bufNum == 1)
-	{
-		for(i=0; i<BUF_SIZE; i++)
-		{
-			sum += BufOne[i];
-		}
-	}
-	else
-	{
-		for(i=0; i<BUF_SIZE; i++)
-		{
-			sum += BufTwo[i];
-		}
-	}
-	return sum / BUF_SIZE;
 }
 
 void svInitializeUart()
@@ -142,62 +121,95 @@ void svInitializeUart()
 	UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,
 	                        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
 	                         UART_CONFIG_PAR_NONE));
+
 }
 
-//*****************************************************************************
-//
-// The UART interrupt handler.
-//
-//*****************************************************************************
-void
-UARTIntHandler(void)
+void InitializeInterrupts()
 {
-    unsigned long ulStatus;
-
-    //
-    // Get the interrrupt status.
-    //
-    ulStatus = UARTIntStatus(UART0_BASE, true);
-
-    //
-    // Clear the asserted interrupts.
-    //
-    UARTIntClear(UART0_BASE, ulStatus);
-
-    //
-    // Loop while there are characters in the receive FIFO.
-    //
-    while(UARTCharsAvail(UART0_BASE))
-    {
-        //
-        // Read the next character from the UART and write it back to the UART.
-        //
-        UARTCharPutNonBlocking(UART0_BASE, UARTCharGetNonBlocking(UART0_BASE));
-    }
+	//Enable and clear all configured interrupts before starting main loop
+	IntEnable(INT_ADC3);
+	IntEnable(INT_TIMER1A);
+	IntMasterEnable();
+	ADCIntClear(ADC0_BASE, 3);
 }
 
-//*****************************************************************************
-//
+int GetSystemState()
+{
+	if(ADCSampleReady)
+	{
+		ReadSampleToBuf();
+		ADCSampleReady = false;
+	}
+	if(BufOneReadyToRead)
+	{
+		BufOneReadyToRead = false;
+		return BUFFER_1_COMPLETE;
+	}
+	if(BufTwoReadyToRead)
+	{
+		BufTwoReadyToRead = false;
+		return BUFFER_2_COMPLETE;
+	}
+	return IDLE;
+}
+
+void ReadSampleToBuf()
+{
+	if(CurrentWriteBuf == 1)
+	{
+		ADCSequenceDataGet(ADC0_BASE, 3, &BufOne[BufWriteIndex]);
+		BufWriteIndex++;
+	  	if(BufWriteIndex >= BUF_SIZE)
+	   	{
+	   		BufWriteIndex = 0;
+	   		CurrentWriteBuf = 2;
+	   		BufOneReadyToRead = true;
+	   	}
+	}
+	else if(CurrentWriteBuf == 2)
+	{
+	  	ADCSequenceDataGet(ADC0_BASE, 3, &BufTwo[BufWriteIndex]);
+	  	BufWriteIndex++;
+	   	if(BufWriteIndex >= BUF_SIZE)
+	   	{
+	   		BufWriteIndex = 0;
+	   		CurrentWriteBuf = 1;
+	   		BufTwoReadyToRead = true;
+	  	}
+	}
+}
+
+unsigned long GetAvgOfBuf(int bufNum)
+{
+	int i = 0;
+	unsigned long sum = 0;
+	if(bufNum == 1)
+	{
+		for(i=0; i<BUF_SIZE; i++)
+		{
+			sum += BufOne[i];
+		}
+	}
+	else if(bufNum == 2)
+	{
+		for(i=0; i<BUF_SIZE; i++)
+		{
+			sum += BufTwo[i];
+		}
+	}
+	return sum / (unsigned long) BUF_SIZE;
+}
+
+
+
 // Send a string to the UART.
-//
-//*****************************************************************************
-void
-UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
+void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
 {
-    //
     // Loop while there are more characters to send.
-    //
     while(ulCount--)
     {
-        //
         // Write the next character to the UART.
-        //
         UARTCharPutNonBlocking(UART0_BASE, *pucBuffer++);
     }
-}
-
-void svCheckSystemState(int *system_state)
-{
-
 }
 
