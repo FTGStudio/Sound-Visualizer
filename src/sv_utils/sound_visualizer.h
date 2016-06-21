@@ -8,7 +8,13 @@ void InitializeADC();
 void svInitializeUart();
 void InitializeInterrupts();
 
+<<<<<<< HEAD
+void svInitializeUart();
+void UARTSend();
+void svCheckSystemState(int *systemState);
+=======
 void ReadSampleToBuf();
 unsigned long GetAvgOfBuf(int bufNum);
 int GetSystemState();
 void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
+>>>>>>> origin/Mike_D
