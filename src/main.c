@@ -60,13 +60,13 @@ int main()
 
 void Display(unsigned long avgVal, int bufNum)
 {
-	static prevLevel = 0;
+	static int prevLevel = 0;
 	int difference;
 	unsigned char uartStr[25];
 	usprintf(uartStr, "Avg Val%d: %4u \r", bufNum, avgVal);
 	UARTSend(uartStr, 16);
 
-	int dispLevel = (avgVal / 128) + 1;// Calculates levels 1-8
+	int dispLevel = (avgVal / 10) + 1;// Calculates levels 1-8
 //	unsigned char singleLine[64] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 //		 	 	 	 	 	 	     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 //								     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
