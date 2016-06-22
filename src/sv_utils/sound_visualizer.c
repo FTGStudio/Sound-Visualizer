@@ -38,6 +38,9 @@ unsigned char singleLineClear[64] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,};
 
+unsigned char singleColumn[7] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+unsigned char singleColumnClear[7] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+
 unsigned long BufOne[BUF_SIZE];
 unsigned long BufTwo[BUF_SIZE];
 //unsigned long BufOneIndex = 0;
@@ -201,6 +204,8 @@ unsigned long GetAvgOfBuf(int bufNum)
 {
 	int i = 0;
 	unsigned long sum = 0;
+	double avgValue = 0;
+	unsigned long offsetValue = 0;
 	if(bufNum == 1)
 	{
 		for(i=0; i<BUF_SIZE; i++)
@@ -215,7 +220,17 @@ unsigned long GetAvgOfBuf(int bufNum)
 			sum += BufTwo[i];
 		}
 	}
-	return sum / (unsigned long) BUF_SIZE;
+	avgValue = sum / (unsigned long) BUF_SIZE;
+
+	// Set up logic to remove dc offset and scale signal.
+//	avgValue = avgValue - 500; // 512 is representative of 3 V reference
+//	if(avgValue < 0)
+//	{
+//		avgValue = 0;
+//	}
+	offsetValue = avgValue;
+
+	return offsetValue;
 }
 
 
@@ -231,18 +246,20 @@ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
     }
 }
 
-void RITAddRow(int difference, int prevDisp)
+void RITAddRow(int difference, int prevDisp, int columnOffset)
 {
 	for(int row=(prevDisp * 12); row < (prevDisp * 12) + (difference * 12); row++)
 	{
-		RIT128x96x4ImageDraw(singleLine, 0, 96 - row, 128, 1);
+		//RIT128x96x4ImageDraw(singleLine, 0, 96 - row, 128, 1);
+		RIT128x96x4ImageDraw(singleColumn, columnOffset, 96 - row, 14, 1);
 	}
 }
 
-void RITClearRow(int difference, int prevDisp)
+void RITClearRow(int difference, int prevDisp, int columnOffset)
 {
 	for(int row=(prevDisp * 12); row > (prevDisp * 12) - (difference * -12); row--)
 	{
-		RIT128x96x4ImageDraw(singleLineClear, 0, 96 - row, 128, 1);
+		//RIT128x96x4ImageDraw(singleLineClear, 0, 96 - row, 128, 1);
+		RIT128x96x4ImageDraw(singleColumnClear, columnOffset, 96 - row, 14, 1);
 	}
 }
