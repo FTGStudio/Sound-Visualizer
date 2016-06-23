@@ -22,16 +22,19 @@
 #include "sound_visualizer.h"
 #include "sound_visualizer.h"
 
-double PI = atan2(1, 1) * 4;
+#define PI 	3.14
+#define NUM_BARS 		8
+#define LEVEL_HEIGHT	8
 
-unsigned char singleLine[64] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+
+unsigned char singleLine[64] = { 0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 0xF8,
+								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,};
 
 unsigned char singleLineClear[64] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -55,6 +58,9 @@ tBoolean BufTwoReadyToRead = false;
 int CurrentWriteBuf = 1;
 int BufWriteIndex = 0;
 int OneSecDelayFlag = 0;
+double avg_history_list[8] = {};
+int previous_level_list[8] = {};
+int current_bar_count = 0;
 
 void Timer1IntHandler()
 {
@@ -252,46 +258,177 @@ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
 
 void RITAddRow(int difference, int prevDisp, int columnOffset)
 {
-	for(int row=(prevDisp * 12); row < (prevDisp * 12) + (difference * 12); row++)
+	int prev_height = LEVEL_HEIGHT * prevDisp;
+	int additional_height = difference * LEVEL_HEIGHT;
+
+	for(int row=prev_height; row < prev_height + additional_height; row+=LEVEL_HEIGHT)
 	{
-		//RIT128x96x4ImageDraw(singleLine, 0, 96 - row, 128, 1);
-		RIT128x96x4ImageDraw(singleColumn, columnOffset, 96 - row, 14, 1);
+		RIT128x96x4ImageDraw(singleLine, (columnOffset * 16) + 1, 96 - row, 14, LEVEL_HEIGHT);
 	}
 }
 
 void RITClearRow(int difference, int prevDisp, int columnOffset)
 {
-	for(int row=(prevDisp * 12); row > (prevDisp * 12) - (difference * -12); row--)
+	int prev_height = LEVEL_HEIGHT * prevDisp;
+	int subtract_height = difference * LEVEL_HEIGHT * -1;
+
+	for(int row=prev_height; row > prev_height - subtract_height; row--)
 	{
-		//RIT128x96x4ImageDraw(singleLineClear, 0, 96 - row, 128, 1);
-		RIT128x96x4ImageDraw(singleColumnClear, columnOffset, 96 - row, 14, 1);
+		RIT128x96x4ImageDraw(singleColumnClear, (columnOffset * 16) + 1, 96 - row, 14, 1);
 	}
 }
 
-void _fft(long buf[], long out[], int n, int step)
+void simulate()
 {
-	if(step < n)
-	{
-		_fft(out, buf, n, step*2);
-		_fft(out + step, buf + step, n, step *2);
+	int disp_level_list[8] = {12, 10, 8, 6, 4, 2, 1, 7};
+	int difference_list[8] = {12, -2, -2, -2, -2, -2, -1, 6};
+	int prev_level_list[8] = {0, 12, 10, 8, 6, 4, 2, 1};
+	static index = 0;
 
-		for(int i=0; i<n; i += 2*step)
-		{
-			long t = cexp(-I * PI * i/n) * out[i + step];
-			buf[i/2] = out[i] + t;
-			buf[(i + n)/2] = out[i] - t;
-		}
+	if(difference_list[index] < 0)
+	{
+		RITClearRow(difference_list[index], prev_level_list[index], 0);
+		RITClearRow(difference_list[index], prev_level_list[index], 1);
+		RITClearRow(difference_list[index], prev_level_list[index], 2);
+		RITClearRow(difference_list[index], prev_level_list[index], 3);
+		RITClearRow(difference_list[index], prev_level_list[index], 4);
+		RITClearRow(difference_list[index], prev_level_list[index], 5);
+		RITClearRow(difference_list[index], prev_level_list[index], 6);
+		RITClearRow(difference_list[index], prev_level_list[index], 7);
+	}
+	else
+	{
+		RITAddRow(difference_list[index], prev_level_list[index], 0);
+		RITAddRow(difference_list[index], prev_level_list[index], 1);
+		RITAddRow(difference_list[index], prev_level_list[index], 2);
+		RITAddRow(difference_list[index], prev_level_list[index], 3);
+		RITAddRow(difference_list[index], prev_level_list[index], 4);
+		RITAddRow(difference_list[index], prev_level_list[index], 5);
+		RITAddRow(difference_list[index], prev_level_list[index], 6);
+		RITAddRow(difference_list[index], prev_level_list[index], 7);
+	}
+	if(index >= 7)
+	{
+		index = 0;
+	}
+	else
+	{
+		index++;
 	}
 }
 
-void fft(long buf[], int n)
+//void _fft(long buf[], long out[], int n, int step)
+//{
+//	if(step < n)
+//	{
+//		_fft(out, buf, n, step*2);
+//		_fft(out + step, buf + step, n, step *2);
+//
+//		for(int i=0; i<n; i += 2*step)
+//		{
+//
+//			//long t = cexp(-I);
+//			//long t = cexpf(-I * PI * i/n) * out[i + step];
+//			long t = cexp(-I * PI * i/n) * out[i + step];
+//			buf[i/2] = out[i] + t;
+//			buf[(i + n)/2] = out[i] - t;
+//		}
+//	}
+//}
+//
+//void fft(long buf[], int n)
+//{
+//	long out[n];
+//	for(int i=0; i < n; i++)
+//	{
+//		out[i] = buf[i];
+//	}
+//
+//	_fft(buf, out, n, 1);
+//}
+//
+//void get_fft(int buffer_number)
+//{
+//	if(buffer_number == 1)
+//	{
+//		fft(BufOne, BUF_SIZE);
+//	}
+//	else if(buffer_number == 2)
+//	{
+//		fft(BufTwo, BUF_SIZE);
+//	}
+//}
+//
+//void compute_average_magnitude(int buffer_number)
+//{
+//	if(buffer_number == 1)
+//	{
+//		//for(int i=0)
+//	}
+//	else if(buffer_number == 2)
+//	{
+//
+//	}
+//}
+//
+
+void Display(unsigned long avgVal, int bufNum)
 {
-	long out[n];
-	for(int i=0; i < n; i++)
+	static int prevLevel = 0;
+	int difference;
+	unsigned char uartStr[25];
+	//double new_avg = get_new_average(avgVal);
+	double new_avg = avgVal;
+	avg_history_list[current_bar_count] = avgVal;
+
+	usprintf(uartStr, "Avg Val%d: %4u \r", bufNum, avgVal);
+	UARTSend(uartStr, 16);
+
+	int dispLevel = (new_avg / 12) + 1;// Calculates levels 1-12
+	if(dispLevel > 12)
 	{
-		out[i] = buf[i];
+		dispLevel = 12;
+	}
+	difference = dispLevel - previous_level_list[current_bar_count];
+
+	if(difference > 0)
+	{
+		RITAddRow(difference, previous_level_list[current_bar_count], current_bar_count);
+	}
+	else if(difference < 0)
+	{
+		RITClearRow(difference, previous_level_list[current_bar_count], current_bar_count);
 	}
 
-	_fft(buf, out, n, 1);
+	previous_level_list[current_bar_count] = dispLevel;
+	if(current_bar_count >= (NUM_BARS-1))
+	{
+		current_bar_count = 0;
+		reset_avg_history();
+	}
+	else
+	{
+		current_bar_count++;
+	}
 }
 
+double get_new_average(double avg)
+{
+	double new_avg = avg;
+	for(int i=0; i < current_bar_count; i++)
+	{
+		new_avg += avg_history_list[i];
+	}
+
+	new_avg /= (current_bar_count + 1);
+
+	return new_avg;
+}
+
+void reset_avg_history()
+{
+	for(int i=0; i<NUM_BARS; i++)
+	{
+		avg_history_list[i] = 0;
+	}
+}
