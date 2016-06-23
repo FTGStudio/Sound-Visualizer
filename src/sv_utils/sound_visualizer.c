@@ -1,3 +1,6 @@
+#include <math.h>
+#include <complex.h>
+
 #include "../inc/hw_adc.h"
 #include "../inc/hw_types.h"
 #include "../inc/hw_ints.h"
@@ -15,10 +18,11 @@
 #include "../driverlib/debug.h"
 #include "../driverlib/uart.h"
 
-
 #include "system_states.h"
 #include "sound_visualizer.h"
 #include "sound_visualizer.h"
+
+double PI = atan2(1, 1) * 4;
 
 unsigned char singleLine[64] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
 								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
@@ -263,3 +267,31 @@ void RITClearRow(int difference, int prevDisp, int columnOffset)
 		RIT128x96x4ImageDraw(singleColumnClear, columnOffset, 96 - row, 14, 1);
 	}
 }
+
+void _fft(long buf[], long out[], int n, int step)
+{
+	if(step < n)
+	{
+		_fft(out, buf, n, step*2);
+		_fft(out + step, buf + step, n, step *2);
+
+		for(int i=0; i<n; i += 2*step)
+		{
+			long t = cexp(-I * PI * i/n) * out[i + step];
+			buf[i/2] = out[i] + t;
+			buf[(i + n)/2] = out[i] - t;
+		}
+	}
+}
+
+void fft(long buf[], int n)
+{
+	long out[n];
+	for(int i=0; i < n; i++)
+	{
+		out[i] = buf[i];
+	}
+
+	_fft(buf, out, n, 1);
+}
+

@@ -15,7 +15,7 @@ void ReadSampleToBuf();
 unsigned long GetAvgOfBuf(int bufNum);
 int GetSystemState();
 void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
-void RITAddRow(int difference, int prevDisp);
-void RITClearRow(int difference, int prevDisp);
+void RITAddRow(int difference, int prevDisp, int offset);
+void RITClearRow(int difference, int prevDisp, int offset);
 
 #endif
