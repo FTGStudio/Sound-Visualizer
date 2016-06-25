@@ -1,72 +1,59 @@
 #include <math.h>
-#include <complex.h>
+//#include <complex.h>
 
-#include "../inc/hw_adc.h"
 #include "../inc/hw_types.h"
 #include "../inc/hw_ints.h"
 #include "../inc/hw_memmap.h"
-//#include "../inc/lm3s6965.h"
 #include "../inc/rit128x96x4.h"
 
 #include "../utils/ustdlib.h"
 
-#include "../driverlib/adc.h"
 #include "../driverlib/sysctl.h"
-#include "../driverlib/gpio.h"
-#include "../driverlib/timer.h"
 #include "../driverlib/interrupt.h"
-#include "../driverlib/debug.h"
+
+//Needed for UART
+#include "../driverlib/gpio.h"
 #include "../driverlib/uart.h"
 
+//My drivers
+#include "../my_driverlib/my_adc.h"
+#include "../my_driverlib/my_timer.h"
+
 #include "system_states.h"
-#include "sound_visualizer.h"
 #include "sound_visualizer.h"
 
 #define PI 	3.14
 #define NUM_BARS 		8
 #define LEVEL_HEIGHT	8
 
+unsigned char singleLevelFill[56] = { 0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 0xF8,
+								  	  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+									  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+									  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+									  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+									  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+									  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+									  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
 
-unsigned char singleLine[64] = { 0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 0xF8,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-								 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,};
-
-unsigned char singleLineClear[64] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-									  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,};
-
-unsigned char singleColumn[7] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-unsigned char singleColumnClear[7] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+unsigned char singleLevelClear[56] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+					 				   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+					 				   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+					 				   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+					 				   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+									   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+									   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+									   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 
 unsigned long BufOne[BUF_SIZE];
 unsigned long BufTwo[BUF_SIZE];
-//unsigned long BufOneIndex = 0;
-//unsigned long BufTwoIndex = 0;
 tBoolean ADCSampleReady = false;
 tBoolean BufOneReadyToRead = false;
 tBoolean BufTwoReadyToRead = false;
 int CurrentWriteBuf = 1;
 int BufWriteIndex = 0;
-int OneSecDelayFlag = 0;
 double avg_history_list[8] = {};
 int previous_level_list[8] = {};
 int current_bar_count = 0;
-
-void Timer1IntHandler()
-{
-	TimerIntClear(TIMER1_BASE, TIMER_TIMA_TIMEOUT);	  //Clear the timer interrupt
-	OneSecDelayFlag = 1;
-}
 
 //Interrupt handler for ADC
 void ADCIntHandler()
@@ -95,6 +82,8 @@ void Initialize()
 {
 	// Set the clocking 20Mhz (200Mhz/10)
 	SysCtlClockSet(SYSCTL_SYSDIV_10 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_8MHZ);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC);		//Enable the clock to the ADC module
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);	//Enable Timer0 peripheral
 	InitializeDisplay();
 	InitializeTimers();
 	InitializeADC();
@@ -105,38 +94,7 @@ void Initialize()
 void InitializeDisplay()
 {
 	RIT128x96x4Init(1000000);	// Initialize the OLED display.
-	RIT128x96x4StringDraw("Splash Screen!", 30, 40, 15);	//Print Splash Screen
-}
-
-void InitializeADC()
-{
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC);	//Enable the clock to the ADC module
-	ADCSequenceDisable(ADC0_BASE, 3);			//Disable Sequence 3 in order to safely configure ADC
-
-	//Configure Sequence 3: processor trigger, priority=0
-	ADCSequenceConfigure(ADC_BASE, 3, ADC_TRIGGER_TIMER, 0);
-
-	//Configure Sequence 3, step 0, analog input 0 | interrupt | end of sequence
-	ADCSequenceStepConfigure(ADC_BASE, 3, 0, ADC_CTL_CH0 | ADC_CTL_IE | ADC_CTL_END);
-
-	ADCSequenceEnable(ADC0_BASE, 3);	//Enable sequence 3 and it's interrupt
-	ADCIntEnable(ADC0_BASE, 3);			//Enable interrupt
-}
-
-void InitializeTimers()
-{
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);				 //Enable Timer0 peripheral
-	TimerConfigure(TIMER0_BASE, TIMER_CFG_32_BIT_PER);			 //Configure Timer0: 32-bit periodic mode for ADC Timer Trigger
-	TimerLoadSet(TIMER0_BASE, TIMER_A, (SysCtlClockGet()/32000)-1);	 //16KHz interrupt
-	TimerControlTrigger(TIMER0_BASE, TIMER_A, true); 			 //Configure Timer0 to generate trigger event for ADC
-	TimerEnable(TIMER0_BASE, TIMER_A);							 //Enable Timer0
-
-
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);				//Enable Timer1 peripheral (in case we need a delay)
-	TimerConfigure(TIMER1_BASE, TIMER_CFG_32_BIT_PER);			//Configure Timer1: 32-bit periodic mode
-	TimerLoadSet(TIMER1_BASE, TIMER_A, SysCtlClockGet());	    //1 second interrupt
-	TimerIntEnable(TIMER1_BASE, TIMER_TIMA_TIMEOUT);			//Enable Timer1 Interrupt
-	TimerEnable(TIMER1_BASE, TIMER_A);							//Enable Timer1
+	//RIT128x96x4StringDraw("Splash Screen!", 30, 40, 15);	//Print Splash Screen
 }
 
 void svInitializeUart()
@@ -210,39 +168,25 @@ void ReadSampleToBuf()
 	}
 }
 
-unsigned long GetAvgOfBuf(int bufNum)
+unsigned long GetBufOneAvg()
 {
-	int i = 0;
 	unsigned long sum = 0;
-	double avgValue = 0;
-	unsigned long offsetValue = 0;
-	if(bufNum == 1)
+	for(int i=0; i<BUF_SIZE; i++)
 	{
-		for(i=0; i<BUF_SIZE; i++)
-		{
-			sum += BufOne[i];
-		}
+		sum += BufOne[i];
 	}
-	else if(bufNum == 2)
-	{
-		for(i=0; i<BUF_SIZE; i++)
-		{
-			sum += BufTwo[i];
-		}
-	}
-	avgValue = sum / (unsigned long) BUF_SIZE;
-
-	// Set up logic to remove dc offset and scale signal.
-//	avgValue = avgValue - 500; // 512 is representative of 3 V reference
-//	if(avgValue < 0)
-//	{
-//		avgValue = 0;
-//	}
-	offsetValue = avgValue;
-
-	return offsetValue;
+	return sum / (unsigned long) BUF_SIZE;
 }
 
+unsigned long GetBufTwoAvg()
+{
+	unsigned long sum = 0;
+	for(int i=0; i<BUF_SIZE; i++)
+	{
+		sum += BufTwo[i];
+	}
+	return sum / (unsigned long) BUF_SIZE;
+}
 
 
 // Send a string to the UART.
@@ -263,7 +207,7 @@ void RITAddRow(int difference, int prevDisp, int columnOffset)
 
 	for(int row=prev_height; row < prev_height + additional_height; row+=LEVEL_HEIGHT)
 	{
-		RIT128x96x4ImageDraw(singleLine, (columnOffset * 16) + 1, 96 - row, 14, LEVEL_HEIGHT);
+		RIT128x96x4ImageDraw(singleLevelFill, (columnOffset * 16) + 1, 96 - row, 14, LEVEL_HEIGHT);
 	}
 }
 
@@ -272,9 +216,9 @@ void RITClearRow(int difference, int prevDisp, int columnOffset)
 	int prev_height = LEVEL_HEIGHT * prevDisp;
 	int subtract_height = difference * LEVEL_HEIGHT * -1;
 
-	for(int row=prev_height; row > prev_height - subtract_height; row--)
+	for(int row=prev_height; row > prev_height - subtract_height; row-=LEVEL_HEIGHT)
 	{
-		RIT128x96x4ImageDraw(singleColumnClear, (columnOffset * 16) + 1, 96 - row, 14, 1);
+		RIT128x96x4ImageDraw(singleLevelClear, (columnOffset * 16) + 1, 96 - row, 14, LEVEL_HEIGHT);
 	}
 }
 
@@ -283,7 +227,7 @@ void simulate()
 	int disp_level_list[8] = {12, 10, 8, 6, 4, 2, 1, 7};
 	int difference_list[8] = {12, -2, -2, -2, -2, -2, -1, 6};
 	int prev_level_list[8] = {0, 12, 10, 8, 6, 4, 2, 1};
-	static index = 0;
+	static int index = 0;
 
 	if(difference_list[index] < 0)
 	{
@@ -314,6 +258,42 @@ void simulate()
 	else
 	{
 		index++;
+	}
+}
+
+void Display(unsigned long avgVal, int bufNum)
+{
+	static int prevLevel = 0;
+	int difference;
+
+	//double new_avg = get_new_average(avgVal);
+	//double new_avg = avgVal;
+	//avg_history_list[current_bar_count] = avgVal;
+
+	unsigned char uartStr[25];
+	usprintf(uartStr, "Avg Val%d: %4u \r", bufNum, avgVal);
+	UARTSend(uartStr, 16);
+
+	int dispLevel = (avgVal / 12) + 1;	// Calculates levels 1-12
+	if(dispLevel > 12) dispLevel = 12;	//Make sure it doesn't go above 12
+
+	difference = dispLevel - previous_level_list[current_bar_count];
+
+	if(difference > 0)
+	{
+		RITAddRow(difference, previous_level_list[current_bar_count], current_bar_count);
+	}
+	else if(difference < 0)
+	{
+		RITClearRow(difference, previous_level_list[current_bar_count], current_bar_count);
+	}
+
+	previous_level_list[current_bar_count] = dispLevel;
+	current_bar_count++;
+	if(current_bar_count >= NUM_BARS)
+	{
+		current_bar_count = 0;
+		//reset_avg_history();
 	}
 }
 
@@ -372,45 +352,7 @@ void simulate()
 //}
 //
 
-void Display(unsigned long avgVal, int bufNum)
-{
-	static int prevLevel = 0;
-	int difference;
-	unsigned char uartStr[25];
-	//double new_avg = get_new_average(avgVal);
-	double new_avg = avgVal;
-	avg_history_list[current_bar_count] = avgVal;
 
-	usprintf(uartStr, "Avg Val%d: %4u \r", bufNum, avgVal);
-	UARTSend(uartStr, 16);
-
-	int dispLevel = (new_avg / 12) + 1;// Calculates levels 1-12
-	if(dispLevel > 12)
-	{
-		dispLevel = 12;
-	}
-	difference = dispLevel - previous_level_list[current_bar_count];
-
-	if(difference > 0)
-	{
-		RITAddRow(difference, previous_level_list[current_bar_count], current_bar_count);
-	}
-	else if(difference < 0)
-	{
-		RITClearRow(difference, previous_level_list[current_bar_count], current_bar_count);
-	}
-
-	previous_level_list[current_bar_count] = dispLevel;
-	if(current_bar_count >= (NUM_BARS-1))
-	{
-		current_bar_count = 0;
-		reset_avg_history();
-	}
-	else
-	{
-		current_bar_count++;
-	}
-}
 
 double get_new_average(double avg)
 {

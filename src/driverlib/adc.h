@@ -21,7 +21,7 @@
 // This is part of revision 8555 of the Stellaris Peripheral Driver Library.
 //
 //*****************************************************************************
-
+/*
 #ifndef __ADC_H__
 #define __ADC_H__
 
@@ -275,3 +275,4 @@ extern unsigned long ADCPhaseDelayGet(unsigned long ulBase);
 #endif
 
 #endif // __ADC_H__
+*/

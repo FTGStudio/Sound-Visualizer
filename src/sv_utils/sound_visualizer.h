@@ -1,18 +1,17 @@
 #ifndef __sound_visualizer_h__
 #define __sound_visualizer_h__
 
-#define BUF_SIZE 600	//0.2/(1/32kHz)
+#define BUF_SIZE 1000	//0.2/(1/32kHz)
 
 //Initialization functions
 void Initialize();
 void InitializeDisplay();
-void InitializeTimers();
-void InitializeADC();
 void svInitializeUart();
 void InitializeInterrupts();
 
 void ReadSampleToBuf();
-unsigned long GetAvgOfBuf(int bufNum);
+unsigned long GetBufOneAvg();
+unsigned long GetBufTwoAvg();
 int GetSystemState();
 void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
 void RITAddRow(int difference, int prevDisp, int offset);

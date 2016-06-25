@@ -21,7 +21,7 @@
 // This is part of revision 8555 of the Stellaris Peripheral Driver Library.
 //
 //*****************************************************************************
-
+/*
 #ifndef __TIMER_H__
 #define __TIMER_H__
 
@@ -219,3 +219,4 @@ extern void TimerQuiesce(unsigned long ulBase);
 #endif
 
 #endif // __TIMER_H__
+*/
