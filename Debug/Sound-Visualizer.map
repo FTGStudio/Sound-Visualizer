@@ -1,14 +1,21 @@
 Archive member included because of file (symbol)
 
+/opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+                              ./src/sv_utils/sound_visualizer.o (__aeabi_dadd)
+/opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+                              ./src/sv_utils/sound_visualizer.o (__aeabi_ddiv)
+/opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+                              ./src/sv_utils/sound_visualizer.o (__aeabi_d2iz)
+/opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+                              ./src/sv_utils/sound_visualizer.o (__aeabi_d2uiz)
 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
                               ./src/cmdline.o (strcmp)
 
 Allocating common symbols
 Common symbol       size              file
 
-BufTwo              0x3200            ./src/sv_utils/sound_visualizer.o
-BufOne              0x3200            ./src/sv_utils/sound_visualizer.o
-str                 0x19              ./src/sv_utils/sound_visualizer.o
+BufTwo              0x960             ./src/sv_utils/sound_visualizer.o
+BufOne              0x960             ./src/sv_utils/sound_visualizer.o
 
 Discarded input sections
 
@@ -26,8 +33,34 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/sv_utils/sound_visualizer.o
  .data          0x00000000        0x0 ./src/sv_utils/sound_visualizer.o
  .bss           0x00000000        0x0 ./src/sv_utils/sound_visualizer.o
- .text.GetAvgOfBuf
-                0x00000000       0x80 ./src/sv_utils/sound_visualizer.o
+ .text.get_new_average
+                0x00000000       0xcc ./src/sv_utils/sound_visualizer.o
+ .text.reset_avg_history
+                0x00000000       0x30 ./src/sv_utils/sound_visualizer.o
+ .text.RITAddRow
+                0x00000000      0x110 ./src/sv_utils/sound_visualizer.o
+ .text.UARTSend
+                0x00000000       0xac ./src/sv_utils/sound_visualizer.o
+ .text.ReadSampleToBuf
+                0x00000000       0xa0 ./src/sv_utils/sound_visualizer.o
+ .text.InitializeInterrupts
+                0x00000000       0x24 ./src/sv_utils/sound_visualizer.o
+ .text.svInitializeUart
+                0x00000000       0x44 ./src/sv_utils/sound_visualizer.o
+ .text.InitializeDisplay
+                0x00000000       0x24 ./src/sv_utils/sound_visualizer.o
+ .text.simulate
+                0x00000000     0x1050 ./src/sv_utils/sound_visualizer.o
+ .rodata.C.10.2708
+                0x00000000       0x20 ./src/sv_utils/sound_visualizer.o
+ .bss.index.2706
+                0x00000000        0x4 ./src/sv_utils/sound_visualizer.o
+ .rodata.C.11.2709
+                0x00000000       0x20 ./src/sv_utils/sound_visualizer.o
+ .data.singleColumn
+                0x00000000        0x8 ./src/sv_utils/sound_visualizer.o
+ .bss.singleLineClear
+                0x00000000       0x40 ./src/sv_utils/sound_visualizer.o
  .text          0x00000000        0x0 ./src/adc.o
  .data          0x00000000        0x0 ./src/adc.o
  .bss           0x00000000        0x0 ./src/adc.o
@@ -132,7 +165,7 @@ Discarded input sections
  .bss           0x00000000        0x0 ./src/cmdline.o
  .text.CmdLineProcess
                 0x00000000       0x88 ./src/cmdline.o
- .bss.argv.1391
+ .bss.argv.1467
                 0x00000000       0x24 ./src/cmdline.o
  .text          0x00000000        0x0 ./src/comp.o
  .data          0x00000000        0x0 ./src/comp.o
@@ -1089,8 +1122,6 @@ Discarded input sections
                 0x00000000      0x144 ./src/rit128x96x4.o
  .text.RIT128x96x4DisplayOff
                 0x00000000       0x94 ./src/rit128x96x4.o
- .text.RIT128x96x4ImageDraw
-                0x00000000      0x330 ./src/rit128x96x4.o
  .text          0x00000000        0x0 ./src/scheduler.o
  .data          0x00000000        0x0 ./src/scheduler.o
  .bss           0x00000000        0x0 ./src/scheduler.o
@@ -1350,14 +1381,10 @@ Discarded input sections
                 0x00000000       0x14 ./src/sysctl.o
  .text.SysCtlBrownOutConfigSet
                 0x00000000       0x10 ./src/sysctl.o
- .text.SysCtlDelay
-                0x00000000        0x8 ./src/sysctl.o
  .text.SysCtlMOSCConfigSet
                 0x00000000        0xc ./src/sysctl.o
  .text.SysCtlPIOSCCalibrate
                 0x00000000       0x6c ./src/sysctl.o
- .text.SysCtlClockSet
-                0x00000000      0x20c ./src/sysctl.o
  .text.SysCtlDeepSleepClockSet
                 0x00000000        0xc ./src/sysctl.o
  .text.SysCtlPWMClockSet
@@ -1551,6 +1578,8 @@ Discarded input sections
  .text.UARTBreakCtl
                 0x00000000       0x1c ./src/uart.o
  .text.UARTBusy
+                0x00000000        0x8 ./src/uart.o
+ .text.UARTIntEnable
                 0x00000000        0x8 ./src/uart.o
  .text.UARTIntDisable
                 0x00000000        0xc ./src/uart.o
@@ -1809,18 +1838,12 @@ Discarded input sections
  .text.urand    0x00000000       0x24 ./src/ustdlib.o
  .text.ustrcasecmp
                 0x00000000       0x60 ./src/ustdlib.o
- .text.uvsnprintf
-                0x00000000     0x10d4 ./src/ustdlib.o
  .text.usnprintf
                 0x00000000       0x20 ./src/ustdlib.o
- .text.usprintf
-                0x00000000       0x24 ./src/ustdlib.o
  .rodata.g_psDaysToMonth
                 0x00000000       0x18 ./src/ustdlib.o
  .data.g_ulRandomSeed
                 0x00000000        0x4 ./src/ustdlib.o
- .rodata.str1.4
-                0x00000000       0x1c ./src/ustdlib.o
  .text          0x00000000        0x0 ./src/watchdog.o
  .data          0x00000000        0x0 ./src/watchdog.o
  .bss           0x00000000        0x0 ./src/watchdog.o
@@ -1860,6 +1883,14 @@ Discarded input sections
                 0x00000000       0x14 ./src/watchdog.o
  .text.WatchdogIntRegister
                 0x00000000       0x14 ./src/watchdog.o
+ .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
  .text          0x00000000      0x1dc /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
  .data          0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
  .bss           0x00000000        0x0 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
@@ -1937,234 +1968,291 @@ END GROUP
 LOAD /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
 LOAD /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
-.text           0x00000000     0x1ac0
+.text           0x00000000     0x3d98
                 0x00000000                _text = .
  *(.isr_vector)
  .isr_vector    0x00000000       0xf0 ./src/startup_gcc.o
                 0x00000000                g_pfnVectors
  *(.text*)
- .text.svCheckSystemState
-                0x000000f0        0x4 ./src/sv_utils/sound_visualizer.o
-                0x000000f0                svCheckSystemState
- .text.UARTSend
-                0x000000f4       0xac ./src/sv_utils/sound_visualizer.o
-                0x000000f4                UARTSend
- .text.UARTIntHandler
-                0x000001a0       0x4c ./src/sv_utils/sound_visualizer.o
-                0x000001a0                UARTIntHandler
- .text.svInitializeUart
-                0x000001ec       0x44 ./src/sv_utils/sound_visualizer.o
-                0x000001ec                svInitializeUart
- .text.InitializeInterrupts
-                0x00000230       0x38 ./src/sv_utils/sound_visualizer.o
-                0x00000230                InitializeInterrupts
- .text.InitializeTimers
-                0x00000268       0x88 ./src/sv_utils/sound_visualizer.o
-                0x00000268                InitializeTimers
- .text.InitializeADC
-                0x000002f0       0x4c ./src/sv_utils/sound_visualizer.o
-                0x000002f0                InitializeADC
- .text.InitializeDisplay
-                0x0000033c       0x24 ./src/sv_utils/sound_visualizer.o
-                0x0000033c                InitializeDisplay
+ .text.GetAvgOfBuf
+                0x000000f0       0xa4 ./src/sv_utils/sound_visualizer.o
+                0x000000f0                GetAvgOfBuf
+ .text.RITClearRow
+                0x00000194      0x10c ./src/sv_utils/sound_visualizer.o
+                0x00000194                RITClearRow
  .text.ADCIntHandler
-                0x00000360       0xa8 ./src/sv_utils/sound_visualizer.o
-                0x00000360                ADCIntHandler
+                0x000002a0       0x20 ./src/sv_utils/sound_visualizer.o
+                0x000002a0                ADCIntHandler
+ .text.InitializeTimers
+                0x000002c0       0x8c ./src/sv_utils/sound_visualizer.o
+                0x000002c0                InitializeTimers
+ .text.InitializeADC
+                0x0000034c       0x4c ./src/sv_utils/sound_visualizer.o
+                0x0000034c                InitializeADC
+ .text.UARTIntHandler
+                0x00000398       0x4c ./src/sv_utils/sound_visualizer.o
+                0x00000398                UARTIntHandler
  .text.Timer1IntHandler
-                0x00000408       0x20 ./src/sv_utils/sound_visualizer.o
-                0x00000408                Timer1IntHandler
+                0x000003e4       0x20 ./src/sv_utils/sound_visualizer.o
+                0x000003e4                Timer1IntHandler
+ .text.Display  0x00000404      0x2ec ./src/sv_utils/sound_visualizer.o
+                0x00000404                Display
+ .text.Initialize
+                0x000006f0       0x94 ./src/sv_utils/sound_visualizer.o
+                0x000006f0                Initialize
+ .text.GetSystemState
+                0x00000784       0xec ./src/sv_utils/sound_visualizer.o
+                0x00000784                GetSystemState
  .text.ADCIntEnable
-                0x00000428       0x10 ./src/adc.o
-                0x00000428                ADCIntEnable
+                0x00000870       0x10 ./src/adc.o
+                0x00000870                ADCIntEnable
  .text.ADCIntClear
-                0x00000438        0xc ./src/adc.o
-                0x00000438                ADCIntClear
+                0x00000880        0xc ./src/adc.o
+                0x00000880                ADCIntClear
  .text.ADCSequenceEnable
-                0x00000444        0xc ./src/adc.o
-                0x00000444                ADCSequenceEnable
+                0x0000088c        0xc ./src/adc.o
+                0x0000088c                ADCSequenceEnable
  .text.ADCSequenceDisable
-                0x00000450       0x10 ./src/adc.o
-                0x00000450                ADCSequenceDisable
+                0x00000898       0x10 ./src/adc.o
+                0x00000898                ADCSequenceDisable
  .text.ADCSequenceConfigure
-                0x00000460       0x38 ./src/adc.o
-                0x00000460                ADCSequenceConfigure
+                0x000008a8       0x38 ./src/adc.o
+                0x000008a8                ADCSequenceConfigure
  .text.ADCSequenceStepConfigure
-                0x00000498       0x80 ./src/adc.o
-                0x00000498                ADCSequenceStepConfigure
+                0x000008e0       0x80 ./src/adc.o
+                0x000008e0                ADCSequenceStepConfigure
  .text.ADCSequenceDataGet
-                0x00000518       0xa0 ./src/adc.o
-                0x00000518                ADCSequenceDataGet
+                0x00000960       0xa0 ./src/adc.o
+                0x00000960                ADCSequenceDataGet
  .text.CPUcpsie
-                0x000005b8        0x8 ./src/cpu.o
-                0x000005b8                CPUcpsie
+                0x00000a00        0x8 ./src/cpu.o
+                0x00000a00                CPUcpsie
  .text.GPIOPadConfigSet
-                0x000005c0       0xf8 ./src/gpio.o
-                0x000005c0                GPIOPadConfigSet
+                0x00000a08       0xf8 ./src/gpio.o
+                0x00000a08                GPIOPadConfigSet
  .text.GPIOPinWrite
-                0x000006b8        0x8 ./src/gpio.o
-                0x000006b8                GPIOPinWrite
+                0x00000b00        0x8 ./src/gpio.o
+                0x00000b00                GPIOPinWrite
  .text.GPIOPinTypeSSI
-                0x000006c0       0x84 ./src/gpio.o
-                0x000006c0                GPIOPinTypeSSI
+                0x00000b08       0x84 ./src/gpio.o
+                0x00000b08                GPIOPinTypeSSI
  .text.GPIOPinTypeUART
-                0x00000744       0x84 ./src/gpio.o
-                0x00000744                GPIOPinTypeUART
+                0x00000b8c       0x84 ./src/gpio.o
+                0x00000b8c                GPIOPinTypeUART
  .text.GPIOPinTypeGPIOOutput
-                0x000007c8       0x84 ./src/gpio.o
-                0x000007c8                GPIOPinTypeGPIOOutput
+                0x00000c10       0x84 ./src/gpio.o
+                0x00000c10                GPIOPinTypeGPIOOutput
  .text.IntEnable
-                0x0000084c       0x78 ./src/interrupt.o
-                0x0000084c                IntEnable
+                0x00000c94       0x78 ./src/interrupt.o
+                0x00000c94                IntEnable
  .text.IntMasterEnable
-                0x000008c4        0xc ./src/interrupt.o
-                0x000008c4                IntMasterEnable
- .text.main     0x000008d0       0x44 ./src/main.o
-                0x000008d0                main
+                0x00000d0c        0xc ./src/interrupt.o
+                0x00000d0c                IntMasterEnable
+ .text.main     0x00000d18       0x54 ./src/main.o
+                0x00000d18                main
  .text.RIT128x96x4Enable
-                0x00000914       0x70 ./src/rit128x96x4.o
-                0x00000914                RIT128x96x4Enable
+                0x00000d6c       0x70 ./src/rit128x96x4.o
+                0x00000d6c                RIT128x96x4Enable
+ .text.RIT128x96x4ImageDraw
+                0x00000ddc      0x330 ./src/rit128x96x4.o
+                0x00000ddc                RIT128x96x4ImageDraw
  .text.RIT128x96x4StringDraw
-                0x00000984      0x460 ./src/rit128x96x4.o
-                0x00000984                RIT128x96x4StringDraw
+                0x0000110c      0x460 ./src/rit128x96x4.o
+                0x0000110c                RIT128x96x4StringDraw
  .text.RIT128x96x4Clear
-                0x00000de4      0x2ac ./src/rit128x96x4.o
-                0x00000de4                RIT128x96x4Clear
+                0x0000156c      0x2ac ./src/rit128x96x4.o
+                0x0000156c                RIT128x96x4Clear
  .text.RIT128x96x4Init
-                0x00001090      0x1cc ./src/rit128x96x4.o
-                0x00001090                RIT128x96x4Init
+                0x00001818      0x1cc ./src/rit128x96x4.o
+                0x00001818                RIT128x96x4Init
  .text.SSIConfigSetExpClk
-                0x0000125c       0x50 ./src/ssi.o
-                0x0000125c                SSIConfigSetExpClk
+                0x000019e4       0x50 ./src/ssi.o
+                0x000019e4                SSIConfigSetExpClk
  .text.SSIEnable
-                0x000012ac        0xc ./src/ssi.o
-                0x000012ac                SSIEnable
+                0x00001a34        0xc ./src/ssi.o
+                0x00001a34                SSIEnable
  .text.SSIDisable
-                0x000012b8        0xc ./src/ssi.o
-                0x000012b8                SSIDisable
+                0x00001a40        0xc ./src/ssi.o
+                0x00001a40                SSIDisable
  .text.SSIDataPut
-                0x000012c4       0x10 ./src/ssi.o
-                0x000012c4                SSIDataPut
- .text.SSIBusy  0x000012d4        0x8 ./src/ssi.o
-                0x000012d4                SSIBusy
- .text.NmiSR    0x000012dc        0x4 ./src/startup_gcc.o
+                0x00001a4c       0x10 ./src/ssi.o
+                0x00001a4c                SSIDataPut
+ .text.SSIBusy  0x00001a5c        0x8 ./src/ssi.o
+                0x00001a5c                SSIBusy
+ .text.NmiSR    0x00001a64        0x4 ./src/startup_gcc.o
  .text.FaultISR
-                0x000012e0        0x4 ./src/startup_gcc.o
+                0x00001a68        0x4 ./src/startup_gcc.o
  .text.IntDefaultHandler
-                0x000012e4        0x4 ./src/startup_gcc.o
+                0x00001a6c        0x4 ./src/startup_gcc.o
  .text.ResetISR
-                0x000012e8       0xa8 ./src/startup_gcc.o
-                0x000012e8                ResetISR
+                0x00001a70       0xa8 ./src/startup_gcc.o
+                0x00001a70                ResetISR
  .text.SysCtlPeripheralEnable
-                0x00001390       0x5c ./src/sysctl.o
-                0x00001390                SysCtlPeripheralEnable
+                0x00001b18       0x5c ./src/sysctl.o
+                0x00001b18                SysCtlPeripheralEnable
+ .text.SysCtlDelay
+                0x00001b74        0x8 ./src/sysctl.o
+                0x00001b74                SysCtlDelay
+ .text.SysCtlClockSet
+                0x00001b7c      0x20c ./src/sysctl.o
+                0x00001b7c                SysCtlClockSet
  .text.SysCtlClockGet
-                0x000013ec      0x2c0 ./src/sysctl.o
-                0x000013ec                SysCtlClockGet
+                0x00001d88      0x2c0 ./src/sysctl.o
+                0x00001d88                SysCtlClockGet
  .text.TimerEnable
-                0x000016ac       0x18 ./src/timer.o
-                0x000016ac                TimerEnable
+                0x00002048       0x18 ./src/timer.o
+                0x00002048                TimerEnable
  .text.TimerConfigure
-                0x000016c4       0x2c ./src/timer.o
-                0x000016c4                TimerConfigure
+                0x00002060       0x2c ./src/timer.o
+                0x00002060                TimerConfigure
  .text.TimerControlTrigger
-                0x000016f0       0x28 ./src/timer.o
-                0x000016f0                TimerControlTrigger
+                0x0000208c       0x28 ./src/timer.o
+                0x0000208c                TimerControlTrigger
  .text.TimerLoadSet
-                0x00001718       0x14 ./src/timer.o
-                0x00001718                TimerLoadSet
+                0x000020b4       0x14 ./src/timer.o
+                0x000020b4                TimerLoadSet
  .text.TimerIntEnable
-                0x0000172c        0x8 ./src/timer.o
-                0x0000172c                TimerIntEnable
+                0x000020c8        0x8 ./src/timer.o
+                0x000020c8                TimerIntEnable
  .text.TimerIntClear
-                0x00001734        0x4 ./src/timer.o
-                0x00001734                TimerIntClear
+                0x000020d0        0x4 ./src/timer.o
+                0x000020d0                TimerIntClear
  .text.UARTConfigSetExpClk
-                0x00001738       0x6c ./src/uart.o
-                0x00001738                UARTConfigSetExpClk
+                0x000020d4       0x6c ./src/uart.o
+                0x000020d4                UARTConfigSetExpClk
  .text.UARTCharsAvail
-                0x000017a4        0xc ./src/uart.o
-                0x000017a4                UARTCharsAvail
+                0x00002140        0xc ./src/uart.o
+                0x00002140                UARTCharsAvail
  .text.UARTCharGetNonBlocking
-                0x000017b0       0x10 ./src/uart.o
-                0x000017b0                UARTCharGetNonBlocking
+                0x0000214c       0x10 ./src/uart.o
+                0x0000214c                UARTCharGetNonBlocking
  .text.UARTCharPutNonBlocking
-                0x000017c0       0x14 ./src/uart.o
-                0x000017c0                UARTCharPutNonBlocking
- .text.UARTIntEnable
-                0x000017d4        0x8 ./src/uart.o
-                0x000017d4                UARTIntEnable
+                0x0000215c       0x14 ./src/uart.o
+                0x0000215c                UARTCharPutNonBlocking
  .text.UARTIntStatus
-                0x000017dc        0xc ./src/uart.o
-                0x000017dc                UARTIntStatus
+                0x00002170        0xc ./src/uart.o
+                0x00002170                UARTIntStatus
  .text.UARTIntClear
-                0x000017e8        0x4 ./src/uart.o
-                0x000017e8                UARTIntClear
+                0x0000217c        0x4 ./src/uart.o
+                0x0000217c                UARTIntClear
+ .text.uvsnprintf
+                0x00002180     0x10d4 ./src/ustdlib.o
+                0x00002180                uvsnprintf
+ .text.usprintf
+                0x00003254       0x24 ./src/ustdlib.o
+                0x00003254                usprintf
+ .text          0x00003278      0x370 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+                0x00003278                __aeabi_drsub
+                0x00003280                __aeabi_dsub
+                0x00003280                __subdf3
+                0x00003284                __adddf3
+                0x00003284                __aeabi_dadd
+                0x000034fc                __aeabi_ui2d
+                0x000034fc                __floatunsidf
+                0x0000351c                __floatsidf
+                0x0000351c                __aeabi_i2d
+                0x00003540                __extendsfdf2
+                0x00003540                __aeabi_f2d
+                0x0000357c                __aeabi_ul2d
+                0x0000357c                __floatundidf
+                0x0000358c                __floatdidf
+                0x0000358c                __aeabi_l2d
+ .text          0x000035e8      0x424 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+                0x000035e8                __aeabi_dmul
+                0x000035e8                __muldf3
+                0x0000383c                __aeabi_ddiv
+                0x0000383c                __divdf3
+ .text          0x00003a0c       0x50 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+                0x00003a0c                __fixdfsi
+                0x00003a0c                __aeabi_d2iz
+ .text          0x00003a5c       0x40 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+                0x00003a5c                __fixunsdfsi
+                0x00003a5c                __aeabi_d2uiz
  *(.rodata*)
  .rodata.str1.4
-                0x000017ec        0x7 ./src/sv_utils/sound_visualizer.o
-                                  0x8 (size before relaxing)
- *fill*         0x000017f3        0x1 00
+                0x00003a9c       0x21 ./src/sv_utils/sound_visualizer.o
+                                 0x24 (size before relaxing)
+ *fill*         0x00003abd        0x3 00
  .rodata.g_pulEnRegs
-                0x000017f4       0x14 ./src/interrupt.o
- .rodata.str1.4
-                0x00001808       0x10 ./src/main.o
+                0x00003ac0       0x14 ./src/interrupt.o
  .rodata.g_pucFont
-                0x00001818      0x1e0 ./src/rit128x96x4.o
+                0x00003ad4      0x1e0 ./src/rit128x96x4.o
  .rodata.g_pucRIT128x96x4Init
-                0x000019f8       0x50 ./src/rit128x96x4.o
+                0x00003cb4       0x50 ./src/rit128x96x4.o
  .rodata.g_pulXtals
-                0x00001a48       0x6c ./src/sysctl.o
+                0x00003d04       0x6c ./src/sysctl.o
  .rodata.g_pulRCGCRegs
-                0x00001ab4        0xc ./src/sysctl.o
-                0x00001ac0                _etext = .
+                0x00003d70        0xc ./src/sysctl.o
+ .rodata.str1.4
+                0x00003d7c       0x1c ./src/ustdlib.o
+                0x00003d98                _etext = .
 
-.glue_7         0x00001ac0        0x0
+.glue_7         0x00003d98        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x00001ac0        0x0
+.glue_7t        0x00003d98        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x00001ac0        0x0
+.vfp11_veneer   0x00003d98        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00001ac0        0x0
+.v4_bx          0x00003d98        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.data           0x20000000        0x0 load address 0x00001ac0
+.data           0x20000000       0x44 load address 0x00003d98
                 0x20000000                _data = .
  *(vtable)
  *(.data*)
-                0x20000000                _edata = .
-
-.bss            0x20000000     0x6539
-                0x20000000                _bss = .
- *(.bss*)
- .bss.BufOneIndex
+ .data.CurrentWriteBuf
                 0x20000000        0x4 ./src/sv_utils/sound_visualizer.o
-                0x20000000                BufOneIndex
- .bss.BufOneReadyToRead
-                0x20000004        0x4 ./src/sv_utils/sound_visualizer.o
-                0x20000004                BufOneReadyToRead
- .bss.OneSecDelayFlag
-                0x20000008        0x4 ./src/sv_utils/sound_visualizer.o
-                0x20000008                OneSecDelayFlag
+                0x20000000                CurrentWriteBuf
+ .data.singleLine
+                0x20000004       0x40 ./src/sv_utils/sound_visualizer.o
+                0x20000004                singleLine
+                0x20000044                _edata = .
+
+.bss            0x20000048     0x144c load address 0x00003de0
+                0x20000048                _bss = .
+ *(.bss*)
+ .bss.previous_level_list
+                0x20000048       0x20 ./src/sv_utils/sound_visualizer.o
+                0x20000048                previous_level_list
+ .bss.current_bar_count
+                0x20000068        0x4 ./src/sv_utils/sound_visualizer.o
+                0x20000068                current_bar_count
  .bss.BufTwoReadyToRead
-                0x2000000c        0x4 ./src/sv_utils/sound_visualizer.o
-                0x2000000c                BufTwoReadyToRead
- .bss.BufTwoIndex
-                0x20000010        0x4 ./src/sv_utils/sound_visualizer.o
-                0x20000010                BufTwoIndex
+                0x2000006c        0x1 ./src/sv_utils/sound_visualizer.o
+                0x2000006c                BufTwoReadyToRead
+ .bss.BufOneReadyToRead
+                0x2000006d        0x1 ./src/sv_utils/sound_visualizer.o
+                0x2000006d                BufOneReadyToRead
+ *fill*         0x2000006e        0x2 00
+ .bss.BufWriteIndex
+                0x20000070        0x4 ./src/sv_utils/sound_visualizer.o
+                0x20000070                BufWriteIndex
+ .bss.singleColumnClear
+                0x20000074        0x8 ./src/sv_utils/sound_visualizer.o
+                0x20000074                singleColumnClear
+ .bss.OneSecDelayFlag
+                0x2000007c        0x4 ./src/sv_utils/sound_visualizer.o
+                0x2000007c                OneSecDelayFlag
+ .bss.ADCSampleReady
+                0x20000080        0x1 ./src/sv_utils/sound_visualizer.o
+                0x20000080                ADCSampleReady
+ *fill*         0x20000081        0x7 00
+ .bss.avg_history_list
+                0x20000088       0x40 ./src/sv_utils/sound_visualizer.o
+                0x20000088                avg_history_list
  .bss.g_pucBuffer
-                0x20000014        0x8 ./src/rit128x96x4.o
+                0x200000c8        0x8 ./src/rit128x96x4.o
  .bss.g_ulSSIFlags
-                0x2000001c        0x4 ./src/rit128x96x4.o
- .bss.pulStack  0x20000020      0x100 ./src/startup_gcc.o
+                0x200000d0        0x4 ./src/rit128x96x4.o
+ .bss.pulStack  0x200000d4      0x100 ./src/startup_gcc.o
  *(COMMON)
- COMMON         0x20000120     0x6419 ./src/sv_utils/sound_visualizer.o
-                0x20000120                BufTwo
-                0x20003320                BufOne
-                0x20006520                str
-                0x20006539                _ebss = .
+ COMMON         0x200001d4     0x12c0 ./src/sv_utils/sound_visualizer.o
+                0x200001d4                BufTwo
+                0x20000b34                BufOne
+                0x20001494                _ebss = .
 OUTPUT(Sound-Visualizer.elf elf32-littlearm)
 
 .ARM.attributes
@@ -2266,11 +2354,19 @@ OUTPUT(Sound-Visualizer.elf elf32-littlearm)
  .ARM.attributes
                 0x000008df       0x31 ./src/watchdog.o
  .ARM.attributes
-                0x00000910       0x29 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+                0x00000910       0x1b /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000939       0x29 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+                0x0000092b       0x1b /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x00000962       0x19 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x00000946       0x1b /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x00000961       0x1b /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .ARM.attributes
+                0x0000097c       0x29 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+ .ARM.attributes
+                0x000009a5       0x29 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .ARM.attributes
+                0x000009ce       0x19 /opt/CodeSourcery/Sourcery_G++_Lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
 .comment        0x00000000      0x7ba
  .comment       0x00000000       0x2b ./src/sv_utils/sound_visualizer.o
@@ -2320,667 +2416,667 @@ OUTPUT(Sound-Visualizer.elf elf32-littlearm)
  .comment       0x00000764       0x2b ./src/ustdlib.o
  .comment       0x0000078f       0x2b ./src/watchdog.o
 
-.debug_abbrev   0x00000000     0x3d4c
- .debug_abbrev  0x00000000      0x127 ./src/sv_utils/sound_visualizer.o
- .debug_abbrev  0x00000127      0x17a ./src/adc.o
- .debug_abbrev  0x000002a1      0x206 ./src/can.o
- .debug_abbrev  0x000004a7       0xfd ./src/cmdline.o
- .debug_abbrev  0x000005a4      0x10a ./src/comp.o
- .debug_abbrev  0x000006ae       0xac ./src/cpu.o
- .debug_abbrev  0x0000075a       0xaf ./src/cpu_usage.o
- .debug_abbrev  0x00000809      0x159 ./src/crc.o
- .debug_abbrev  0x00000962      0x1ec ./src/eeprom.o
- .debug_abbrev  0x00000b4e      0x126 ./src/epi.o
- .debug_abbrev  0x00000c74      0x24c ./src/ethernet.o
- .debug_abbrev  0x00000ec0      0x100 ./src/fan.o
- .debug_abbrev  0x00000fc0      0x1a5 ./src/flash.o
- .debug_abbrev  0x00001165      0x11e ./src/flash_pb.o
- .debug_abbrev  0x00001283       0x82 ./src/fpu.o
- .debug_abbrev  0x00001305      0x1dd ./src/gpio.o
- .debug_abbrev  0x000014e2      0x177 ./src/hibernate.o
- .debug_abbrev  0x00001659      0x1f8 ./src/i2c.o
- .debug_abbrev  0x00001851      0x100 ./src/i2s.o
- .debug_abbrev  0x00001951      0x177 ./src/interrupt.o
- .debug_abbrev  0x00001ac8       0x67 ./src/isqrt.o
- .debug_abbrev  0x00001b2f      0x139 ./src/lpc.o
- .debug_abbrev  0x00001c68       0x61 ./src/main.o
- .debug_abbrev  0x00001cc9       0xcf ./src/mpu.o
- .debug_abbrev  0x00001d98      0x17f ./src/peci.o
- .debug_abbrev  0x00001f17      0x15c ./src/pwm.o
- .debug_abbrev  0x00002073      0x102 ./src/qei.o
- .debug_abbrev  0x00002175      0x256 ./src/ringbuf.o
- .debug_abbrev  0x000023cb      0x141 ./src/rit128x96x4.o
- .debug_abbrev  0x0000250c      0x184 ./src/scheduler.o
- .debug_abbrev  0x00002690       0x7c ./src/sine.o
- .debug_abbrev  0x0000270c       0xe5 ./src/softi2c.o
- .debug_abbrev  0x000027f1      0x197 ./src/softssi.o
- .debug_abbrev  0x00002988      0x20f ./src/softuart.o
- .debug_abbrev  0x00002b97      0x17a ./src/ssi.o
- .debug_abbrev  0x00002d11       0xbd ./src/startup_gcc.o
- .debug_abbrev  0x00002dce      0x1a8 ./src/sysctl.o
- .debug_abbrev  0x00002f76       0xba ./src/sysexc.o
- .debug_abbrev  0x00003030       0x9c ./src/systick.o
- .debug_abbrev  0x000030cc      0x1f0 ./src/timer.o
- .debug_abbrev  0x000032bc      0x1fa ./src/uart.o
- .debug_abbrev  0x000034b6      0x1e8 ./src/uartstdio.o
- .debug_abbrev  0x0000369e      0x181 ./src/udma.o
- .debug_abbrev  0x0000381f      0x196 ./src/usb.o
- .debug_abbrev  0x000039b5      0x2a4 ./src/ustdlib.o
- .debug_abbrev  0x00003c59       0xf3 ./src/watchdog.o
+.debug_abbrev   0x00000000     0x3f13
+ .debug_abbrev  0x00000000      0x2e7 ./src/sv_utils/sound_visualizer.o
+ .debug_abbrev  0x000002e7      0x17a ./src/adc.o
+ .debug_abbrev  0x00000461      0x206 ./src/can.o
+ .debug_abbrev  0x00000667       0xfd ./src/cmdline.o
+ .debug_abbrev  0x00000764      0x10a ./src/comp.o
+ .debug_abbrev  0x0000086e       0xac ./src/cpu.o
+ .debug_abbrev  0x0000091a       0xaf ./src/cpu_usage.o
+ .debug_abbrev  0x000009c9      0x159 ./src/crc.o
+ .debug_abbrev  0x00000b22      0x1ec ./src/eeprom.o
+ .debug_abbrev  0x00000d0e      0x126 ./src/epi.o
+ .debug_abbrev  0x00000e34      0x24c ./src/ethernet.o
+ .debug_abbrev  0x00001080      0x100 ./src/fan.o
+ .debug_abbrev  0x00001180      0x1a5 ./src/flash.o
+ .debug_abbrev  0x00001325      0x11e ./src/flash_pb.o
+ .debug_abbrev  0x00001443       0x82 ./src/fpu.o
+ .debug_abbrev  0x000014c5      0x1dd ./src/gpio.o
+ .debug_abbrev  0x000016a2      0x177 ./src/hibernate.o
+ .debug_abbrev  0x00001819      0x1f8 ./src/i2c.o
+ .debug_abbrev  0x00001a11      0x100 ./src/i2s.o
+ .debug_abbrev  0x00001b11      0x177 ./src/interrupt.o
+ .debug_abbrev  0x00001c88       0x67 ./src/isqrt.o
+ .debug_abbrev  0x00001cef      0x139 ./src/lpc.o
+ .debug_abbrev  0x00001e28       0x68 ./src/main.o
+ .debug_abbrev  0x00001e90       0xcf ./src/mpu.o
+ .debug_abbrev  0x00001f5f      0x17f ./src/peci.o
+ .debug_abbrev  0x000020de      0x15c ./src/pwm.o
+ .debug_abbrev  0x0000223a      0x102 ./src/qei.o
+ .debug_abbrev  0x0000233c      0x256 ./src/ringbuf.o
+ .debug_abbrev  0x00002592      0x141 ./src/rit128x96x4.o
+ .debug_abbrev  0x000026d3      0x184 ./src/scheduler.o
+ .debug_abbrev  0x00002857       0x7c ./src/sine.o
+ .debug_abbrev  0x000028d3       0xe5 ./src/softi2c.o
+ .debug_abbrev  0x000029b8      0x197 ./src/softssi.o
+ .debug_abbrev  0x00002b4f      0x20f ./src/softuart.o
+ .debug_abbrev  0x00002d5e      0x17a ./src/ssi.o
+ .debug_abbrev  0x00002ed8       0xbd ./src/startup_gcc.o
+ .debug_abbrev  0x00002f95      0x1a8 ./src/sysctl.o
+ .debug_abbrev  0x0000313d       0xba ./src/sysexc.o
+ .debug_abbrev  0x000031f7       0x9c ./src/systick.o
+ .debug_abbrev  0x00003293      0x1f0 ./src/timer.o
+ .debug_abbrev  0x00003483      0x1fa ./src/uart.o
+ .debug_abbrev  0x0000367d      0x1e8 ./src/uartstdio.o
+ .debug_abbrev  0x00003865      0x181 ./src/udma.o
+ .debug_abbrev  0x000039e6      0x196 ./src/usb.o
+ .debug_abbrev  0x00003b7c      0x2a4 ./src/ustdlib.o
+ .debug_abbrev  0x00003e20       0xf3 ./src/watchdog.o
 
-.debug_info     0x00000000    0x11712
- .debug_info    0x00000000      0x26d ./src/sv_utils/sound_visualizer.o
- .debug_info    0x0000026d      0x907 ./src/adc.o
- .debug_info    0x00000b74     0x1fd1 ./src/can.o
- .debug_info    0x00002b45      0x197 ./src/cmdline.o
- .debug_info    0x00002cdc      0x26c ./src/comp.o
- .debug_info    0x00002f48      0x11a ./src/cpu.o
- .debug_info    0x00003062      0x12d ./src/cpu_usage.o
- .debug_info    0x0000318f      0x28d ./src/crc.o
- .debug_info    0x0000341c      0x4b9 ./src/eeprom.o
- .debug_info    0x000038d5      0x66c ./src/epi.o
- .debug_info    0x00003f41      0x87d ./src/ethernet.o
- .debug_info    0x000047be      0x3f8 ./src/fan.o
- .debug_info    0x00004bb6      0x3ef ./src/flash.o
- .debug_info    0x00004fa5      0x1dd ./src/flash_pb.o
- .debug_info    0x00005182      0x12d ./src/fpu.o
- .debug_info    0x000052af     0x11f6 ./src/gpio.o
- .debug_info    0x000064a5      0x63b ./src/hibernate.o
- .debug_info    0x00006ae0      0x92d ./src/i2c.o
- .debug_info    0x0000740d      0x557 ./src/i2s.o
- .debug_info    0x00007964      0x3e9 ./src/interrupt.o
- .debug_info    0x00007d4d       0x89 ./src/isqrt.o
- .debug_info    0x00007dd6      0xa87 ./src/lpc.o
- .debug_info    0x0000885d       0x81 ./src/main.o
- .debug_info    0x000088de      0x1bc ./src/mpu.o
- .debug_info    0x00008a9a      0x736 ./src/peci.o
- .debug_info    0x000091d0      0x9e7 ./src/pwm.o
- .debug_info    0x00009bb7      0x3ae ./src/qei.o
- .debug_info    0x00009f65      0x724 ./src/ringbuf.o
- .debug_info    0x0000a689      0x577 ./src/rit128x96x4.o
- .debug_info    0x0000ac00      0x2bc ./src/scheduler.o
- .debug_info    0x0000aebc       0xa4 ./src/sine.o
- .debug_info    0x0000af60      0x3ee ./src/softi2c.o
- .debug_info    0x0000b34e      0x7f7 ./src/softssi.o
- .debug_info    0x0000bb45      0xaa6 ./src/softuart.o
- .debug_info    0x0000c5eb      0x52f ./src/ssi.o
- .debug_info    0x0000cb1a      0x11b ./src/startup_gcc.o
- .debug_info    0x0000cc35      0x998 ./src/sysctl.o
- .debug_info    0x0000d5cd      0x127 ./src/sysexc.o
- .debug_info    0x0000d6f4      0x121 ./src/systick.o
- .debug_info    0x0000d815      0x938 ./src/timer.o
- .debug_info    0x0000e14d      0xaf6 ./src/uart.o
- .debug_info    0x0000ec43      0x4fb ./src/uartstdio.o
- .debug_info    0x0000f13e      0x5da ./src/udma.o
- .debug_info    0x0000f718     0x12f1 ./src/usb.o
- .debug_info    0x00010a09      0x9ad ./src/ustdlib.o
- .debug_info    0x000113b6      0x35c ./src/watchdog.o
+.debug_info     0x00000000    0x120b4
+ .debug_info    0x00000000      0xbca ./src/sv_utils/sound_visualizer.o
+ .debug_info    0x00000bca      0x907 ./src/adc.o
+ .debug_info    0x000014d1     0x1fd1 ./src/can.o
+ .debug_info    0x000034a2      0x197 ./src/cmdline.o
+ .debug_info    0x00003639      0x26c ./src/comp.o
+ .debug_info    0x000038a5      0x11a ./src/cpu.o
+ .debug_info    0x000039bf      0x12d ./src/cpu_usage.o
+ .debug_info    0x00003aec      0x28d ./src/crc.o
+ .debug_info    0x00003d79      0x4b9 ./src/eeprom.o
+ .debug_info    0x00004232      0x66c ./src/epi.o
+ .debug_info    0x0000489e      0x87d ./src/ethernet.o
+ .debug_info    0x0000511b      0x3f8 ./src/fan.o
+ .debug_info    0x00005513      0x3ef ./src/flash.o
+ .debug_info    0x00005902      0x1dd ./src/flash_pb.o
+ .debug_info    0x00005adf      0x12d ./src/fpu.o
+ .debug_info    0x00005c0c     0x11f6 ./src/gpio.o
+ .debug_info    0x00006e02      0x63b ./src/hibernate.o
+ .debug_info    0x0000743d      0x92d ./src/i2c.o
+ .debug_info    0x00007d6a      0x557 ./src/i2s.o
+ .debug_info    0x000082c1      0x3e9 ./src/interrupt.o
+ .debug_info    0x000086aa       0x89 ./src/isqrt.o
+ .debug_info    0x00008733      0xa87 ./src/lpc.o
+ .debug_info    0x000091ba       0xc6 ./src/main.o
+ .debug_info    0x00009280      0x1bc ./src/mpu.o
+ .debug_info    0x0000943c      0x736 ./src/peci.o
+ .debug_info    0x00009b72      0x9e7 ./src/pwm.o
+ .debug_info    0x0000a559      0x3ae ./src/qei.o
+ .debug_info    0x0000a907      0x724 ./src/ringbuf.o
+ .debug_info    0x0000b02b      0x577 ./src/rit128x96x4.o
+ .debug_info    0x0000b5a2      0x2bc ./src/scheduler.o
+ .debug_info    0x0000b85e       0xa4 ./src/sine.o
+ .debug_info    0x0000b902      0x3ee ./src/softi2c.o
+ .debug_info    0x0000bcf0      0x7f7 ./src/softssi.o
+ .debug_info    0x0000c4e7      0xaa6 ./src/softuart.o
+ .debug_info    0x0000cf8d      0x52f ./src/ssi.o
+ .debug_info    0x0000d4bc      0x11b ./src/startup_gcc.o
+ .debug_info    0x0000d5d7      0x998 ./src/sysctl.o
+ .debug_info    0x0000df6f      0x127 ./src/sysexc.o
+ .debug_info    0x0000e096      0x121 ./src/systick.o
+ .debug_info    0x0000e1b7      0x938 ./src/timer.o
+ .debug_info    0x0000eaef      0xaf6 ./src/uart.o
+ .debug_info    0x0000f5e5      0x4fb ./src/uartstdio.o
+ .debug_info    0x0000fae0      0x5da ./src/udma.o
+ .debug_info    0x000100ba     0x12f1 ./src/usb.o
+ .debug_info    0x000113ab      0x9ad ./src/ustdlib.o
+ .debug_info    0x00011d58      0x35c ./src/watchdog.o
 
-.debug_line     0x00000000     0xa189
- .debug_line    0x00000000      0x329 ./src/sv_utils/sound_visualizer.o
- .debug_line    0x00000329      0x449 ./src/adc.o
- .debug_line    0x00000772      0xbeb ./src/can.o
- .debug_line    0x0000135d      0x2b7 ./src/cmdline.o
- .debug_line    0x00001614      0x16a ./src/comp.o
- .debug_line    0x0000177e       0xbb ./src/cpu.o
- .debug_line    0x00001839      0x112 ./src/cpu_usage.o
- .debug_line    0x0000194b      0x227 ./src/crc.o
- .debug_line    0x00001b72      0x426 ./src/eeprom.o
- .debug_line    0x00001f98      0x394 ./src/epi.o
- .debug_line    0x0000232c      0x48c ./src/ethernet.o
- .debug_line    0x000027b8      0x1f6 ./src/fan.o
- .debug_line    0x000029ae      0x32c ./src/flash.o
- .debug_line    0x00002cda      0x1ae ./src/flash_pb.o
- .debug_line    0x00002e88      0x10e ./src/fpu.o
- .debug_line    0x00002f96      0x7cc ./src/gpio.o
- .debug_line    0x00003762      0x637 ./src/hibernate.o
- .debug_line    0x00003d99      0x456 ./src/i2c.o
- .debug_line    0x000041ef      0x303 ./src/i2s.o
- .debug_line    0x000044f2      0x22f ./src/interrupt.o
- .debug_line    0x00004721       0xf7 ./src/isqrt.o
- .debug_line    0x00004818      0x421 ./src/lpc.o
- .debug_line    0x00004c39      0x1f2 ./src/main.o
- .debug_line    0x00004e2b      0x166 ./src/mpu.o
- .debug_line    0x00004f91      0x2d8 ./src/peci.o
- .debug_line    0x00005269      0x3dd ./src/pwm.o
- .debug_line    0x00005646      0x205 ./src/qei.o
- .debug_line    0x0000584b      0x288 ./src/ringbuf.o
- .debug_line    0x00005ad3      0x48f ./src/rit128x96x4.o
- .debug_line    0x00005f62      0x185 ./src/scheduler.o
- .debug_line    0x000060e7       0x60 ./src/sine.o
- .debug_line    0x00006147      0x2ec ./src/softi2c.o
- .debug_line    0x00006433      0x407 ./src/softssi.o
- .debug_line    0x0000683a      0x8c4 ./src/softuart.o
- .debug_line    0x000070fe      0x279 ./src/ssi.o
- .debug_line    0x00007377       0x87 ./src/startup_gcc.o
- .debug_line    0x000073fe      0x67a ./src/sysctl.o
- .debug_line    0x00007a78       0xfa ./src/sysexc.o
- .debug_line    0x00007b72      0x144 ./src/systick.o
- .debug_line    0x00007cb6      0x411 ./src/timer.o
- .debug_line    0x000080c7      0x4fc ./src/uart.o
- .debug_line    0x000085c3      0x4e1 ./src/uartstdio.o
- .debug_line    0x00008aa4      0x328 ./src/udma.o
- .debug_line    0x00008dcc      0x837 ./src/usb.o
- .debug_line    0x00009603      0x959 ./src/ustdlib.o
- .debug_line    0x00009f5c      0x22d ./src/watchdog.o
+.debug_line     0x00000000     0xa4b3
+ .debug_line    0x00000000      0x7c9 ./src/sv_utils/sound_visualizer.o
+ .debug_line    0x000007c9      0x449 ./src/adc.o
+ .debug_line    0x00000c12      0xbeb ./src/can.o
+ .debug_line    0x000017fd      0x1e6 ./src/cmdline.o
+ .debug_line    0x000019e3      0x16a ./src/comp.o
+ .debug_line    0x00001b4d       0xbb ./src/cpu.o
+ .debug_line    0x00001c08      0x112 ./src/cpu_usage.o
+ .debug_line    0x00001d1a      0x227 ./src/crc.o
+ .debug_line    0x00001f41      0x426 ./src/eeprom.o
+ .debug_line    0x00002367      0x394 ./src/epi.o
+ .debug_line    0x000026fb      0x48c ./src/ethernet.o
+ .debug_line    0x00002b87      0x1f6 ./src/fan.o
+ .debug_line    0x00002d7d      0x32c ./src/flash.o
+ .debug_line    0x000030a9      0x1ae ./src/flash_pb.o
+ .debug_line    0x00003257      0x10e ./src/fpu.o
+ .debug_line    0x00003365      0x7cc ./src/gpio.o
+ .debug_line    0x00003b31      0x637 ./src/hibernate.o
+ .debug_line    0x00004168      0x456 ./src/i2c.o
+ .debug_line    0x000045be      0x303 ./src/i2s.o
+ .debug_line    0x000048c1      0x22f ./src/interrupt.o
+ .debug_line    0x00004af0       0xf7 ./src/isqrt.o
+ .debug_line    0x00004be7      0x421 ./src/lpc.o
+ .debug_line    0x00005008      0x2ef ./src/main.o
+ .debug_line    0x000052f7      0x166 ./src/mpu.o
+ .debug_line    0x0000545d      0x2d8 ./src/peci.o
+ .debug_line    0x00005735      0x3dd ./src/pwm.o
+ .debug_line    0x00005b12      0x205 ./src/qei.o
+ .debug_line    0x00005d17      0x288 ./src/ringbuf.o
+ .debug_line    0x00005f9f      0x48f ./src/rit128x96x4.o
+ .debug_line    0x0000642e      0x185 ./src/scheduler.o
+ .debug_line    0x000065b3       0x60 ./src/sine.o
+ .debug_line    0x00006613      0x2ec ./src/softi2c.o
+ .debug_line    0x000068ff      0x407 ./src/softssi.o
+ .debug_line    0x00006d06      0x7f3 ./src/softuart.o
+ .debug_line    0x000074f9      0x279 ./src/ssi.o
+ .debug_line    0x00007772       0x87 ./src/startup_gcc.o
+ .debug_line    0x000077f9      0x67a ./src/sysctl.o
+ .debug_line    0x00007e73       0xfa ./src/sysexc.o
+ .debug_line    0x00007f6d      0x144 ./src/systick.o
+ .debug_line    0x000080b1      0x411 ./src/timer.o
+ .debug_line    0x000084c2      0x4fc ./src/uart.o
+ .debug_line    0x000089be      0x4e1 ./src/uartstdio.o
+ .debug_line    0x00008e9f      0x328 ./src/udma.o
+ .debug_line    0x000091c7      0x837 ./src/usb.o
+ .debug_line    0x000099fe      0x888 ./src/ustdlib.o
+ .debug_line    0x0000a286      0x22d ./src/watchdog.o
 
-.debug_macinfo  0x00000000   0x26e65c
+.debug_macinfo  0x00000000   0x23f737
  .debug_macinfo
-                0x00000000    0x29d97 ./src/sv_utils/sound_visualizer.o
+                0x00000000    0x10f69 ./src/sv_utils/sound_visualizer.o
  .debug_macinfo
-                0x00029d97    0x18203 ./src/adc.o
+                0x00010f69    0x18203 ./src/adc.o
  .debug_macinfo
-                0x00041f9a     0xc87c ./src/can.o
+                0x0002916c     0xc87c ./src/can.o
  .debug_macinfo
-                0x0004e816     0x2984 ./src/cmdline.o
+                0x000359e8     0x389d ./src/cmdline.o
  .debug_macinfo
-                0x0005119a     0x411f ./src/comp.o
+                0x00039285     0x411f ./src/comp.o
  .debug_macinfo
-                0x000552b9      0xcb3 ./src/cpu.o
+                0x0003d3a4      0xcb3 ./src/cpu.o
  .debug_macinfo
-                0x00055f6c     0xd8a4 ./src/cpu_usage.o
+                0x0003e057     0xd8a4 ./src/cpu_usage.o
  .debug_macinfo
-                0x00063810      0xd4e ./src/crc.o
+                0x0004b8fb      0xd4e ./src/crc.o
  .debug_macinfo
-                0x0006455e    0x16db7 ./src/eeprom.o
+                0x0004c649    0x16db7 ./src/eeprom.o
  .debug_macinfo
-                0x0007b315     0x5d36 ./src/epi.o
+                0x00063400     0x5d36 ./src/epi.o
  .debug_macinfo
-                0x0008104b     0x8540 ./src/ethernet.o
+                0x00069136     0x8540 ./src/ethernet.o
  .debug_macinfo
-                0x0008958b     0x5db1 ./src/fan.o
+                0x00071676     0x5db1 ./src/fan.o
  .debug_macinfo
-                0x0008f33c    0x12ca0 ./src/flash.o
+                0x00077427    0x12ca0 ./src/flash.o
  .debug_macinfo
-                0x000a1fdc     0x67bf ./src/flash_pb.o
+                0x0008a0c7     0x67bf ./src/flash_pb.o
  .debug_macinfo
-                0x000a879b     0x904b ./src/fpu.o
+                0x00090886     0x904b ./src/fpu.o
  .debug_macinfo
-                0x000b17e6    0x12dcb ./src/gpio.o
+                0x000998d1    0x12dcb ./src/gpio.o
  .debug_macinfo
-                0x000c45b1    0x155ce ./src/hibernate.o
+                0x000ac69c    0x155ce ./src/hibernate.o
  .debug_macinfo
-                0x000d9b7f    0x16a58 ./src/i2c.o
+                0x000c1c6a    0x16a58 ./src/i2c.o
  .debug_macinfo
-                0x000f05d7     0x392f ./src/i2s.o
+                0x000d86c2     0x392f ./src/i2s.o
  .debug_macinfo
-                0x000f3f06     0x9857 ./src/interrupt.o
+                0x000dbff1     0x9857 ./src/interrupt.o
  .debug_macinfo
-                0x000fd75d      0xcb5 ./src/isqrt.o
+                0x000e5848      0xcb5 ./src/isqrt.o
  .debug_macinfo
-                0x000fe412    0x17c2d ./src/lpc.o
+                0x000e64fd    0x17c2d ./src/lpc.o
  .debug_macinfo
-                0x0011603f    0x29d83 ./src/main.o
+                0x000fe12a    0x10f41 ./src/main.o
  .debug_macinfo
-                0x0013fdc2     0x9e35 ./src/mpu.o
+                0x0010f06b     0x9e35 ./src/mpu.o
  .debug_macinfo
-                0x00149bf7    0x1384f ./src/peci.o
+                0x00118ea0    0x1384f ./src/peci.o
  .debug_macinfo
-                0x0015d446    0x1b6a0 ./src/pwm.o
+                0x0012c6ef    0x1b6a0 ./src/pwm.o
  .debug_macinfo
-                0x00178ae6     0x35ad ./src/qei.o
+                0x00147d8f     0x35ad ./src/qei.o
  .debug_macinfo
-                0x0017c093     0x18b5 ./src/ringbuf.o
+                0x0014b33c     0x18b5 ./src/ringbuf.o
  .debug_macinfo
-                0x0017d948    0x15e17 ./src/rit128x96x4.o
+                0x0014cbf1    0x15e17 ./src/rit128x96x4.o
  .debug_macinfo
-                0x0019375f     0x5834 ./src/scheduler.o
+                0x00162a08     0x5834 ./src/scheduler.o
  .debug_macinfo
-                0x00198f93      0xce3 ./src/sine.o
+                0x0016823c      0xce3 ./src/sine.o
  .debug_macinfo
-                0x00199c76     0x9b34 ./src/softi2c.o
+                0x00168f1f     0x9b34 ./src/softi2c.o
  .debug_macinfo
-                0x001a37aa     0x97b9 ./src/softssi.o
+                0x00172a53     0x97b9 ./src/softssi.o
  .debug_macinfo
-                0x001acf63    0x21b11 ./src/softuart.o
+                0x0017c20c    0x22a2a ./src/softuart.o
  .debug_macinfo
-                0x001cea74     0x6ce0 ./src/ssi.o
+                0x0019ec36     0x6ce0 ./src/ssi.o
  .debug_macinfo
-                0x001d5754      0xca2 ./src/startup_gcc.o
+                0x001a5916      0xca2 ./src/startup_gcc.o
  .debug_macinfo
-                0x001d63f6    0x1c2d4 ./src/sysctl.o
+                0x001a65b8    0x1c2d4 ./src/sysctl.o
  .debug_macinfo
-                0x001f26ca     0x24a7 ./src/sysexc.o
+                0x001c288c     0x24a7 ./src/sysexc.o
  .debug_macinfo
-                0x001f4b71     0x985b ./src/systick.o
+                0x001c4d33     0x985b ./src/systick.o
  .debug_macinfo
-                0x001fe3cc     0x5776 ./src/timer.o
+                0x001ce58e     0x5776 ./src/timer.o
  .debug_macinfo
-                0x00203b42    0x176c2 ./src/uart.o
+                0x001d3d04    0x176c2 ./src/uart.o
  .debug_macinfo
-                0x0021b204     0xfbed ./src/uartstdio.o
+                0x001eb3c6     0xfbed ./src/uartstdio.o
  .debug_macinfo
-                0x0022adf1    0x14714 ./src/udma.o
+                0x001fafb3    0x14714 ./src/udma.o
  .debug_macinfo
-                0x0023f505    0x29473 ./src/usb.o
+                0x0020f6c7    0x29473 ./src/usb.o
  .debug_macinfo
-                0x00268978     0x2aad ./src/ustdlib.o
+                0x00238b3a     0x39c6 ./src/ustdlib.o
  .debug_macinfo
-                0x0026b425     0x3237 ./src/watchdog.o
+                0x0023c500     0x3237 ./src/watchdog.o
 
-.debug_loc      0x00000000     0xe295
- .debug_loc     0x00000000      0x1ed ./src/sv_utils/sound_visualizer.o
- .debug_loc     0x000001ed      0x667 ./src/adc.o
- .debug_loc     0x00000854     0x395d ./src/can.o
- .debug_loc     0x000041b1       0xb3 ./src/cmdline.o
- .debug_loc     0x00004264      0x14e ./src/comp.o
- .debug_loc     0x000043b2       0x4c ./src/cpu.o
- .debug_loc     0x000043fe       0x95 ./src/cpu_usage.o
- .debug_loc     0x00004493      0x41e ./src/crc.o
- .debug_loc     0x000048b1      0x417 ./src/eeprom.o
- .debug_loc     0x00004cc8      0x330 ./src/epi.o
- .debug_loc     0x00004ff8      0x7b5 ./src/ethernet.o
- .debug_loc     0x000057ad      0x1d8 ./src/fan.o
- .debug_loc     0x00005985      0x350 ./src/flash.o
- .debug_loc     0x00005cd5      0x2a3 ./src/flash_pb.o
- .debug_loc     0x00005f78      0x5c9 ./src/gpio.o
- .debug_loc     0x00006541      0x29c ./src/hibernate.o
- .debug_loc     0x000067dd      0x38f ./src/i2c.o
- .debug_loc     0x00006b6c      0x11d ./src/i2s.o
- .debug_loc     0x00006c89      0x344 ./src/interrupt.o
- .debug_loc     0x00006fcd      0x35c ./src/isqrt.o
- .debug_loc     0x00007329      0x50b ./src/lpc.o
- .debug_loc     0x00007834       0x63 ./src/main.o
- .debug_loc     0x00007897      0x11f ./src/mpu.o
- .debug_loc     0x000079b6      0x466 ./src/peci.o
- .debug_loc     0x00007e1c      0x633 ./src/pwm.o
- .debug_loc     0x0000844f       0xf4 ./src/qei.o
- .debug_loc     0x00008543      0x500 ./src/ringbuf.o
- .debug_loc     0x00008a43      0x35d ./src/rit128x96x4.o
- .debug_loc     0x00008da0       0xdc ./src/scheduler.o
- .debug_loc     0x00008e7c       0x1e ./src/sine.o
- .debug_loc     0x00008e9a      0x2dd ./src/softi2c.o
- .debug_loc     0x00009177      0x3c9 ./src/softssi.o
- .debug_loc     0x00009540      0x70c ./src/softuart.o
- .debug_loc     0x00009c4c      0x273 ./src/ssi.o
- .debug_loc     0x00009ebf       0x1f ./src/startup_gcc.o
- .debug_loc     0x00009ede      0x76d ./src/sysctl.o
- .debug_loc     0x0000a64b       0x7a ./src/sysexc.o
- .debug_loc     0x0000a6c5       0x50 ./src/systick.o
- .debug_loc     0x0000a715      0x6f1 ./src/timer.o
- .debug_loc     0x0000ae06      0x470 ./src/uart.o
- .debug_loc     0x0000b276      0xae0 ./src/uartstdio.o
- .debug_loc     0x0000bd56      0x3bd ./src/udma.o
- .debug_loc     0x0000c113      0xea6 ./src/usb.o
- .debug_loc     0x0000cfb9     0x11fb ./src/ustdlib.o
- .debug_loc     0x0000e1b4       0xe1 ./src/watchdog.o
+.debug_loc      0x00000000     0xe74a
+ .debug_loc     0x00000000      0x6b2 ./src/sv_utils/sound_visualizer.o
+ .debug_loc     0x000006b2      0x667 ./src/adc.o
+ .debug_loc     0x00000d19     0x395d ./src/can.o
+ .debug_loc     0x00004676       0xb3 ./src/cmdline.o
+ .debug_loc     0x00004729      0x14e ./src/comp.o
+ .debug_loc     0x00004877       0x4c ./src/cpu.o
+ .debug_loc     0x000048c3       0x95 ./src/cpu_usage.o
+ .debug_loc     0x00004958      0x41e ./src/crc.o
+ .debug_loc     0x00004d76      0x417 ./src/eeprom.o
+ .debug_loc     0x0000518d      0x330 ./src/epi.o
+ .debug_loc     0x000054bd      0x7b5 ./src/ethernet.o
+ .debug_loc     0x00005c72      0x1d8 ./src/fan.o
+ .debug_loc     0x00005e4a      0x350 ./src/flash.o
+ .debug_loc     0x0000619a      0x2a3 ./src/flash_pb.o
+ .debug_loc     0x0000643d      0x5c9 ./src/gpio.o
+ .debug_loc     0x00006a06      0x29c ./src/hibernate.o
+ .debug_loc     0x00006ca2      0x38f ./src/i2c.o
+ .debug_loc     0x00007031      0x11d ./src/i2s.o
+ .debug_loc     0x0000714e      0x344 ./src/interrupt.o
+ .debug_loc     0x00007492      0x35c ./src/isqrt.o
+ .debug_loc     0x000077ee      0x50b ./src/lpc.o
+ .debug_loc     0x00007cf9       0x53 ./src/main.o
+ .debug_loc     0x00007d4c      0x11f ./src/mpu.o
+ .debug_loc     0x00007e6b      0x466 ./src/peci.o
+ .debug_loc     0x000082d1      0x633 ./src/pwm.o
+ .debug_loc     0x00008904       0xf4 ./src/qei.o
+ .debug_loc     0x000089f8      0x500 ./src/ringbuf.o
+ .debug_loc     0x00008ef8      0x35d ./src/rit128x96x4.o
+ .debug_loc     0x00009255       0xdc ./src/scheduler.o
+ .debug_loc     0x00009331       0x1e ./src/sine.o
+ .debug_loc     0x0000934f      0x2dd ./src/softi2c.o
+ .debug_loc     0x0000962c      0x3c9 ./src/softssi.o
+ .debug_loc     0x000099f5      0x70c ./src/softuart.o
+ .debug_loc     0x0000a101      0x273 ./src/ssi.o
+ .debug_loc     0x0000a374       0x1f ./src/startup_gcc.o
+ .debug_loc     0x0000a393      0x76d ./src/sysctl.o
+ .debug_loc     0x0000ab00       0x7a ./src/sysexc.o
+ .debug_loc     0x0000ab7a       0x50 ./src/systick.o
+ .debug_loc     0x0000abca      0x6f1 ./src/timer.o
+ .debug_loc     0x0000b2bb      0x470 ./src/uart.o
+ .debug_loc     0x0000b72b      0xae0 ./src/uartstdio.o
+ .debug_loc     0x0000c20b      0x3bd ./src/udma.o
+ .debug_loc     0x0000c5c8      0xea6 ./src/usb.o
+ .debug_loc     0x0000d46e     0x11fb ./src/ustdlib.o
+ .debug_loc     0x0000e669       0xe1 ./src/watchdog.o
 
 .debug_pubnames
-                0x00000000     0x4b4e
+                0x00000000     0x4c6c
  .debug_pubnames
-                0x00000000      0x169 ./src/sv_utils/sound_visualizer.o
+                0x00000000      0x287 ./src/sv_utils/sound_visualizer.o
  .debug_pubnames
-                0x00000169      0x33f ./src/adc.o
+                0x00000287      0x33f ./src/adc.o
  .debug_pubnames
-                0x000004a8      0x15c ./src/can.o
+                0x000005c6      0x15c ./src/can.o
  .debug_pubnames
-                0x00000604       0x25 ./src/cmdline.o
+                0x00000722       0x25 ./src/cmdline.o
  .debug_pubnames
-                0x00000629       0xec ./src/comp.o
+                0x00000747       0xec ./src/comp.o
  .debug_pubnames
-                0x00000715       0x6a ./src/cpu.o
+                0x00000833       0x6a ./src/cpu.o
  .debug_pubnames
-                0x0000077f       0x34 ./src/cpu_usage.o
+                0x0000089d       0x34 ./src/cpu_usage.o
  .debug_pubnames
-                0x000007b3       0x49 ./src/crc.o
+                0x000008d1       0x49 ./src/crc.o
  .debug_pubnames
-                0x000007fc      0x18e ./src/eeprom.o
+                0x0000091a      0x18e ./src/eeprom.o
  .debug_pubnames
-                0x0000098a      0x232 ./src/epi.o
+                0x00000aa8      0x232 ./src/epi.o
  .debug_pubnames
-                0x00000bbc      0x240 ./src/ethernet.o
+                0x00000cda      0x240 ./src/ethernet.o
  .debug_pubnames
-                0x00000dfc      0x15b ./src/fan.o
+                0x00000f1a      0x15b ./src/fan.o
  .debug_pubnames
-                0x00000f57      0x13d ./src/flash.o
+                0x00001075      0x13d ./src/flash.o
  .debug_pubnames
-                0x00001094       0x41 ./src/flash_pb.o
+                0x000011b2       0x41 ./src/flash_pb.o
  .debug_pubnames
-                0x000010d5       0xd5 ./src/fpu.o
+                0x000011f3       0xd5 ./src/fpu.o
  .debug_pubnames
-                0x000011aa      0x3a5 ./src/gpio.o
+                0x000012c8      0x3a5 ./src/gpio.o
  .debug_pubnames
-                0x0000154f      0x33d ./src/hibernate.o
+                0x0000166d      0x33d ./src/hibernate.o
  .debug_pubnames
-                0x0000188c      0x370 ./src/i2c.o
+                0x000019aa      0x370 ./src/i2c.o
  .debug_pubnames
-                0x00001bfc      0x217 ./src/i2s.o
+                0x00001d1a      0x217 ./src/i2s.o
  .debug_pubnames
-                0x00001e13      0x135 ./src/interrupt.o
+                0x00001f31      0x135 ./src/interrupt.o
  .debug_pubnames
-                0x00001f48       0x1c ./src/isqrt.o
+                0x00002066       0x1c ./src/isqrt.o
  .debug_pubnames
-                0x00001f64      0x337 ./src/lpc.o
+                0x00002082      0x337 ./src/lpc.o
  .debug_pubnames
-                0x0000229b       0x1b ./src/main.o
+                0x000023b9       0x1b ./src/main.o
  .debug_pubnames
-                0x000022b6       0xb8 ./src/mpu.o
+                0x000023d4       0xb8 ./src/mpu.o
  .debug_pubnames
-                0x0000236e      0x1db ./src/peci.o
+                0x0000248c      0x1db ./src/peci.o
  .debug_pubnames
-                0x00002549      0x2d1 ./src/pwm.o
+                0x00002667      0x2d1 ./src/pwm.o
  .debug_pubnames
-                0x0000281a      0x14f ./src/qei.o
+                0x00002938      0x14f ./src/qei.o
  .debug_pubnames
-                0x00002969      0x127 ./src/ringbuf.o
+                0x00002a87      0x127 ./src/ringbuf.o
  .debug_pubnames
-                0x00002a90       0xce ./src/rit128x96x4.o
+                0x00002bae       0xce ./src/rit128x96x4.o
  .debug_pubnames
-                0x00002b5e       0xda ./src/scheduler.o
+                0x00002c7c       0xda ./src/scheduler.o
  .debug_pubnames
-                0x00002c38       0x1b ./src/sine.o
+                0x00002d56       0x1b ./src/sine.o
  .debug_pubnames
-                0x00002c53      0x13e ./src/softi2c.o
+                0x00002d71      0x13e ./src/softi2c.o
  .debug_pubnames
-                0x00002d91      0x1ed ./src/softssi.o
+                0x00002eaf      0x1ed ./src/softssi.o
  .debug_pubnames
-                0x00002f7e      0x2bd ./src/softuart.o
+                0x0000309c      0x2bd ./src/softuart.o
  .debug_pubnames
-                0x0000323b      0x15f ./src/ssi.o
+                0x00003359      0x15f ./src/ssi.o
  .debug_pubnames
-                0x0000339a       0x30 ./src/startup_gcc.o
+                0x000034b8       0x30 ./src/startup_gcc.o
  .debug_pubnames
-                0x000033ca      0x4bf ./src/sysctl.o
+                0x000034e8      0x4bf ./src/sysctl.o
  .debug_pubnames
-                0x00003889       0x90 ./src/sysexc.o
+                0x000039a7       0x90 ./src/sysexc.o
  .debug_pubnames
-                0x00003919       0xd0 ./src/systick.o
+                0x00003a37       0xd0 ./src/systick.o
  .debug_pubnames
-                0x000039e9      0x29b ./src/timer.o
+                0x00003b07      0x29b ./src/timer.o
  .debug_pubnames
-                0x00003c84      0x3c4 ./src/uart.o
+                0x00003da2      0x3c4 ./src/uart.o
  .debug_pubnames
-                0x00004048       0x73 ./src/uartstdio.o
+                0x00004166       0x73 ./src/uartstdio.o
  .debug_pubnames
-                0x000040bb      0x289 ./src/udma.o
+                0x000041d9      0x289 ./src/udma.o
  .debug_pubnames
-                0x00004344      0x595 ./src/usb.o
+                0x00004462      0x595 ./src/usb.o
  .debug_pubnames
-                0x000048d9       0xd5 ./src/ustdlib.o
+                0x000049f7       0xd5 ./src/ustdlib.o
  .debug_pubnames
-                0x000049ae      0x1a0 ./src/watchdog.o
+                0x00004acc      0x1a0 ./src/watchdog.o
 
-.debug_aranges  0x00000000     0x1f58
+.debug_aranges  0x00000000     0x1f98
  .debug_aranges
-                0x00000000       0x70 ./src/sv_utils/sound_visualizer.o
+                0x00000000       0xb0 ./src/sv_utils/sound_visualizer.o
  .debug_aranges
-                0x00000070      0x120 ./src/adc.o
+                0x000000b0      0x120 ./src/adc.o
  .debug_aranges
-                0x00000190       0xb0 ./src/can.o
+                0x000001d0       0xb0 ./src/can.o
  .debug_aranges
-                0x00000240       0x20 ./src/cmdline.o
+                0x00000280       0x20 ./src/cmdline.o
  .debug_aranges
-                0x00000260       0x60 ./src/comp.o
+                0x000002a0       0x60 ./src/comp.o
  .debug_aranges
-                0x000002c0       0x48 ./src/cpu.o
+                0x00000300       0x48 ./src/cpu.o
  .debug_aranges
-                0x00000308       0x28 ./src/cpu_usage.o
+                0x00000348       0x28 ./src/cpu_usage.o
  .debug_aranges
-                0x00000330       0x38 ./src/crc.o
+                0x00000370       0x38 ./src/crc.o
  .debug_aranges
-                0x00000368       0xb0 ./src/eeprom.o
+                0x000003a8       0xb0 ./src/eeprom.o
  .debug_aranges
-                0x00000418       0xd8 ./src/epi.o
+                0x00000458       0xd8 ./src/epi.o
  .debug_aranges
-                0x000004f0       0xd8 ./src/ethernet.o
+                0x00000530       0xd8 ./src/ethernet.o
  .debug_aranges
-                0x000005c8       0x98 ./src/fan.o
+                0x00000608       0x98 ./src/fan.o
  .debug_aranges
-                0x00000660       0x98 ./src/flash.o
+                0x000006a0       0x98 ./src/flash.o
  .debug_aranges
-                0x000006f8       0x30 ./src/flash_pb.o
+                0x00000738       0x30 ./src/flash_pb.o
  .debug_aranges
-                0x00000728       0x60 ./src/fpu.o
+                0x00000768       0x60 ./src/fpu.o
  .debug_aranges
-                0x00000788      0x168 ./src/gpio.o
+                0x000007c8      0x168 ./src/gpio.o
  .debug_aranges
-                0x000008f0      0x128 ./src/hibernate.o
+                0x00000930      0x128 ./src/hibernate.o
  .debug_aranges
-                0x00000a18      0x150 ./src/i2c.o
+                0x00000a58      0x150 ./src/i2c.o
  .debug_aranges
-                0x00000b68       0xe8 ./src/i2s.o
+                0x00000ba8       0xe8 ./src/i2s.o
  .debug_aranges
-                0x00000c50       0x98 ./src/interrupt.o
+                0x00000c90       0x98 ./src/interrupt.o
  .debug_aranges
-                0x00000ce8       0x20 ./src/isqrt.o
+                0x00000d28       0x20 ./src/isqrt.o
  .debug_aranges
-                0x00000d08      0x150 ./src/lpc.o
+                0x00000d48      0x150 ./src/lpc.o
  .debug_aranges
-                0x00000e58       0x20 ./src/main.o
+                0x00000e98       0x20 ./src/main.o
  .debug_aranges
-                0x00000e78       0x60 ./src/mpu.o
+                0x00000eb8       0x60 ./src/mpu.o
  .debug_aranges
-                0x00000ed8       0xc0 ./src/peci.o
+                0x00000f18       0xc0 ./src/peci.o
  .debug_aranges
-                0x00000f98      0x120 ./src/pwm.o
+                0x00000fd8      0x120 ./src/pwm.o
  .debug_aranges
-                0x000010b8       0xa0 ./src/qei.o
+                0x000010f8       0xa0 ./src/qei.o
  .debug_aranges
-                0x00001158       0x90 ./src/ringbuf.o
+                0x00001198       0x90 ./src/ringbuf.o
  .debug_aranges
-                0x000011e8       0x58 ./src/rit128x96x4.o
+                0x00001228       0x58 ./src/rit128x96x4.o
  .debug_aranges
-                0x00001240       0x58 ./src/scheduler.o
+                0x00001280       0x58 ./src/scheduler.o
  .debug_aranges
-                0x00001298       0x20 ./src/sine.o
+                0x000012d8       0x20 ./src/sine.o
  .debug_aranges
-                0x000012b8       0x90 ./src/softi2c.o
+                0x000012f8       0x90 ./src/softi2c.o
  .debug_aranges
-                0x00001348       0xc8 ./src/softssi.o
+                0x00001388       0xc8 ./src/softssi.o
  .debug_aranges
-                0x00001410      0x108 ./src/softuart.o
+                0x00001450      0x108 ./src/softuart.o
  .debug_aranges
-                0x00001518       0xa8 ./src/ssi.o
+                0x00001558       0xa8 ./src/ssi.o
  .debug_aranges
-                0x000015c0       0x38 ./src/startup_gcc.o
+                0x00001600       0x38 ./src/startup_gcc.o
  .debug_aranges
-                0x000015f8      0x1a0 ./src/sysctl.o
+                0x00001638      0x1a0 ./src/sysctl.o
  .debug_aranges
-                0x00001798       0x48 ./src/sysexc.o
+                0x000017d8       0x48 ./src/sysexc.o
  .debug_aranges
-                0x000017e0       0x60 ./src/systick.o
+                0x00001820       0x60 ./src/systick.o
  .debug_aranges
-                0x00001840      0x118 ./src/timer.o
+                0x00001880      0x118 ./src/timer.o
  .debug_aranges
-                0x00001958      0x188 ./src/uart.o
+                0x00001998      0x188 ./src/uart.o
  .debug_aranges
-                0x00001ae0       0x48 ./src/uartstdio.o
+                0x00001b20       0x48 ./src/uartstdio.o
  .debug_aranges
-                0x00001b28       0xe8 ./src/udma.o
+                0x00001b68       0xe8 ./src/udma.o
  .debug_aranges
-                0x00001c10      0x210 ./src/usb.o
+                0x00001c50      0x210 ./src/usb.o
  .debug_aranges
-                0x00001e20       0x90 ./src/ustdlib.o
+                0x00001e60       0x90 ./src/ustdlib.o
  .debug_aranges
-                0x00001eb0       0xa8 ./src/watchdog.o
+                0x00001ef0       0xa8 ./src/watchdog.o
 
-.debug_ranges   0x00000000     0x4ed8
- .debug_ranges  0x00000000       0x68 ./src/sv_utils/sound_visualizer.o
- .debug_ranges  0x00000068      0x118 ./src/adc.o
- .debug_ranges  0x00000180     0x1e08 ./src/can.o
- .debug_ranges  0x00001f88       0x18 ./src/cmdline.o
- .debug_ranges  0x00001fa0       0x58 ./src/comp.o
- .debug_ranges  0x00001ff8       0x40 ./src/cpu.o
- .debug_ranges  0x00002038       0x20 ./src/cpu_usage.o
- .debug_ranges  0x00002058       0x30 ./src/crc.o
- .debug_ranges  0x00002088      0x118 ./src/eeprom.o
- .debug_ranges  0x000021a0       0xd0 ./src/epi.o
- .debug_ranges  0x00002270      0x130 ./src/ethernet.o
- .debug_ranges  0x000023a0       0x90 ./src/fan.o
- .debug_ranges  0x00002430       0x90 ./src/flash.o
- .debug_ranges  0x000024c0       0x68 ./src/flash_pb.o
- .debug_ranges  0x00002528       0x58 ./src/fpu.o
- .debug_ranges  0x00002580      0x210 ./src/gpio.o
- .debug_ranges  0x00002790      0x418 ./src/hibernate.o
- .debug_ranges  0x00002ba8      0x1e0 ./src/i2c.o
- .debug_ranges  0x00002d88       0xe0 ./src/i2s.o
- .debug_ranges  0x00002e68       0x90 ./src/interrupt.o
- .debug_ranges  0x00002ef8       0x18 ./src/isqrt.o
- .debug_ranges  0x00002f10      0x148 ./src/lpc.o
- .debug_ranges  0x00003058       0x18 ./src/main.o
- .debug_ranges  0x00003070       0x58 ./src/mpu.o
- .debug_ranges  0x000030c8       0xb8 ./src/peci.o
- .debug_ranges  0x00003180      0x158 ./src/pwm.o
- .debug_ranges  0x000032d8       0x98 ./src/qei.o
- .debug_ranges  0x00003370      0x200 ./src/ringbuf.o
- .debug_ranges  0x00003570      0x2e0 ./src/rit128x96x4.o
- .debug_ranges  0x00003850       0x78 ./src/scheduler.o
- .debug_ranges  0x000038c8       0x18 ./src/sine.o
- .debug_ranges  0x000038e0       0x88 ./src/softi2c.o
- .debug_ranges  0x00003968      0x240 ./src/softssi.o
- .debug_ranges  0x00003ba8      0x2f0 ./src/softuart.o
- .debug_ranges  0x00003e98      0x120 ./src/ssi.o
- .debug_ranges  0x00003fb8       0x30 ./src/startup_gcc.o
- .debug_ranges  0x00003fe8      0x228 ./src/sysctl.o
- .debug_ranges  0x00004210       0x40 ./src/sysexc.o
- .debug_ranges  0x00004250       0x58 ./src/systick.o
- .debug_ranges  0x000042a8      0x260 ./src/timer.o
- .debug_ranges  0x00004508      0x218 ./src/uart.o
- .debug_ranges  0x00004720      0x1e0 ./src/uartstdio.o
- .debug_ranges  0x00004900       0xe0 ./src/udma.o
- .debug_ranges  0x000049e0      0x288 ./src/usb.o
- .debug_ranges  0x00004c68      0x1d0 ./src/ustdlib.o
- .debug_ranges  0x00004e38       0xa0 ./src/watchdog.o
+.debug_ranges   0x00000000     0x5140
+ .debug_ranges  0x00000000      0x2d0 ./src/sv_utils/sound_visualizer.o
+ .debug_ranges  0x000002d0      0x118 ./src/adc.o
+ .debug_ranges  0x000003e8     0x1e08 ./src/can.o
+ .debug_ranges  0x000021f0       0x18 ./src/cmdline.o
+ .debug_ranges  0x00002208       0x58 ./src/comp.o
+ .debug_ranges  0x00002260       0x40 ./src/cpu.o
+ .debug_ranges  0x000022a0       0x20 ./src/cpu_usage.o
+ .debug_ranges  0x000022c0       0x30 ./src/crc.o
+ .debug_ranges  0x000022f0      0x118 ./src/eeprom.o
+ .debug_ranges  0x00002408       0xd0 ./src/epi.o
+ .debug_ranges  0x000024d8      0x130 ./src/ethernet.o
+ .debug_ranges  0x00002608       0x90 ./src/fan.o
+ .debug_ranges  0x00002698       0x90 ./src/flash.o
+ .debug_ranges  0x00002728       0x68 ./src/flash_pb.o
+ .debug_ranges  0x00002790       0x58 ./src/fpu.o
+ .debug_ranges  0x000027e8      0x210 ./src/gpio.o
+ .debug_ranges  0x000029f8      0x418 ./src/hibernate.o
+ .debug_ranges  0x00002e10      0x1e0 ./src/i2c.o
+ .debug_ranges  0x00002ff0       0xe0 ./src/i2s.o
+ .debug_ranges  0x000030d0       0x90 ./src/interrupt.o
+ .debug_ranges  0x00003160       0x18 ./src/isqrt.o
+ .debug_ranges  0x00003178      0x148 ./src/lpc.o
+ .debug_ranges  0x000032c0       0x18 ./src/main.o
+ .debug_ranges  0x000032d8       0x58 ./src/mpu.o
+ .debug_ranges  0x00003330       0xb8 ./src/peci.o
+ .debug_ranges  0x000033e8      0x158 ./src/pwm.o
+ .debug_ranges  0x00003540       0x98 ./src/qei.o
+ .debug_ranges  0x000035d8      0x200 ./src/ringbuf.o
+ .debug_ranges  0x000037d8      0x2e0 ./src/rit128x96x4.o
+ .debug_ranges  0x00003ab8       0x78 ./src/scheduler.o
+ .debug_ranges  0x00003b30       0x18 ./src/sine.o
+ .debug_ranges  0x00003b48       0x88 ./src/softi2c.o
+ .debug_ranges  0x00003bd0      0x240 ./src/softssi.o
+ .debug_ranges  0x00003e10      0x2f0 ./src/softuart.o
+ .debug_ranges  0x00004100      0x120 ./src/ssi.o
+ .debug_ranges  0x00004220       0x30 ./src/startup_gcc.o
+ .debug_ranges  0x00004250      0x228 ./src/sysctl.o
+ .debug_ranges  0x00004478       0x40 ./src/sysexc.o
+ .debug_ranges  0x000044b8       0x58 ./src/systick.o
+ .debug_ranges  0x00004510      0x260 ./src/timer.o
+ .debug_ranges  0x00004770      0x218 ./src/uart.o
+ .debug_ranges  0x00004988      0x1e0 ./src/uartstdio.o
+ .debug_ranges  0x00004b68       0xe0 ./src/udma.o
+ .debug_ranges  0x00004c48      0x288 ./src/usb.o
+ .debug_ranges  0x00004ed0      0x1d0 ./src/ustdlib.o
+ .debug_ranges  0x000050a0       0xa0 ./src/watchdog.o
 
-.debug_str      0x00000000     0x53ef
- .debug_str     0x00000000      0x1a3 ./src/sv_utils/sound_visualizer.o
-                                0x1cc (size before relaxing)
- .debug_str     0x000001a3      0x386 ./src/adc.o
+.debug_str      0x00000000     0x55a4
+ .debug_str     0x00000000      0x383 ./src/sv_utils/sound_visualizer.o
+                                0x3dd (size before relaxing)
+ .debug_str     0x00000383      0x37d ./src/adc.o
                                 0x416 (size before relaxing)
- .debug_str     0x00000529      0x47d ./src/can.o
+ .debug_str     0x00000700      0x47d ./src/can.o
                                 0x540 (size before relaxing)
- .debug_str     0x000009a6       0xb6 ./src/cmdline.o
+ .debug_str     0x00000b7d       0x87 ./src/cmdline.o
                                 0x14b (size before relaxing)
- .debug_str     0x00000a5c       0x60 ./src/comp.o
+ .debug_str     0x00000c04       0x60 ./src/comp.o
                                 0x158 (size before relaxing)
- .debug_str     0x00000abc       0x60 ./src/cpu.o
+ .debug_str     0x00000c64       0x60 ./src/cpu.o
                                  0xad (size before relaxing)
- .debug_str     0x00000b1c       0xb9 ./src/cpu_usage.o
+ .debug_str     0x00000cc4       0xb9 ./src/cpu_usage.o
                                 0x11c (size before relaxing)
- .debug_str     0x00000bd5       0x77 ./src/crc.o
+ .debug_str     0x00000d7d       0x77 ./src/crc.o
                                 0x10c (size before relaxing)
- .debug_str     0x00000c4c      0x1ab ./src/eeprom.o
+ .debug_str     0x00000df4      0x1ab ./src/eeprom.o
                                 0x24c (size before relaxing)
- .debug_str     0x00000df7      0x246 ./src/epi.o
+ .debug_str     0x00000f9f      0x246 ./src/epi.o
                                 0x306 (size before relaxing)
- .debug_str     0x0000103d      0x262 ./src/ethernet.o
+ .debug_str     0x000011e5      0x262 ./src/ethernet.o
                                 0x31b (size before relaxing)
- .debug_str     0x0000129f      0x123 ./src/fan.o
+ .debug_str     0x00001447      0x123 ./src/fan.o
                                 0x1bc (size before relaxing)
- .debug_str     0x000013c2      0x1b2 ./src/flash.o
+ .debug_str     0x0000156a      0x1b2 ./src/flash.o
                                 0x26e (size before relaxing)
- .debug_str     0x00001574       0xc6 ./src/flash_pb.o
+ .debug_str     0x0000171c       0xc6 ./src/flash_pb.o
                                 0x138 (size before relaxing)
- .debug_str     0x0000163a       0xac ./src/fpu.o
+ .debug_str     0x000017e2       0xac ./src/fpu.o
                                 0x10e (size before relaxing)
- .debug_str     0x000016e6      0x3c1 ./src/gpio.o
+ .debug_str     0x0000188e      0x3c1 ./src/gpio.o
                                 0x457 (size before relaxing)
- .debug_str     0x00001aa7      0x318 ./src/hibernate.o
+ .debug_str     0x00001c4f      0x318 ./src/hibernate.o
                                 0x3b9 (size before relaxing)
- .debug_str     0x00001dbf      0x346 ./src/i2c.o
+ .debug_str     0x00001f67      0x346 ./src/i2c.o
                                 0x3f3 (size before relaxing)
- .debug_str     0x00002105      0x1bb ./src/i2s.o
+ .debug_str     0x000022ad      0x1bb ./src/i2s.o
                                 0x265 (size before relaxing)
- .debug_str     0x000022c0      0x170 ./src/interrupt.o
+ .debug_str     0x00002468      0x170 ./src/interrupt.o
                                 0x232 (size before relaxing)
- .debug_str     0x00002430       0x22 ./src/isqrt.o
+ .debug_str     0x000025d8       0x22 ./src/isqrt.o
                                  0x7d (size before relaxing)
- .debug_str     0x00002452      0x2f9 ./src/lpc.o
+ .debug_str     0x000025fa      0x2f9 ./src/lpc.o
                                 0x400 (size before relaxing)
- .debug_str     0x0000274b       0x1a ./src/main.o
-                                 0x9a (size before relaxing)
- .debug_str     0x00002765       0xb5 ./src/mpu.o
+ .debug_str     0x000028f3       0x27 ./src/main.o
+                                0x109 (size before relaxing)
+ .debug_str     0x0000291a       0xb5 ./src/mpu.o
                                 0x12a (size before relaxing)
- .debug_str     0x0000281a      0x20f ./src/peci.o
+ .debug_str     0x000029cf      0x20f ./src/peci.o
                                 0x2eb (size before relaxing)
- .debug_str     0x00002a29      0x33b ./src/pwm.o
+ .debug_str     0x00002bde      0x33b ./src/pwm.o
                                 0x3ec (size before relaxing)
- .debug_str     0x00002d64      0x128 ./src/qei.o
+ .debug_str     0x00002f19      0x128 ./src/qei.o
                                 0x1d2 (size before relaxing)
- .debug_str     0x00002e8c      0x169 ./src/ringbuf.o
+ .debug_str     0x00003041      0x169 ./src/ringbuf.o
                                 0x200 (size before relaxing)
- .debug_str     0x00002ff5      0x191 ./src/rit128x96x4.o
+ .debug_str     0x000031aa      0x191 ./src/rit128x96x4.o
                                 0x22f (size before relaxing)
- .debug_str     0x00003186      0x18c ./src/scheduler.o
+ .debug_str     0x0000333b      0x18c ./src/scheduler.o
                                 0x1f7 (size before relaxing)
- .debug_str     0x00003312       0x2f ./src/sine.o
+ .debug_str     0x000034c7       0x2f ./src/sine.o
                                  0x9e (size before relaxing)
- .debug_str     0x00003341      0x171 ./src/softi2c.o
+ .debug_str     0x000034f6      0x171 ./src/softi2c.o
                                 0x20c (size before relaxing)
- .debug_str     0x000034b2      0x291 ./src/softssi.o
+ .debug_str     0x00003667      0x291 ./src/softssi.o
                                 0x38e (size before relaxing)
- .debug_str     0x00003743      0x39c ./src/softuart.o
+ .debug_str     0x000038f8      0x39c ./src/softuart.o
                                 0x55f (size before relaxing)
- .debug_str     0x00003adf       0xf9 ./src/ssi.o
+ .debug_str     0x00003c94       0xf9 ./src/ssi.o
                                 0x253 (size before relaxing)
- .debug_str     0x00003bd8       0x66 ./src/startup_gcc.o
+ .debug_str     0x00003d8d       0x66 ./src/startup_gcc.o
                                  0xc5 (size before relaxing)
- .debug_str     0x00003c3e      0x502 ./src/sysctl.o
+ .debug_str     0x00003df3      0x502 ./src/sysctl.o
                                 0x5a9 (size before relaxing)
- .debug_str     0x00004140       0x76 ./src/sysexc.o
+ .debug_str     0x000042f5       0x76 ./src/sysexc.o
                                  0xf8 (size before relaxing)
- .debug_str     0x000041b6       0xab ./src/systick.o
+ .debug_str     0x0000436b       0xab ./src/systick.o
                                 0x11a (size before relaxing)
- .debug_str     0x00004261      0x273 ./src/timer.o
+ .debug_str     0x00004416      0x273 ./src/timer.o
                                 0x351 (size before relaxing)
- .debug_str     0x000044d4      0x22e ./src/uart.o
+ .debug_str     0x00004689      0x22e ./src/uart.o
                                 0x498 (size before relaxing)
- .debug_str     0x00004702       0xfd ./src/uartstdio.o
+ .debug_str     0x000048b7       0xfd ./src/uartstdio.o
                                 0x1a2 (size before relaxing)
- .debug_str     0x000047ff      0x342 ./src/udma.o
+ .debug_str     0x000049b4      0x342 ./src/udma.o
                                 0x3cf (size before relaxing)
- .debug_str     0x00004b41      0x58e ./src/usb.o
+ .debug_str     0x00004cf6      0x58e ./src/usb.o
                                 0x69c (size before relaxing)
- .debug_str     0x000050cf      0x1be ./src/ustdlib.o
+ .debug_str     0x00005284      0x1be ./src/ustdlib.o
                                 0x320 (size before relaxing)
- .debug_str     0x0000528d      0x162 ./src/watchdog.o
+ .debug_str     0x00005442      0x162 ./src/watchdog.o
                                 0x1e7 (size before relaxing)
 
-.debug_frame    0x00000000     0x43bc
- .debug_frame   0x00000000      0x11c ./src/sv_utils/sound_visualizer.o
- .debug_frame   0x0000011c      0x270 ./src/adc.o
- .debug_frame   0x0000038c      0x2d0 ./src/can.o
- .debug_frame   0x0000065c       0x2c ./src/cmdline.o
- .debug_frame   0x00000688       0xb4 ./src/comp.o
- .debug_frame   0x0000073c       0x70 ./src/cpu.o
- .debug_frame   0x000007ac       0x48 ./src/cpu_usage.o
- .debug_frame   0x000007f4       0x88 ./src/crc.o
- .debug_frame   0x0000087c      0x1c0 ./src/eeprom.o
- .debug_frame   0x00000a3c      0x1d4 ./src/epi.o
- .debug_frame   0x00000c10      0x200 ./src/ethernet.o
- .debug_frame   0x00000e10      0x120 ./src/fan.o
- .debug_frame   0x00000f30      0x15c ./src/flash.o
- .debug_frame   0x0000108c       0x68 ./src/flash_pb.o
- .debug_frame   0x000010f4       0xa0 ./src/fpu.o
- .debug_frame   0x00001194      0x2f8 ./src/gpio.o
- .debug_frame   0x0000148c      0x26c ./src/hibernate.o
- .debug_frame   0x000016f8      0x298 ./src/i2c.o
- .debug_frame   0x00001990      0x1c0 ./src/i2s.o
- .debug_frame   0x00001b50      0x140 ./src/interrupt.o
- .debug_frame   0x00001c90       0x20 ./src/isqrt.o
- .debug_frame   0x00001cb0      0x2b4 ./src/lpc.o
- .debug_frame   0x00001f64       0x30 ./src/main.o
- .debug_frame   0x00001f94       0xc0 ./src/mpu.o
- .debug_frame   0x00002054      0x1a4 ./src/peci.o
- .debug_frame   0x000021f8      0x260 ./src/pwm.o
- .debug_frame   0x00002458      0x130 ./src/qei.o
- .debug_frame   0x00002588      0x168 ./src/ringbuf.o
- .debug_frame   0x000026f0      0x134 ./src/rit128x96x4.o
- .debug_frame   0x00002824       0xa8 ./src/scheduler.o
- .debug_frame   0x000028cc       0x20 ./src/sine.o
- .debug_frame   0x000028ec      0x118 ./src/softi2c.o
- .debug_frame   0x00002a04      0x1a4 ./src/softssi.o
- .debug_frame   0x00002ba8      0x230 ./src/softuart.o
- .debug_frame   0x00002dd8      0x140 ./src/ssi.o
- .debug_frame   0x00002f18       0x60 ./src/startup_gcc.o
- .debug_frame   0x00002f78      0x378 ./src/sysctl.o
- .debug_frame   0x000032f0       0x80 ./src/sysexc.o
- .debug_frame   0x00003370       0xa8 ./src/systick.o
- .debug_frame   0x00003418      0x25c ./src/timer.o
- .debug_frame   0x00003674      0x318 ./src/uart.o
- .debug_frame   0x0000398c       0xe0 ./src/uartstdio.o
- .debug_frame   0x00003a6c      0x1d8 ./src/udma.o
- .debug_frame   0x00003c44      0x448 ./src/usb.o
- .debug_frame   0x0000408c      0x1c0 ./src/ustdlib.o
- .debug_frame   0x0000424c      0x140 ./src/watchdog.o
- .debug_frame   0x0000438c       0x30 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+.debug_frame    0x00000000     0x44d0
+ .debug_frame   0x00000000      0x238 ./src/sv_utils/sound_visualizer.o
+ .debug_frame   0x00000238      0x270 ./src/adc.o
+ .debug_frame   0x000004a8      0x2d0 ./src/can.o
+ .debug_frame   0x00000778       0x2c ./src/cmdline.o
+ .debug_frame   0x000007a4       0xb4 ./src/comp.o
+ .debug_frame   0x00000858       0x70 ./src/cpu.o
+ .debug_frame   0x000008c8       0x48 ./src/cpu_usage.o
+ .debug_frame   0x00000910       0x88 ./src/crc.o
+ .debug_frame   0x00000998      0x1c0 ./src/eeprom.o
+ .debug_frame   0x00000b58      0x1d4 ./src/epi.o
+ .debug_frame   0x00000d2c      0x200 ./src/ethernet.o
+ .debug_frame   0x00000f2c      0x120 ./src/fan.o
+ .debug_frame   0x0000104c      0x15c ./src/flash.o
+ .debug_frame   0x000011a8       0x68 ./src/flash_pb.o
+ .debug_frame   0x00001210       0xa0 ./src/fpu.o
+ .debug_frame   0x000012b0      0x2f8 ./src/gpio.o
+ .debug_frame   0x000015a8      0x26c ./src/hibernate.o
+ .debug_frame   0x00001814      0x298 ./src/i2c.o
+ .debug_frame   0x00001aac      0x1c0 ./src/i2s.o
+ .debug_frame   0x00001c6c      0x140 ./src/interrupt.o
+ .debug_frame   0x00001dac       0x20 ./src/isqrt.o
+ .debug_frame   0x00001dcc      0x2b4 ./src/lpc.o
+ .debug_frame   0x00002080       0x28 ./src/main.o
+ .debug_frame   0x000020a8       0xc0 ./src/mpu.o
+ .debug_frame   0x00002168      0x1a4 ./src/peci.o
+ .debug_frame   0x0000230c      0x260 ./src/pwm.o
+ .debug_frame   0x0000256c      0x130 ./src/qei.o
+ .debug_frame   0x0000269c      0x168 ./src/ringbuf.o
+ .debug_frame   0x00002804      0x134 ./src/rit128x96x4.o
+ .debug_frame   0x00002938       0xa8 ./src/scheduler.o
+ .debug_frame   0x000029e0       0x20 ./src/sine.o
+ .debug_frame   0x00002a00      0x118 ./src/softi2c.o
+ .debug_frame   0x00002b18      0x1a4 ./src/softssi.o
+ .debug_frame   0x00002cbc      0x230 ./src/softuart.o
+ .debug_frame   0x00002eec      0x140 ./src/ssi.o
+ .debug_frame   0x0000302c       0x60 ./src/startup_gcc.o
+ .debug_frame   0x0000308c      0x378 ./src/sysctl.o
+ .debug_frame   0x00003404       0x80 ./src/sysexc.o
+ .debug_frame   0x00003484       0xa8 ./src/systick.o
+ .debug_frame   0x0000352c      0x25c ./src/timer.o
+ .debug_frame   0x00003788      0x318 ./src/uart.o
+ .debug_frame   0x00003aa0       0xe0 ./src/uartstdio.o
+ .debug_frame   0x00003b80      0x1d8 ./src/udma.o
+ .debug_frame   0x00003d58      0x448 ./src/usb.o
+ .debug_frame   0x000041a0      0x1c0 ./src/ustdlib.o
+ .debug_frame   0x00004360      0x140 ./src/watchdog.o
+ .debug_frame   0x000044a0       0x30 /opt/CodeSourcery/Sourcery_G++_Lite/arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
