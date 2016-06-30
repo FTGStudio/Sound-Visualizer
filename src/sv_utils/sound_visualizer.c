@@ -1,10 +1,9 @@
 #include <math.h>
-//#include <complex.h>
 
 #include "../inc/hw_types.h"
 #include "../inc/hw_ints.h"
 #include "../inc/hw_memmap.h"
-#include "../inc/rit128x96x4.h"
+//#include "../inc/rit128x96x4.h"
 
 #include "../utils/ustdlib.h"
 
@@ -353,7 +352,7 @@ void Display(unsigned long avgVal, int bufNum)
 //
 
 
-
+/*
 double get_new_average(double avg)
 {
 	double new_avg = avg;
@@ -374,3 +373,4 @@ void reset_avg_history()
 		avg_history_list[i] = 0;
 	}
 }
+*/
