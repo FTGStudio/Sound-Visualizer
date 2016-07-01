@@ -6,20 +6,22 @@
 //Initialization functions
 void Initialize();
 void InitializeDisplay();
-void svInitializeUart();
-void InitializeInterrupts();
+
 
 void ReadSampleToBuf();
 unsigned long GetBufOneAvg();
 unsigned long GetBufTwoAvg();
 int GetSystemState();
-void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
-void RITAddRow(int difference, int prevDisp, int offset);
-void RITClearRow(int difference, int prevDisp, int offset);
-void Display(unsigned long avg, int buf_num);
+
+void RITAddBarLevels(int difference, int prevLevel, int barIndex);
+void RITClearBarLevels(int difference, int prevLevel, int barIndex);
+void Display(unsigned long avg);
+
+//void svInitializeUart();
+//void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
 //void reset_avg_history();
 //double get_new_average(double avg);
-void simulate();
+//void simulate();
 //void get_fft(int buffer_number);
 //void compute_average_magnitude(int buffer_number);
 

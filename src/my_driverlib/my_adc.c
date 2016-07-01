@@ -23,7 +23,7 @@
 #define ADC_SEQ                 (ADC_O_SSMUX0)
 #define ADC_SEQ_STEP            (ADC_O_SSMUX1 - ADC_O_SSMUX0)
 #define ADC_SSMUX               (ADC_O_SSMUX0 - ADC_O_SSMUX0)
-#define ADC_SSEMUX              (ADC_O_SSEMUX0 - ADC_O_SSMUX0)
+#define ADC_SSEMUX              (ADC_O_SSMUX0 - ADC_O_SSMUX0)
 #define ADC_SSCTL               (ADC_O_SSCTL0 - ADC_O_SSMUX0)
 #define ADC_SSFIFO              (ADC_O_SSFIFO0 - ADC_O_SSMUX0)
 #define ADC_SSFSTAT             (ADC_O_SSFSTAT0 - ADC_O_SSMUX0)
@@ -41,8 +41,9 @@ void InitializeADC()
 	//Configure Sequence 3, step 0, analog input 0 | interrupt | end of sequence
 	ADCSequenceStepConfigure(ADC_BASE, 3, 0, ADC_CTL_CH0 | ADC_CTL_IE | ADC_CTL_END);
 
-	ADCSequenceEnable(ADC0_BASE, 3);	//Enable sequence 3 and it's interrupt
-	ADCIntEnable(ADC0_BASE, 3);			//Enable interrupt
+	ADCSequenceEnable(ADC0_BASE, 3);	//Enable sequence 3
+	ADCIntEnable(ADC0_BASE, 3);			//Enable interrupt for pin
+	IntEnable(INT_ADC3);				//Enable interrupt in interrupt controller
 }
 
 //*****************************************************************************

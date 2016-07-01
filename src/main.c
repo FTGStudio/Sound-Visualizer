@@ -5,7 +5,6 @@ int main()
 {
 	int system_state = INITIALIZE;
 
-
 	//Main program loop
 	unsigned long avgADCValue = 0;
 	while(1)
@@ -18,13 +17,13 @@ int main()
 
 			case BUFFER_1_COMPLETE:
 				avgADCValue = GetBufOneAvg();
-				Display(avgADCValue, 1);
+				Display(avgADCValue);
 				system_state = IDLE;
 				break;
 
 			case BUFFER_2_COMPLETE:
 				avgADCValue = GetBufTwoAvg();
-				Display(avgADCValue, 2);
+				Display(avgADCValue);
 				system_state = IDLE;
 				break;
 

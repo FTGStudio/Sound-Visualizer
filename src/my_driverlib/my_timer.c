@@ -135,9 +135,8 @@ void TimerConfigure(unsigned long ulBase, unsigned long ulConfig)
 
     // Set the configuration of the A and B timers.  Note that the B timer
     // configuration is ignored by the hardware in 32-bit modes.
-    HWREG(ulBase + TIMER_O_TAMR) = (ulConfig & 255) | TIMER_TAMR_TAPWMIE;
-    HWREG(ulBase + TIMER_O_TBMR) =
-        ((ulConfig >> 8) & 255) | TIMER_TBMR_TBPWMIE;
+    HWREG(ulBase + TIMER_O_TAMR) = (ulConfig & 255) | TIMER_TAMR_TAMIE;
+    HWREG(ulBase + TIMER_O_TBMR) = ((ulConfig >> 8) & 255) | TIMER_TBMR_TBMIE;
 }
 
 //*****************************************************************************
