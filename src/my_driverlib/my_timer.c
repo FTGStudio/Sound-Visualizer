@@ -6,23 +6,24 @@
  */
 
 #include "my_timer.h"
-#include "../inc/hw_timer.h"
-#include "../inc/hw_memmap.h"
-#include "../inc/hw_types.h"
-#include "../driverlib/debug.h"
-#include "../driverlib/sysctl.h"
+#include "inc/hw_timer.h"
+#include "inc/hw_memmap.h"
+#include "inc/hw_types.h"
+#include "driverlib/debug.h"
+#include "driverlib/sysctl.h"
 
 //*****************************************************************************
-//! Initialize timers used for sound visualizer
+//! Initialize timer used for sound visualizer. Timer 0 is used to generate
+//! a trigger that will tell the ADC to take a sample.
 //!
 //! \return None.
 //*****************************************************************************
 void InitializeTimers()
 {
 	TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);				 //Configure Timer0: 32-bit periodic mode for ADC Timer Trigger
-	TimerLoadSet(TIMER0_BASE, TIMER_A, (SysCtlClockGet()/32000)-1);	 //16KHz interrupt
+	TimerLoadSet(TIMER0_BASE, TIMER_A, (SysCtlClockGet()/32000)-1);	 //32KHz for triggering ADC sampling
 	TimerControlTrigger(TIMER0_BASE, TIMER_A, true); 			 	//Configure Timer0 to generate trigger event for ADC
-	TimerEnable(TIMER0_BASE, TIMER_A);							 	//Enable Timer0
+	TimerEnable(TIMER0_BASE, TIMER_A);							 	//Enable Timer0_A
 }
 
 //*****************************************************************************

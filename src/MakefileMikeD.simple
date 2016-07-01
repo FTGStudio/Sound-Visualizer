@@ -1,11 +1,17 @@
 # The C:/StellarisWare directory
-ROOT=C:/StellarisWare
+ROOT=...
 
 # Where the driver library is
-DRIVERLIBDIR=${ROOT}/driverlib/gcc
+DRIVERLIBDIR=${ROOT}/driverlib/gcc-cm3
 
 # Where the OLED driver is
 OLEDDIR=${ROOT}/boards/ek-lm3s6965
+
+# Where the "my" drivers are
+MY=my_driverlib
+
+# Where the sound_visualizer.c file is
+SV=sv_utils
 
 # The basic compiler command and flags
 CC=arm-none-eabi-gcc \
@@ -29,22 +35,14 @@ gcc/main.bin: gcc/main.elf
 	
 
 # This creates the .ELF file if any of the dependencies change
-gcc/main.elf: main.c startup_gcc.c sound_visualizer.o soundVisualizer.ld
+gcc/main.elf: main.c startup_gcc.c ${SV}/sound_visualizer.c ${MY}/my_adc.c ${MY}/my_timer.c soundVisualizer.ld
 	${CC} -o gcc/main.elf \
-	      main.c startup_gcc.c sound_visualizer.o\
+	      main.c startup_gcc.c ${SV}/sound_visualizer.c ${MY}/my_adc.c ${MY}/my_timer.c \
 	      ${OLEDDIR}/drivers/rit128x96x4.c \
-            -ldriver \
+            -ldriver-cm3 \
 	      -T soundVisualizer.ld \
 	      --entry ResetISR \
 	      -Wl,--gc-sections \
-
-gcc/sound_visualizer.o: sound_visualizer.c sound_visualizer.h
-	${CC} -o gcc/sound_visualizer.o \
-		sound_visualizer.c \
-		${OLEDDIR}/drivers/rit128x96x4.c \
-		-ldriver \
-		-T soundVisualizer.ld \
-		-Wl,--gc-sections \
 
 # This "pseudo-target" removes the target and intermediate files
 .PHONY: clean

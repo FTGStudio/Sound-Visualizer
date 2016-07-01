@@ -6,13 +6,12 @@
  */
 
 #include "my_adc.h"
-#include "../inc/hw_adc.h"
-#include "../inc/hw_ints.h"
-#include "../inc/hw_memmap.h"
-#include "../inc/hw_types.h"
-#include "../inc/hw_sysctl.h"
-#include "../driverlib/debug.h"
-#include "../driverlib/interrupt.h"
+#include "inc/hw_adc.h"
+#include "inc/hw_ints.h"
+#include "inc/hw_memmap.h"
+#include "inc/hw_types.h"
+#include "driverlib/debug.h"
+#include "driverlib/interrupt.h"
 
 //*****************************************************************************
 //
@@ -31,9 +30,18 @@
 #define ADC_SSDC                (ADC_O_SSDC0 - ADC_O_SSMUX0)
 
 
+//*****************************************************************************
+//! Initializes ADC for sound visualizer. Since it only needs one analog input,
+//! sample sequence 3 was chosen because it only has 1 step in the sequence.
+//! It's interrupt is enabled and it is configured to generate an interrupt from
+//! a timer trigger (which Timer0 is configured to do).
+//!
+//! \return None.
+//*****************************************************************************
 void InitializeADC()
 {
-	ADCSequenceDisable(ADC0_BASE, 3);			//Disable Sequence 3 in order to safely configure ADC
+	//Disable Sequence 3 in order to safely configure ADC
+	ADCSequenceDisable(ADC0_BASE, 3);
 
 	//Configure Sequence 3: processor trigger, priority=0
 	ADCSequenceConfigure(ADC_BASE, 3, ADC_TRIGGER_TIMER, 0);
@@ -177,7 +185,6 @@ void ADCSequenceConfigure(unsigned long ulBase, unsigned long ulSequenceNum,
 }
 
 
-
 //*****************************************************************************
 //! Configure a step of the sample sequencer.
 //!
@@ -185,40 +192,42 @@ void ADCSequenceConfigure(unsigned long ulBase, unsigned long ulSequenceNum,
 //! \param ulSequenceNum is the sample sequence number.
 //! \param ulStep is the step to be configured.
 //! \param ulConfig is the configuration of this step; must be a logical OR of
-//! \b ADC_CTL_TS, \b ADC_CTL_IE, \b ADC_CTL_END, \b ADC_CTL_D, one of the
-//! input channel selects (\b ADC_CTL_CH0 through \b ADC_CTL_CH23), and one of
-//! the digital comparator selects (\b ADC_CTL_CMP0 through \b ADC_CTL_CMP7).
+//! \b ADC_CTL_TS, \b ADC_CTL_IE, \b ADC_CTL_END, \b ADC_CTL_D, and one of the
+//! input channel selects (\b ADC_CTL_CH0 through \b ADC_CTL_CH15).  For parts
+//! with the digital comparator feature, the follow values may also be OR'd
+//! into the \e ulConfig value to enable the digital comparater feature:
+//! \b ADC_CTL_CE and one of the comparater selects (\b ADC_CTL_CMP0 through
+//! \b ADC_CTL_CMP7).
 //!
-//! This function configures the ADC for one step of a sample sequence.  The
-//! ADC can be configured for single-ended or differential operation
-//! (the \b ADC_CTL_D bit selects differential operation when set), the
-//! channel to be sampled can be chosen (the \b ADC_CTL_CH0 through
-//! \b ADC_CTL_CH23 values), and the internal temperature sensor can be
-//! selected (the \b ADC_CTL_TS bit).  Additionally, this step can be defined
-//! as the last in the sequence (the \b ADC_CTL_END bit) and it can be
-//! configured to cause an interrupt when the step is complete (the
-//! \b ADC_CTL_IE bit).  If the digital comparators are present on the device,
-//! this step may also be configured to send the ADC sample to the selected
-//! comparator using \b ADC_CTL_CMP0 through \b ADC_CTL_CMP7. The configuration
-//! is used by the ADC at the appropriate time when the trigger for
-//! this sequence occurs.
+//! This function will set the configuration of the ADC for one step of a
+//! sample sequence.  The ADC can be configured for single-ended or
+//! differential operation (the \b ADC_CTL_D bit selects differential
+//! operation when set), the channel to be sampled can be chosen (the
+//! \b ADC_CTL_CH0 through \b ADC_CTL_CH15 values), and the internal
+//! temperature sensor can be selected (the \b ADC_CTL_TS bit).  Additionally,
+//! this step can be defined as the last in the sequence (the \b ADC_CTL_END
+//! bit) and it can be configured to cause an interrupt when the step is
+//! complete (the \b ADC_CTL_IE bit).  If the digital comparators are present
+//! on the device, this step may also be configured send the ADC sample to
+//! the selected comparator (the \b ADC_CTL_CMP0 through \b ADC_CTL_CMP7
+//! values) by using the \b ADC_CTL_CE bit.  The configuration is used by the
+//! ADC at the appropriate time when the trigger for this sequence occurs.
 //!
 //! \note If the Digitial Comparator is present and enabled using the
-//! \b ADC_CTL_CMP0 through \b ADC_CTL_CMP7 selects, the ADC sample is NOT
-//! written into the ADC sequence data FIFO.
+//! \b ADC_CTL_CE bit, the ADC sample will NOT be written into the ADC
+//! sequence data FIFO.
 //!
 //! The \e ulStep parameter determines the order in which the samples are
 //! captured by the ADC when the trigger occurs.  It can range from zero to
-//! seven for the first sample sequencer, from zero to three for the second and
-//! third sample sequencer, and can only be zero for the fourth sample
-//! sequencer.
+//! seven for the first sample sequence, from zero to three for the second and
+//! third sample sequence, and can only be zero for the fourth sample sequence.
 //!
 //! Differential mode only works with adjacent channel pairs (for example, 0
 //! and 1).  The channel select must be the number of the channel pair to
 //! sample (for example, \b ADC_CTL_CH0 for 0 and 1, or \b ADC_CTL_CH1 for 2
-//! and 3) or undefined results are returned by the ADC.  Additionally, if
+//! and 3) or undefined results will be returned by the ADC.  Additionally, if
 //! differential mode is selected when the temperature sensor is being sampled,
-//! undefined results are returned by the ADC.
+//! undefined results will be returned by the ADC.
 //!
 //! It is the responsibility of the caller to ensure that a valid configuration
 //! is specified; this function does not check the validity of the specified
@@ -249,11 +258,6 @@ void ADCSequenceStepConfigure(unsigned long ulBase, unsigned long ulSequenceNum,
     HWREG(ulBase + ADC_SSMUX) = ((HWREG(ulBase + ADC_SSMUX) &
                                   ~(0x0000000f << ulStep)) |
                                  ((ulConfig & 0x0f) << ulStep));
-
-    // Set the upper bits of the analog mux value for this step.
-    HWREG(ulBase + ADC_SSEMUX) = ((HWREG(ulBase + ADC_SSEMUX) &
-                                  ~(0x0000000f << ulStep)) |
-                                  (((ulConfig & 0xf00) >> 8) << ulStep));
 
     // Set the control value for this step.
     HWREG(ulBase + ADC_SSCTL) = ((HWREG(ulBase + ADC_SSCTL) &

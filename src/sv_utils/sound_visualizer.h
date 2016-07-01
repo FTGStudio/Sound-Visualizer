@@ -4,18 +4,18 @@
 #define BUF_SIZE 1000	//0.2/(1/32kHz)
 
 //Initialization functions
-void Initialize();
-void InitializeDisplay();
+extern void Initialize();
+extern void InitializeDisplay();
 
 
-void ReadSampleToBuf();
-unsigned long GetBufOneAvg();
-unsigned long GetBufTwoAvg();
-int GetSystemState();
+extern void ReadSampleToBuf();
+extern unsigned long GetBufOneAvg();
+extern unsigned long GetBufTwoAvg();
+extern int GetSystemState();
 
-void RITAddBarLevels(int difference, int prevLevel, int barIndex);
-void RITClearBarLevels(int difference, int prevLevel, int barIndex);
-void Display(unsigned long avg);
+extern void RITAddBarLevels(int difference, int prevLevel, int barIndex);
+extern void RITClearBarLevels(int difference, int prevLevel, int barIndex);
+extern void Display(unsigned long avg);
 
 //void svInitializeUart();
 //void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
