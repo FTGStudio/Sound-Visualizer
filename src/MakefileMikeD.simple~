@@ -21,7 +21,7 @@ CC=arm-none-eabi-gcc \
    -ffunction-sections -fdata-sections \
    -std=c99 -Wall -pedantic -DPART_LM3S6965 -Dgcc \
    -I${ROOT} \
-	-I${MY} \
+	-I${MY}\
    -L${DRIVERLIBDIR}
 
 # What directories contain sources and targets (besides the
